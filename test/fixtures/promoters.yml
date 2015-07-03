@@ -2,10 +2,8 @@
 
 one:
   name: MyString
-  type: 
   password_digest: MyString
 
 two:
   name: MyString
-  type: 
   password_digest: MyString
