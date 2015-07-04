@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :stations
   resources :promoters
 
-  namespace :api do
+  namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       resources :artists
     end
