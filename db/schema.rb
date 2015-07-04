@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150703114640) do
 
   create_table "promoters", force: :cascade do |t|
     t.string   "name"
+    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150703114640) do
 
   create_table "stations", force: :cascade do |t|
     t.string   "name"
+    t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
