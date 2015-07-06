@@ -4,11 +4,7 @@ class SessionsController < ApplicationController
       if user = Station.find_by_email(params[:email])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-<<<<<<< HEAD
-          session[:user_type] = "station"
-=======
           session[:user_type] = "stations"
->>>>>>> master
           redirect_to show_station_path
         else
           flash.now[:notice] = "User and Password do not match our records."
@@ -16,11 +12,7 @@ class SessionsController < ApplicationController
       elsif user = Promoter.find_by_email(params[:email])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-<<<<<<< HEAD
-          session[:user_type] = "promoter"
-=======
           session[:user_type] = "promoters"
->>>>>>> master
           redirect_to show_promoter_path
         else
           flash.now[:notice] = "User and Password do not match our records."

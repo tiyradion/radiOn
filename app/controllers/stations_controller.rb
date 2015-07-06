@@ -10,16 +10,12 @@ class StationsController < ApplicationController
   # GET /stations/1
   # GET /stations/1.json
   def show
-<<<<<<< HEAD
     @station = Station.find(params[:id])
     @promoters = Promoter.all
     # @comments = @station.comments
     respond_to do |format|
       format.json
     end
-
-=======
->>>>>>> master
   end
 
   # GET /stations/new
@@ -79,10 +75,6 @@ class StationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_params
-<<<<<<< HEAD
-      params[:station]
-=======
       params.require(:station).permit(:name, :email, :password_digest)
->>>>>>> master
     end
 end
