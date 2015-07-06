@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 json.(@promoter, :id, :name, :created_at, :updated_at)
 json.artists @promoter.artists do |artist|
   json.name artist.name
@@ -6,3 +7,6 @@ json.artists @promoter.artists do |artist|
     json.station comment.station.name
   end
 end
+=======
+json.extract! @promoter, :id, :name, :email, :password_digest, :created_at, :updated_at
+>>>>>>> master

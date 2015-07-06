@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   get 'sessions/login'
 
   get 'sessions/logout'
@@ -20,6 +21,16 @@ Rails.application.routes.draw do
   #     resources :promoters
   #   end
   # end
+=======
+  resources :artists
+  resources :stations
+  resources :promoters
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      resources :artists
+    end
+  end
+>>>>>>> master
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
