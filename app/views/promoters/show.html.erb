@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @promoter.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @promoter.email %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @promoter.password_digest %>
+</p>
+
+<%= link_to 'Edit', edit_promoter_path(@promoter) %> |
+<%= link_to 'Back', promoters_path %>

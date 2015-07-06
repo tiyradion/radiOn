@@ -1,8 +1,8 @@
-class CreateUsers < ActiveRecord::Migration
+class CreatePromoters < ActiveRecord::Migration
   def change
-    create_table :users do |t|
+    create_table :promoters do |t|
       t.string :name
-      t.string :type
+      t.string :email
       t.string :password_digest
 
       t.timestamps null: false
