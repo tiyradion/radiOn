@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/home'
+
+  root 'dashboard#home'
+
   get 'sessions/login'
 
   get 'sessions/logout'
