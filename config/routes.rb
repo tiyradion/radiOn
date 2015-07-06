@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :stations
   resources :promoters
   # namespace :api, defaults: {format: 'json'} do
   #   namespace :v1 do
