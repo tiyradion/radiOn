@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
+  get 'api/v1/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
+  get 'api/v1/stations/:id' => 'stations#show', defaults: {format: 'json'}
+
+  resources :comments
   resources :artists
   resources :stations
   resources :promoters

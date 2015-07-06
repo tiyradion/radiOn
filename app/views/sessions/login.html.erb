@@ -1,0 +1,12 @@
+<h1>Login</h1>
+
+<%= form_tag do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= label_tag :password_digest, "Password" %>
+  <%= password_field_tag :password_digest %>
+  <%= submit_tag "Login" %>
+<% end %>
+
+<%= link_to "New Station", new_station_path %>
+<%= link_to "New Promoter", new_promoter_path %>
