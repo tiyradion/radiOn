@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password_digest, "Password" %>
+    <%= f.text_field :password_digest %>
+
   <div class="actions">
     <%= f.submit %>
   </div>

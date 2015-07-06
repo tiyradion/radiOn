@@ -1,16 +1,25 @@
 Rails.application.routes.draw do
 
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
   resources :comments
   resources :artists
-  root to: 'artists#index'
+  root 'sessions#login'
   resources :stations
   resources :promoters
 
-  namespace :api, defaults: {format: 'json'} do
-    namespace :v1 do
-      resources :artists
-    end
-  end
+  get 'api/v1/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
+  get 'api/v1/stations/:id' => 'stations#show', defaults: {format: 'json'}
+
+
+  # namespace :api, defaults: {format: 'json'} do
+  #   namespace :v1 do
+  #     resources :artists
+  #     resources :promoters
+  #   end
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
