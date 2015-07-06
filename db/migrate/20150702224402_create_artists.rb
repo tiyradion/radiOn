@@ -5,7 +5,6 @@ class CreateArtists < ActiveRecord::Migration
       t.integer :promoter_id
       t.boolean :requested
       t.string :uploaded_file
-
       t.timestamps null: false
     end
   end
