@@ -5,7 +5,7 @@ class CreateArtists < ActiveRecord::Migration
       t.string :album_name
       t.string :song_name
       t.integer :promoter_id
-      t.string :uploaded_file
+      t.attachment :uploaded_file
       t.timestamps null: false
     end
   end

@@ -42,7 +42,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def artist_params
-        params[:artist]
+        params.require(:artist).permit(:uploaded_file)
       end
     end
 end

@@ -25,5 +25,7 @@ end
 end
 
 10.times do
-  Artist.create(name: Faker::App.name, promoter_id: rand(1..5), uploaded_file: music.sample)
+  artist = Artist.new(name: Faker::App.author, album_name: Faker::App.name, song_name: Faker::Team.name, promoter_id: rand(1..5))
+  artist.uploaded_file_url(music.sample)
+  artist.save
 end
