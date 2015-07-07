@@ -1,5 +1,4 @@
 module Api
-  module V1
     class ArtistsController < ApplicationController
       before_action :set_artist, only: [:show, :update, :destroy]
       respond_to :json
@@ -46,5 +45,4 @@ module Api
         params[:artist]
       end
     end
-  end
 end

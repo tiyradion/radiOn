@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
 
-  resources :artists
+  get 'dashboard/home'
+
+  root 'dashboard#home'
+
+  get 'sessions/login'
+
+  get 'sessions/logout'
+
+  get 'api/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
+  get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
+
+  resources :comments
   resources :stations
   resources :promoters
   namespace :api, defaults: {format: 'json'} do
-    namespace :v1 do
-      resources :artists
-    end
+    resources :artists
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

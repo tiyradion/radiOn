@@ -18,7 +18,11 @@ class PromotersControllerTest < ActionController::TestCase
 
   test "should create promoter" do
     assert_difference('Promoter.count') do
+<<<<<<< HEAD
+      post :create, promoter: {  }
+=======
       post :create, promoter: { email: @promoter.email, name: @promoter.name, password_digest: @promoter.password_digest }
+>>>>>>> master
     end
 
     assert_redirected_to promoter_path(assigns(:promoter))
@@ -35,7 +39,11 @@ class PromotersControllerTest < ActionController::TestCase
   end
 
   test "should update promoter" do
+<<<<<<< HEAD
+    patch :update, id: @promoter, promoter: {  }
+=======
     patch :update, id: @promoter, promoter: { email: @promoter.email, name: @promoter.name, password_digest: @promoter.password_digest }
+>>>>>>> master
     assert_redirected_to promoter_path(assigns(:promoter))
   end
 
