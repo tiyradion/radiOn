@@ -1,4 +1,4 @@
 json.array!(@artists) do |artist|
   json.(artist, :id, :name)
-  json.url artist_url(artist, format: :json)
+  json.url api_artist_url(artist)
 end
