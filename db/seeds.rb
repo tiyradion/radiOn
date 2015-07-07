@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+music = ["https://s3.amazonaws.com/radion-college-radio/Best+Coast+-+The+Only+Place.mp3",
+  "https://s3.amazonaws.com/radion-college-radio/Blackbird+Blackbird+-+Left+To+Hurt.mp3",
+  "https://s3.amazonaws.com/radion-college-radio/Still+Corners+-+Fireflies.mp3",
+  "https://s3.amazonaws.com/radion-college-radio/Future+Islands+-+Tin+Man.mp3",
+  "https://s3.amazonaws.com/radion-college-radio/Yeasayer+-+2080.mp3"]
+
 5.times do
   Station.create(name: Faker::Name.name, email: Faker::Internet.email, password_digest: "password")
 end
@@ -19,5 +25,5 @@ end
 end
 
 10.times do
-  Artist.create(name: Faker::App.name, promoter_id: rand(1..5))
+  Artist.create(name: Faker::App.name, promoter_id: rand(1..5), uploaded_file: music.sample)
 end
