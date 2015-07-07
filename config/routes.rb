@@ -8,17 +8,15 @@ Rails.application.routes.draw do
 
   get 'sessions/logout'
 
-  get 'api/v1/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
-  get 'api/v1/stations/:id' => 'stations#show', defaults: {format: 'json'}
+  get 'api/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
+  get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
 
   resources :comments
   resources :artists
   resources :stations
   resources :promoters
   namespace :api, defaults: {format: 'json'} do
-    namespace :v1 do
-      resources :artists
-    end
+    resources :artists
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
