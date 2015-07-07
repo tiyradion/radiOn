@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20150703114640) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
+    t.string   "album_name"
+    t.string   "song_name"
     t.integer  "promoter_id"
     t.string   "uploaded_file"
     t.datetime "created_at",    null: false
