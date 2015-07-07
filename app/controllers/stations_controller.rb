@@ -1,22 +1,5 @@
 class StationsController < ApplicationController
-  before_action :set_station, only: [:show, :edit, :update, :destroy]
-
-  # GET /stations
-  # GET /stations.json
-  def index
-    @stations = Station.all
-  end
-
-  # GET /stations/1
-  # GET /stations/1.json
-  def show
-    @station = Station.find(params[:id])
-    @promoters = Promoter.all
-    # @comments = @station.comments
-    respond_to do |format|
-      format.json
-    end
-  end
+  before_action :set_station, only: [:edit, :update, :destroy]
 
   # GET /stations/new
   def new

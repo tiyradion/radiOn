@@ -8,14 +8,18 @@ Rails.application.routes.draw do
 
   get 'sessions/logout'
 
-  get 'api/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
-  get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
+  # get 'api/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
+  # get 'api/promoters' => 'promoters#index', defaults: {format: 'json'}
+  # # get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
+  # get 'api/stations' => 'stations#index', defaults: {format: 'json'}
 
   resources :comments
-  resources :stations
-  resources :promoters
+  resources :stations, except: [:index, :show]
+  resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
     resources :artists
+    resources :stations, only: [:index, :show]
+    resources :promoters, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
