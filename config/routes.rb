@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
 
   resources :comments
-  resources :artists
   resources :stations
   resources :promoters
   namespace :api, defaults: {format: 'json'} do
