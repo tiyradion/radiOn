@@ -2,6 +2,10 @@ Radion.Views.ArtistList = Backbone.View.extend({
 
   el: '.promo-artists',
 
+  events: {
+    "click .submit-new-artist": "ajaxUpload"
+  },
+
   template: JST['artists/artist_list'],
 
   initialize: function() {
@@ -15,28 +19,26 @@ Radion.Views.ArtistList = Backbone.View.extend({
 
   },
 
-  ajaxUpload: function (form) {
+  ajaxUpload: function () {
 
+    var form = $('.new-artist-form');
     var musicSelector = $('input[type=file]', form);
     var file = musicSelector[0].files[0];
 
     var formData = new FormData();
-    formData.append('name', $('.new-artist-name', form));
-    formData.append('album_name', $('.new-album-name', form));
-    formData.append('song_name', $('.new-track-name', form));
-    formData.append('uploaded_file', file);
+    formData.append('artist[name]', $('.new-artist-name', form).val());
+    formData.append('artist[album_name]', $('.new-album-name', form).val());
+    formData.append('artist[song_name]', $('.new-track-name', form).val());
+    formData.append('artist[uploaded_file]', file);
 
     $.ajax({
-      url: form.attr('action'), // The URL to post to
-      type: form.attr('method'), // The HTTP method (e.g. POST)
+      url: '/api/artists', // The URL to post to
+      type: 'POST', // The HTTP method (e.g. POST)
       data: formData, // The data to send to the server
       processData: false, // Disable jQuery's mangling of the data
       contentType: false, // Prevent jQuery from adding the content-type header
       dataType: 'json' // What we expect back from server
-    }).done(function (data) {
-      $('img').remove();
-      $('body').append('<img src="' + data.img + '">');
-    }).fail(function () {
+    }).done(console.log("Uploaded!")).fail(function () {
       console.log(arguments);
       alert('Failed to upload!');
     });
@@ -48,6 +50,7 @@ Radion.Views.ArtistList = Backbone.View.extend({
     this.$el.html(this.template({
       artists: this.model.toJSON()
     }));
+
   }
 
 });
