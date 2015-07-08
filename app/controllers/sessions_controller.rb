@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           session[:user_type] = "stations"
-          redirect_to show_station_path
+          redirect_to root_url
         else
           flash.now[:notice] = "User and Password do not match our records."
         end
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
           session[:user_type] = "promoters"
-          redirect_to show_promoter_path
+          redirect_to root_url
         else
           flash.now[:notice] = "User and Password do not match our records."
         end
