@@ -1,21 +1,6 @@
     class PromotersController < ApplicationController
-      before_action :set_promoter, only: [:show, :edit, :update, :destroy]
-      # respond_to :json
+      before_action :set_promoter, only: [:edit, :update, :destroy]
 
-      # GET /promoters
-      # GET /promoters.json
-      def index
-        @promoters = Promoter.all
-      end
-
-      # GET /promoters/1
-      # GET /promoters/1.json
-      def show
-        @promoter = Promoter.find(params[:id])
-        respond_to do |format|
-          format.json
-        end
-      end
 
       # GET /promoters/new
       def new
