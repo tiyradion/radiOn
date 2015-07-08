@@ -1,10 +1,47 @@
-<div class="promo-artists">
+<div class="promo-artists-header">
   <h2 class="promo-contacts-h2">My Artists</h2>
-  <div class="promo-artist-div pure-menu pure-menu-scrollable custom-restricted">
-    <ul class="pure-menu-list">
-    <% artists.forEach(function(artist) { %>
-      <li class="pure-menu-item"><a href="#listen/<%- artist.id %>" class="pure-menu-link"><%- artist.name %></a></li>
-    <% }) %>
-    </ul>
+  <a class="open-modal" href="#openModal">Add +</a>
+</div>
+
+<div id="openModal" class="modalDialog">
+  <div>
+
+    <a href="#close" title="Close" class="close">X</a>
+    <h2 class="modal-title">New Artist</h2>
+
+    <form class="new-artist-form pure-form pure-form-aligned">
+
+      <div class="new-artist pure-control-group">
+        <label for="new-artist-name">Artist Name</label>
+        <input class="new-artist-name" name="new-artist-name" placeholder="Artist name" />
+      </div>
+
+      <div class="new-album pure-control-group">
+        <label for="new-album-name">Album Name</label>
+        <input class="new-album-name" name="new-album-name" placeholder="Album name"/>
+      </div>
+
+      <div class="new-track pure-control-group">
+        <label for="new-track-name">Track Name</label>
+        <input class="new-track-name" name="new-track-name" placeholder="Track name"/>
+      </div>
+
+      <div class="file-upload-div">
+        <input class="new-music-file" type="file">
+      </div>
+
+      <button class="submit-new-artist pure-button">Submit</button>
+
+    </form>
+
   </div>
+
+</div>
+
+<div class="promo-artist-div pure-menu pure-menu-scrollable custom-restricted">
+  <ul class="pure-menu-list">
+  <% artists.forEach(function(artist) { %>
+    <li class="pure-menu-item"><a href="#listen/<%- artist.id %>" class="pure-menu-link"><%- artist.name %></a></li>
+  <% }) %>
+  </ul>
 </div>
