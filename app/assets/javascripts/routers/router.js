@@ -10,7 +10,7 @@ Radion.Routers.Router = Backbone.Router.extend({
     promoDashboard: function() {
 
       var mainView = new Radion.Views.PromoDashboard();
-      var stationListView = new Radion.Views.StationList();
+      var stationListView = new Radion.Views.StationList({model: new Radion.Collections.Stations()});
       var artistListView = new Radion.Views.ArtistList({model: new Radion.Collections.Artists()});
 
     },

@@ -16,22 +16,24 @@ module Api
 
       # POST /artists
       def create
-      @artist = Artist.create(artist_params)
-        respond_with @artist
+        @artist = Artist.create(artist_params)
+        respond_with do |format|
+          format.json
+        end
       end
 
       # PATCH/PUT /artists/1
       def update
         @artist.update(artist_params)
-          respond_with @artist
+          # respond_with @artist
       end
 
       # DELETE /artists/1
       def destroy
         @artist.destroy
-        respond_to do |format|
-          format.json { head :no_content }
-        end
+        # respond_to do |format|
+        #   format.json { head :no_content }
+        # end
       end
 
       private
@@ -42,7 +44,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def artist_params
-        params.require(:artist).permit(:uploaded_file)
+        params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file)
       end
     end
 end
