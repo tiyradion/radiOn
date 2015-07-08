@@ -1,8 +1,8 @@
-Radion.Views.PromoDashboard = Backbone.View.extend({
+Radion.Views.StationList = Backbone.View.extend({
 
-  el: 'main',
+  el: '.promo-contacts',
 
-  template: JST['promo_dashboard'],
+  template: JST['stations/station_list'],
 
   initialize: function() {
 
@@ -13,7 +13,6 @@ Radion.Views.PromoDashboard = Backbone.View.extend({
   render: function () {
 
     this.$el.html(this.template());
-
   }
 
 });

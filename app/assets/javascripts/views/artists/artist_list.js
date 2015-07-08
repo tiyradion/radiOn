@@ -1,6 +1,6 @@
 Radion.Views.ArtistList = Backbone.View.extend({
 
-  el: 'main',
+  el: '.promo-artists',
 
   template: JST['artists/artist_list'],
 
@@ -14,13 +14,13 @@ Radion.Views.ArtistList = Backbone.View.extend({
     });
 
     console.log(this.model);
-    
+
   },
 
   render: function () {
 
     this.$el.html(this.template({
-      artists: _.chain(this.model.toJSON())
+      artists: this.model.toJSON()
     }));
   }
 
