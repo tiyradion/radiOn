@@ -9,7 +9,9 @@ Radion.Routers.Router = Backbone.Router.extend({
 
     promoDashboard: function() {
 
-      var view = new Radion.Views.ArtistList({model: new Radion.Collections.Artists()});
+      var mainView = new Radion.Views.PromoDashboard();
+      var stationListView = new Radion.Views.StationList({model: new Radion.Collections.Stations()});
+      var artistListView = new Radion.Views.ArtistList({model: new Radion.Collections.Artists()});
 
     },
 
@@ -21,10 +23,6 @@ Radion.Routers.Router = Backbone.Router.extend({
 
       var view = new Radion.Views.Listen({model: new Radion.Models.Artist({id: id})});
       console.log(view);
-    },
-
-    upload: function() {
-      console.log("Upload");
     }
 
 });
