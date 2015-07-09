@@ -10,7 +10,7 @@
 <body>
   <header>
     <% if session[:user_id] %>
-      <div >Welcome  <%= session[:user_name] %> </div>
+      <div class="promo-welcome">Welcome  <%= session[:user_name] %> </div>
       <div> <%= link_to "Logout", sessions_logout_path%> </div>
     <% end %>
   </header>
