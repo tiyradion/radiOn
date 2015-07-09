@@ -18,7 +18,9 @@
 
         respond_to do |format|
           if @promoter.save
-            format.html { redirect_to @promoter, notice: 'Promoter was successfully created.' }
+            session[:user_id] = @promoter.id
+            session[:user_type] = "promoters"
+            format.html { redirect_to root_url, notice: 'Promoter was successfully created.' }
             format.json { render :show, status: :created, location: @promoter }
           else
             format.html { render :new }
@@ -59,6 +61,6 @@
 
         # Never trust parameters from the scary internet, only allow the white list through.
         def promoter_params
-          params.require(:promoter).permit(:name, :email, :password_digest)
+          params.require(:promoter).permit(:name, :email, :password)
         end
     end

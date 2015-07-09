@@ -17,7 +17,9 @@ class StationsController < ApplicationController
 
     respond_to do |format|
       if @station.save
-        format.html { redirect_to @station, notice: 'Station was successfully created.' }
+        session[:user_id] = @station.id
+        session[:user_type] = "stations"
+        format.html { redirect_to root_url, notice: 'Station was successfully created.' }
         format.json { render :show, status: :created, location: @station }
       else
         format.html { render :new }
@@ -31,7 +33,7 @@ class StationsController < ApplicationController
   def update
     respond_to do |format|
       if @station.update(station_params)
-        format.html { redirect_to @station, notice: 'Station was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Station was successfully updated.' }
         format.json { render :show, status: :ok, location: @station }
       else
         format.html { render :edit }
@@ -45,7 +47,7 @@ class StationsController < ApplicationController
   def destroy
     @station.destroy
     respond_to do |format|
-      format.html { redirect_to stations_url, notice: 'Station was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Station was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -58,6 +60,6 @@ class StationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_params
-      params.require(:station).permit(:name, :email, :password_digest)
+      params.require(:station).permit(:name, :email, :password)
     end
 end
