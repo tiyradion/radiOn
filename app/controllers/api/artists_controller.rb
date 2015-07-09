@@ -6,31 +6,30 @@ module Api
       # GET /artists.json
       def index
         @artists = Artist.all
-        respond_with @artists
+        respond_with :api, @artists
       end
 
       # GET /artists/1
       def shows
-        respond_with @artist
+        respond_with :api, @artist
       end
 
       # POST /artists
       def create
-      @artist = Artist.create(artist_params)
-        respond_with @artist
+        @artist = Artist.create(artist_params)
+        respond_with :api, @artist
       end
 
       # PATCH/PUT /artists/1
       def update
         @artist.update(artist_params)
-          respond_with @artist
+        respond_with :api, @artist
       end
 
       # DELETE /artists/1
       def destroy
         @artist.destroy
-        respond_to do |format|
-          format.json { head :no_content }
+        respond_with :api, @artist
         end
       end
 
@@ -42,7 +41,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def artist_params
-        params.require(:artist).permit(:uploaded_file)
+        params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file)
       end
     end
 end
