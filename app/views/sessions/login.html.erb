@@ -1,12 +1,46 @@
-<h1>Login</h1>
+<html class="login-html">
+  <head>
+    <meta charset="utf-8">
+    <title>loDial</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/login.css">
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
+  <body>
 
-<%= form_tag do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Login" %>
-<% end %>
+    <header class="login-header">
+        <h2 class="dial">loDial</h2>
+    </header>
 
-<%= link_to "New Station", new_station_path %>
-<%= link_to "New Promoter", new_promoter_path %>
+<div class="login-div">
+  <div class="login pure-form pure-form-aligned">
+  <%= form_tag do %>
+  <%= text_field_tag :email, nil, placeholder: "Email", :class => "email-login-div" %>
+  <%= password_field_tag :password, nil, placeholder: "Password", :class => "password-login-div" %>
+  <%= submit_tag "Login", :class => "btn-login" %>
+    <% end %>
+  </div>
+
+  <div class="login-represent-div">
+    <p class="radio-btn-label"><span>Or Register As</span></p>
+
+  <div class="login-btns">
+      <%= link_to "New Station", new_station_path, :class => "btn-radio-register" %>
+      <%= link_to "New Promoter", new_promoter_path, :class => "btn-promo-register" %>
+  </div>
+
+  </div>
+</div>
+
+<div class="login-footer">
+    <p><span class="login-footer-title">loDial</span>. Make radio easier.</p>
+</div>
+
+<div class="site-info">
+  <p class="site-info">Created by radiOn Group</p>
+  
+</div>
+
+</html>
