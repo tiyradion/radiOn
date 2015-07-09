@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
     resources :artists
-    resources :stations, only: [:index, :show]
+    resources :stations, only: [:index, :show] do
+      member do
+        get :promoters
+      end
+    end
     resources :promoters, only: [:index, :show]
   end
 
