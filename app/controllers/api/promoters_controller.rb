@@ -20,7 +20,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def promoter_params
-        params.require(:promoter).permit(:name, :email, :password_digest)
+        params.require(:promoter).permit(:name, :email, :password)
       end
   end
 end

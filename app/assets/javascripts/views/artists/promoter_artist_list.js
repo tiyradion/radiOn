@@ -1,12 +1,12 @@
-Radion.Views.ArtistList = Backbone.View.extend({
+Radion.Views.PromoterArtistList = Backbone.View.extend({
 
-  el: '.promo-artists',
+  el: '.artist-list',
 
   events: {
     "click .submit-new-artist": "ajaxUpload"
   },
 
-  template: JST['artists/artist_list'],
+  template: JST['artists/promoter_artist_list'],
 
   initialize: function() {
 
@@ -38,9 +38,9 @@ Radion.Views.ArtistList = Backbone.View.extend({
       processData: false, // Disable jQuery's mangling of the data
       contentType: false, // Prevent jQuery from adding the content-type header
       dataType: 'json' // What we expect back from server
-    }).done(console.log("Uploaded!")).fail(function () {
+    }).done(console.log('Uploaded.')).fail(function () {
       console.log(arguments);
-      alert('Failed to upload!');
+      alert('Failed to upload.');
     });
 
   },

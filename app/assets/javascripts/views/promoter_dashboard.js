@@ -1,8 +1,8 @@
-Radion.Views.PromoDashboard = Backbone.View.extend({
+Radion.Views.PromoterDashboard = Backbone.View.extend({
 
   el: 'main',
 
-  template: JST['promo_dashboard'],
+  template: JST['promoter_dashboard'],
 
   initialize: function() {
 

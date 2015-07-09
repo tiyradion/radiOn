@@ -2,11 +2,18 @@ module Api
     class ArtistsController < ApplicationController
       before_action :set_artist, only: [:show, :update, :destroy]
       respond_to :json
+      before_action :promoter_logged_in?, only: [:create, :update, :destroy]
+      before_action :logged_in?, only: [:index, :show]
 
       # GET /artists.json
       def index
-        @artists = Artist.all
-        respond_with :api, @artists
+        if session[:user_type] == "stations"
+          @artists = Artist.all
+          respond_with :api, @artists
+        else
+          @artists = @promoter.artists
+          respond_with :api, @artists
+        end
       end
 
       # GET /artists/1
@@ -16,7 +23,7 @@ module Api
 
       # POST /artists
       def create
-        @artist = Artist.create(artist_params)
+        @artist = Artist.create(artist_params, promoter_id: session[:user_id])
         respond_with :api, @artist
       end
 
