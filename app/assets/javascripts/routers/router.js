@@ -1,7 +1,6 @@
 Radion.Routers.Router = Backbone.Router.extend({
 
   routes: {
-      "": "promoDashboard",
       "promo-dashboard": "promoDashboard",
       "station-dashboard": "stationDashboard",
       "listen/:id": "listen"
