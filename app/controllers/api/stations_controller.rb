@@ -1,11 +1,16 @@
 module Api
   class StationsController < ApplicationController
-    before_action :set_station, only: [:show]
+    before_action :set_station, only: [:show, :promoters]
     respond_to :json
+    before_action :promoter_logged_in?, only: [:index]
 
     def index
       @stations = Station.all
       respond_with @stations
+    end
+
+    def promoters
+      respond_with @station.promoters
     end
 
     def show
