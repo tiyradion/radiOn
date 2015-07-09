@@ -2,8 +2,7 @@ Radion.Routers.Router = Backbone.Router.extend({
 
   routes: {
       "404": "badUrl",
-      "promoter-dashboard": "promoterDashboard",
-      "station-dashboard": "stationDashboard",
+      "": "home",
       "listen/:id": "listen"
     },
 
@@ -11,6 +10,14 @@ Radion.Routers.Router = Backbone.Router.extend({
 
       var view = new Radion.Views.BadUrl();
 
+    },
+
+    home: function() {
+      if(Radion.userType === "promoters") {
+        this.promoterDashboard();
+      } else if (Radion.userType === "stations"){
+        this.stationDashboard();
+      }
     },
 
     promoterDashboard: function() {
