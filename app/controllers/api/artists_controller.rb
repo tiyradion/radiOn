@@ -23,7 +23,9 @@ module Api
 
       # POST /artists
       def create
-        @artist = Artist.create(artist_params)
+        @artist = Artist.new(artist_params)
+        @artist.promoter_id = session[:user_id]
+        @artist.save
         respond_with :api, @artist
       end
 
