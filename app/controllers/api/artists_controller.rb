@@ -23,7 +23,9 @@ module Api
 
       # POST /artists
       def create
-        @artist = Artist.create(artist_params, promoter_id: session[:user_id])
+        @artist = Artist.new(artist_params)
+        @artist.promoter_id = session[:user_id]
+        @artist.save
         respond_with :api, @artist
       end
 
@@ -37,7 +39,6 @@ module Api
       def destroy
         @artist.destroy
         respond_with :api, @artist
-        end
       end
 
       private
