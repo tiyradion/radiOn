@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Radion</title>
+  <title>loDial</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
 <body>
   <header>
     <% if session[:user_id] %>
-      <div >Logged in as  <%= session[:user_name] %> </div>
+      <div >Welcome  <%= session[:user_name] %> </div>
       <div> <%= link_to "Logout", sessions_logout_path%> </div>
     <% end %>
   </header>
