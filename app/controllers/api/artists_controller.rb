@@ -3,21 +3,22 @@ module Api
       before_action :set_artist, only: [:show, :update, :destroy]
       respond_to :json
       before_action :promoter_logged_in?, only: [:create, :update, :destroy]
+      before_action :logged_in?, only: [:index, :show]
 
       # GET /artists.json
       def index
         if session[:user_type] == "stations"
           @artists = Artist.all
-          respond_with @artists
+          respond_with :api, @artists
         else
           @artists = @promoter.artists
-          respond_with @artists
+          respond_with :api, @artists
         end
       end
 
       # GET /artists/1
       def shows
-        respond_with @artist
+        respond_with :api, @artist    
       end
 
       # POST /artists
