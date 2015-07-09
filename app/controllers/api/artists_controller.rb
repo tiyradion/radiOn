@@ -6,34 +6,31 @@ module Api
       # GET /artists.json
       def index
         @artists = Artist.all
-        respond_with @artists
+        respond_with :api, @artists
       end
 
       # GET /artists/1
       def shows
-        respond_with @artist
+        respond_with :api, @artist
       end
 
       # POST /artists
       def create
         @artist = Artist.create(artist_params)
-        respond_with do |format|
-          format.json
-        end
+        respond_with :api, @artist
       end
 
       # PATCH/PUT /artists/1
       def update
         @artist.update(artist_params)
-          # respond_with @artist
+        respond_with :api, @artist
       end
 
       # DELETE /artists/1
       def destroy
         @artist.destroy
-        # respond_to do |format|
-        #   format.json { head :no_content }
-        # end
+        respond_with :api, @artist
+        end
       end
 
       private
