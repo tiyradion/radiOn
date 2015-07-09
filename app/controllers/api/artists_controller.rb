@@ -17,7 +17,7 @@ module Api
       end
 
       # GET /artists/1
-      def shows
+      def show
         respond_with :api, @artist
       end
 

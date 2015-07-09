@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 <body>
+  <header>
+    <% if session[:user_id] %>
+      <div >Welcome  <%= session[:user_name] %> </div>
+      <div> <%= link_to "Logout", sessions_logout_path%> </div>
+    <% end %>
+  </header>
   <input id="user-session-info" type="hidden" data-userid="<%= session[:user_id] %>" data-usertype="<%= session[:user_type] %>">
   <main>
   <%= yield %>
