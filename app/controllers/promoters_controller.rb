@@ -20,6 +20,7 @@
           if @promoter.save
             session[:user_id] = @promoter.id
             session[:user_type] = "promoters"
+            session[:user_name] = @promoter.name
             format.html { redirect_to root_url, notice: 'Promoter was successfully created.' }
             format.json { render :show, status: :created, location: @promoter }
           else
