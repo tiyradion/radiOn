@@ -24,7 +24,7 @@ module Api
       # POST /artists
       def create
         @artist = Artist.create(artist_params, promoter_id: session[:user_id])
-        respond_with @artist
+        respond_with :api, @artist
       end
 
       # PATCH/PUT /artists/1
