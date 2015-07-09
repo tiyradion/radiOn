@@ -5,13 +5,9 @@ Rails.application.routes.draw do
   root 'dashboard#home'
 
   get 'sessions/login'
+  post 'sessions/login'
 
   get 'sessions/logout'
-
-  # get 'api/promoters/:id' => 'promoters#show', defaults: {format: 'json'}
-  # get 'api/promoters' => 'promoters#index', defaults: {format: 'json'}
-  # # get 'api/stations/:id' => 'stations#show', defaults: {format: 'json'}
-  # get 'api/stations' => 'stations#index', defaults: {format: 'json'}
 
   resources :comments
   resources :stations, except: [:index, :show]

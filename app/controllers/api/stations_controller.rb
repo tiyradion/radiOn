@@ -21,7 +21,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def station_params
-        params.require(:station).permit(:name, :email, :password_digest)
+        params.require(:station).permit(:name, :email, :password)
       end
   end
 end
