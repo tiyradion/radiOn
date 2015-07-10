@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'backbone-on-rails'
 
+gem 'puma'
+
 gem "paperclip", "~> 4.3"
 
 gem 'aws-sdk', '~> 1.6'
