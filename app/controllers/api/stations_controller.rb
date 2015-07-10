@@ -26,7 +26,8 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def station_params
-        params.require(:station).permit(:name, :email, :password)
+        params.require(:station).permit(:name, :email, :password, :station_name,
+          :phone_number, :address_1, :address_2, :city, :state, :zipcode)
       end
 
       # def promoter_logged_in?
