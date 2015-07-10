@@ -13,13 +13,22 @@ Rails.application.routes.draw do
   resources :stations, except: [:index, :show]
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
-    resources :artists
-    resources :stations, only: [:index, :show] #do
-      # member do
-      #   get :promoters
-      # end
-    #end
-    resources :promoters, only: [:index, :show]
+    resources :artists do
+      member do
+        get :comments
+      end
+    end
+    resources :stations, only: [:index, :show, :update] do
+      member do
+        get :promoters
+      end
+    end
+    resources :promoters, only: [:index, :show, :update] do
+      member do
+        get :artists
+        get :stations
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

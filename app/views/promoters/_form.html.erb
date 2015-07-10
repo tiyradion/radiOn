@@ -11,31 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :company_name %><br>
-    <%= f.text_field :company_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :picture_upload %><br>
+<html class="promo-register-html">
+
+  <header class="promo-register-header">
+      <h1 class="dial">loDial</h1>
+  </header>
+
+  <div class="promo-register-div">
+  <p class="new-promo-heading"><span class="promo-lodial">loDial</span> - Sign Up!</p>
+
+  <div class="promo-register pure-form pure-form-aligned">
+
+    <div class="promo-name-div">
+      <%= text_field :name, nil, placeholder: "Name", :class => "promo-name pure-input-1" %>
+    </div>
+
+    <div class="promo-company-name-div">
+      <%= text_field :company_name, nil, placeholder: "Company Name", :class => "promo-company-name pure-input-1" %>
+    </div>
+
+    <div class="promo-email-div">
+    <%= text_field :email, nil, placeholder: "Email", :class => "promo-email pure-input-1" %>
+    </div>
+
+    <div class="promo-password-div">
+      <%= text_field :password, nil, placeholder: "Password", :class => "promo-password pure-input-1" %>
+    </div>
+
+    <div class="promo-phone-number-div">
+    <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "promo-phone-number pure-input-1" %>
+    </div>
+
+  <div class="file-upload">
     <%= f.file_field :picture_upload %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="btn-create-promo-div">
+    <%= submit_tag "Register", :class => "btn-create-promo" %>
   </div>
+
+  </div>
+  </div>
+</div>
+  </html>
 <% end %>
