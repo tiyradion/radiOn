@@ -13,6 +13,11 @@ music = ["https://s3.amazonaws.com/radion-college-radio/Best+Coast+-+The+Only+Pl
   "https://s3.amazonaws.com/radion-college-radio/Yeasayer+-+2080.mp3"]
 
 5.times do
+  Promoter.create(name: Faker::Name.name, email: Faker::Internet.email, password_digest: "password",
+    company_name: Faker::Company.name, phone_number: Faker::PhoneNumber.phone_number)
+end
+
+5.times do
   Station.create(name: Faker::Name.name, email: Faker::Internet.email, password_digest: "password",
     station_name: Faker::Team.name, address_1: Faker::Address.street_address, zipcode: Faker::Address.zip,
     city: Faker::Address.city, state: Faker::Address.state_abbr, promoter_ids: [rand(1..3), rand(4..5)],
@@ -22,11 +27,6 @@ end
 # 20.times do
 #   Comment.create(description: Faker::Company.catch_phrase, artist_id: rand(1..10), station_id: rand(1..5))
 # end
-
-5.times do
-  Promoter.create(name: Faker::Name.name, email: Faker::Internet.email, password_digest: "password",
-    company_name: Faker::Company.name, phone_number: Faker::PhoneNumber.phone_number)
-end
 
 10.times do
   artist = Artist.new(name: Faker::App.author, album_name: Faker::App.name, song_name: Faker::Team.name, promoter_id: rand(1..5))
