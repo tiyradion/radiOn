@@ -11,51 +11,72 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+
+  <html class="station-register-html">
+
+  <header class="station-register-header">
+      <h1 class="dial">loDial</h1>
+  </header>
+
+  <div class="station-register-div">
+  <p class="new-station-heading"><span class="station-lodial">loDial</span> - Sign Up!</p>
+
+  <div class="station-register pure-form pure-form-aligned">
+
+    <div class="station-name-div">
+      <%= text_field :name, nil, placeholder: "Name", :class => "station-contact-name pure-input-1" %>
+    </div>
+
+    <div class="promo-company-name-div">
+      <%= text_field :station_name, nil, placeholder: "Radio Station", :class => "radio-station-name pure-input-1" %>
+    </div>
+
+    <div class="station-email-div">
+      <%= text_field :email, nil, placeholder: "Email", :class => "station-email pure-input-1" %>
+    </div>
+
+    <div class="promo-password-div">
+      <%= text_field :password, nil, placeholder: "Password", :class => "station-password pure-input-1" %>
+    </div>
+
+    <div class="station-phone-number-div">
+      <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "station-phone pure-input-1" %>
+    </div>
+
+    <div class="mailing-address-div pure-form pure-g">
+      <div class="station-address-1-div pure-u-1-2">
+        <%= text_field :address_1, nil, placeholder: "Mailing Address (optional)", :class => "station-address-1 pure-input-1" %>
+      </div>
+
+      <div class="station-address-2-div pure-u-1-2">
+        <%= text_field :address_2, nil, placeholder: "Mailing Address 2 (optional)", :class => "station-address-2 pure-input-1" %>
+      </div>
+    </div>
+
+    <div class="city-state-zip-div pure-form pure-g">
+      <div class="station-city-div pure-u-1-3">
+        <%= text_field :city, nil, placeholder: "City (optional)", :class => "station-city pure-input-1" %>
+      </div>
+
+      <div class="station-state-div pure-u-1-3">
+        <%= text_field :state, nil, placeholder: "State (optional)", :class => "station-state pure-input-1" %>
+      </div>
+
+      <div class="station-zipcode-div pure-u-1-3">
+        <%= text_field :zipcode, nil, placeholder: "Zip (optional)", :class => "station-zipcode pure-input-1" %>
+      </div>
+    </div>
+
+    <label class="file-upload">
+      <%= f.file_field :picture_upload, :class => "upload" %>
+      <span class="file-upload-label">Add a Profile Picture <i class="fa fa-picture-o"></i></span>
+    </label>
+
+    <div class="btn-create-station-div">
+      <%= submit_tag "Register", :class => "btn-create-station" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :station_name %><br>
-    <%= f.text_field :station_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :address_1 %><br>
-    <%= f.text_field :address_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :address_2%><br>
-    <%= f.text_field :address_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zipcode %><br>
-    <%= f.text_field :zipcode %>
-  </div>
-  <div class="field">
-    <%= f.label :picture_upload %><br>
-    <%= f.file_field :picture_upload %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
+</html>
 <% end %>
