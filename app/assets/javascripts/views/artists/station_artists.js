@@ -1,6 +1,6 @@
-Radion.Views.StationArtistList = Backbone.View.extend({
+Radion.Views.StationArtists = Backbone.View.extend({
 
-  el: '.artist-list',
+  el: '.station-artists',
 
   events: {
     "click .submit-new-artist": "ajaxUpload"
