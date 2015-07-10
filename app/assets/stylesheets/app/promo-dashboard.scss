@@ -156,7 +156,8 @@
 	pointer-events: none;
 }
 
-.modalDialog:target {
+.modalDialog.showing {
+  display: block;
 	opacity:1;
 	pointer-events: auto;
 }
