@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  private
   def station_logged_in?
     unless Station.find_by_id(session[:user_id]) && session[:user_type] == "stations"
       redirect_to sessions_login_path, notice: "Please login"
