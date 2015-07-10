@@ -8,6 +8,8 @@ Radion.Views.PromoterDashboard = Backbone.View.extend({
 
     this.render();
 
+    $('html').addClass('promo-dashboard');
+
   },
 
   render: function () {

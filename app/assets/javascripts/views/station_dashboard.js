@@ -8,6 +8,8 @@ Radion.Views.StationDashboard = Backbone.View.extend({
 
     this.render();
 
+    $('html').addClass('station-dashboard');
+
   },
 
   render: function () {

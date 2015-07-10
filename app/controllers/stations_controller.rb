@@ -61,6 +61,7 @@ class StationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_params
-      params.require(:station).permit(:name, :email, :password)
+      params.require(:station).permit(:name, :email, :password, :picture_upload,
+        :station_name, :phone_number, :address_1, :address_2, :city, :state, :zipcode)
     end
 end

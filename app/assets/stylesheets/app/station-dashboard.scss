@@ -1,25 +1,24 @@
-// Place all the styles related to the Dashboard controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.dashboard-body {
-  background-color: #4c4849;
+.station-dashboard {
+  background: rgba(255, 255, 255, 1) url("../bg.jpg") center center fixed;
 }
 
 /*header*/
-.promo-dash-header {
+.station-dash-header {
   position: fixed;
   width: 100%;
-  background-color: #FFFFFE;
+  background-color: #eb7260;
+  box-shadow: 0px 2px 2px 0px gray;
+  z-index: 1;
 }
 
-.promo-welcome {
+.station-welcome {
   margin-top: 1em;
   margin-right: 2em;
   display: inline-block;
   float: right;
   font-size: 1.2em;
   font-family: 'Roboto Condensed', sans-serif;
-  color: #eb7260;
+  color: #FFFFFE;
 }
 
 .dial-low {
@@ -33,31 +32,59 @@
 .dial-low a {
   text-decoration: none;
   right: 0 auto;
-  color: #eb7260;
+  color: #FFFFFE;
 }
 
 /*dashboard content*/
-.promo-dash-div {
+.station-dash-div {
   position: absolute;
   width: 100%;
   padding-top: 3em;
 }
 
-.promo-contacts {
-  position: relative;
+.station-contacts {
   display: inline-block;
+  width: 100%;
+  position: relative;
   margin-left: 2em;
   margin-top: 3em;
 }
 
+.station-contact-header {
+  width: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.station-contacts-h2 {
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+
+.station-contacts-add {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.2em;
+  color: #eb7260;
+  margin-top: -0.2em;
+  margin-left: 21em;
+  border: 1px solid #eb7260;
+}
+
+.station-contacts-add:hover {
+  color: #91ada9;
+  border: 1px solid #91ada9;
+}
 .custom-restricted {
   height: 15em;
   width: 30em;
-  border: 1px solid gray;
   border-radius: 4px;
+  border: 1px solid #eae4da;
 }
 
-.promo-artists {
+.station-artists {
   z-index: 1000;
   position: relative;
   display: inline-block;
@@ -74,28 +101,28 @@
   margin-top: -2em;
 }
 
-.promo-artists h2, .promo-contacts h2 {
+.station-artists h2, .station-contacts h2 {
   color: #eb7260;
   margin-bottom: 1em;
 }
 
-.promo-artists h2 {
+.station-artists h2 {
   display: inline-block;
   float: left;
 }
 
-.promo-artist-div, .promo-contacts-div, .promo-other-div {
+.station-artist-div, .station-contacts-div, .station-other-div {
   background-color: #FFFFFE;
 }
 
-.promo-contacts {
+.station-contacts {
   position: absolute;
   display: inline-block;
   margin-top: 2em;
   width: 60em;
 }
 
-.promo-other-div {
+.station-other-div {
   z-index: 1;
   position: relative;
   height: 8em;

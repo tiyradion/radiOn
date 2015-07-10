@@ -12,16 +12,6 @@
   <% end %>
 
 <html class="promo-register-html">
-  <head>
-    <meta charset="utf-8">
-    <title class="register-title">Register - loDial</title>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/reset.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/promo-register.css">
-    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  </head>
-  <body>
 
   <header class="promo-register-header">
       <h1 class="dial">loDial</h1>
@@ -32,17 +22,36 @@
 
   <div class="promo-register pure-form pure-form-aligned">
 
-    <%= text_field :name, nil, placeholder: "Name", :class => "promo-name-div" %>
-    <%= text_field :company_name, nil, placeholder: "Company Name", :class => "promo-company-name-div" %>
-    <%= text_field :email, nil, placeholder: "Email", :class => "email-reg-div" %>
-    <%= text_field :password, nil, placeholder: "Password", :class => "password-reg-div"%>
-    <%= text_field :phone_number, nil, placeholder: "Password", :class => "promo-phone-number-div" %>
+    <div class="promo-name-div">
+      <%= text_field :name, nil, placeholder: "Name", :class => "promo-name pure-input-1" %>
+    </div>
 
-  <div class="field">
+    <div class="promo-company-name-div">
+      <%= text_field :company_name, nil, placeholder: "Company Name", :class => "promo-company-name pure-input-1" %>
+    </div>
+
+    <div class="promo-email-div">
+    <%= text_field :email, nil, placeholder: "Email", :class => "promo-email pure-input-1" %>
+    </div>
+
+    <div class="promo-password-div">
+      <%= text_field :password, nil, placeholder: "Password", :class => "promo-password pure-input-1" %>
+    </div>
+
+    <div class="promo-phone-number-div">
+    <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "promo-phone-number pure-input-1" %>
+    </div>
+
+  <div class="file-upload">
     <%= f.file_field :picture_upload %>
   </div>
 
-  <div class= "btn-create-promo">
-    <%= f.submit %>
+  <div class="btn-create-promo-div">
+    <%= submit_tag "Register", :class => "btn-create-promo" %>
   </div>
+
+  </div>
+  </div>
+</div>
+  </html>
 <% end %>

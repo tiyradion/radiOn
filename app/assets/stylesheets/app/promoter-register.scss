@@ -45,7 +45,11 @@
   box-shadow: 0px 5px 5px 0px #423f40;
 }
 
-.promo-register-div button {
+.promo-register-div div {
+  margin-bottom: 0.5em;
+}
+
+.btn-create-promo {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
@@ -58,7 +62,7 @@
   border: 2px solid #91ada9;
 }
 
-.promo-register-div button:hover {
+.btn-create-promo:hover {
   background-color: #FFFFFE;
   color: #eb7260;
   border: 2px solid #eb7260;
@@ -67,6 +71,11 @@
 .btn-create-promo-div {
   margin-top: 2em;
   width: 100%;
+}
+
+.file-upload {
+  margin-top: 0.5em;
+  padding-bottom: 1em;
 }
 
 .register-footer {

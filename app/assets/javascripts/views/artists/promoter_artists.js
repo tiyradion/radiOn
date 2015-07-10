@@ -1,8 +1,11 @@
-Radion.Views.PromoterArtistList = Backbone.View.extend({
+Radion.Views.PromoterArtists = Backbone.View.extend({
 
-  el: '.artist-list',
+  el: '.promo-artists',
 
   events: {
+    "click .open-modal": "openModal",
+    "click .close": "closeModal",
+    "click .artist-link": "openModal",
     "click .submit-new-artist": "ajaxUpload"
   },
 
@@ -16,6 +19,26 @@ Radion.Views.PromoterArtistList = Backbone.View.extend({
       alert('Failed to load artists.');
       console.error(arguments);
     });
+
+  },
+
+  openModal: function() {
+
+    $('#openModal').addClass('showing');
+
+    $('.modal-close, .modal-container').on('click', function () {
+      $('.modal-container').removeClass('showing');
+    });
+
+    $('.modal').click(function (e) {
+      e.stopPropagation();
+    });
+
+  },
+
+  closeModal: function() {
+
+    $('#openModal').removeClass('showing');
 
   },
 
