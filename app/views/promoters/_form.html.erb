@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+
 <html class="promo-register-html">
 
   <header class="promo-register-header">
@@ -42,9 +44,10 @@
     <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "promo-phone-number pure-input-1" %>
     </div>
 
-  <div class="file-upload">
-    <%= f.file_field :picture_upload %>
-  </div>
+  <label class="file-upload">
+    <%= f.file_field :picture_upload, :class => "upload" %>
+    <span class="file-upload-label">Add a Profile Picture <i class="fa fa-picture-o"></i></span>
+  </label>
 
   <div class="btn-create-promo-div">
     <%= submit_tag "Register", :class => "btn-create-promo" %>
