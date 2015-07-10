@@ -18,12 +18,12 @@ Rails.application.routes.draw do
         get :comments
       end
     end
-    resources :stations, only: [:index, :show] do
+    resources :stations, only: [:index, :show, :update] do
       member do
         get :promoters
       end
     end
-    resources :promoters, only: [:index, :show] do
+    resources :promoters, only: [:index, :show, :update] do
       member do
         get :artists
         get :stations

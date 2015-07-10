@@ -1,6 +1,6 @@
 module Api
   class PromotersController < ApplicationController
-    before_action :set_promoter, only: [:show, :artists, :stations]
+    before_action :set_promoter, only: [:show, :artists, :stations, :update]
     respond_to :json
 
     def index
@@ -17,7 +17,12 @@ module Api
     end
 
     def stations
-      respond_with @promoter
+      respond_with @promoter.stations
+    end
+
+    def update
+      @promoter.update(promoter_params)
+      respond_with :api, @artist
     end
 
     private
@@ -26,7 +31,7 @@ module Api
       end
 
       def promoter_params
-        params.require(:promoter).permit(:name, :email, :password, :company_name, :phone_number, :picture_upload)
+        params.require(:promoter).permit(:name, :email, :password, :company_name, :phone_number, :picture_upload, station_ids: [])
       end
   end
 end

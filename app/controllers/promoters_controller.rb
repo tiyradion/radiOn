@@ -1,18 +1,13 @@
-    class PromotersController < ApplicationController
-      before_action :set_promoter, only: [:edit, :update, :destroy]
-
-
-      # GET /promoters/new
-      def new
-        @promoter = Promoter.new
-      end
+class PromotersController < ApplicationController
+  before_action :set_promoter, only: [:edit, :update, :destroy]
+    def new
+      @promoter = Promoter.new
+    end
 
       # GET /promoters/1/edit
       def edit
       end
 
-      # POST /promoters
-      # POST /promoters.json
       def create
         @promoter = Promoter.new(promoter_params)
 
@@ -44,8 +39,6 @@
         end
       end
 
-      # DELETE /promoters/1
-      # DELETE /promoters/1.json
       def destroy
         @promoter.destroy
         respond_to do |format|
@@ -62,6 +55,6 @@
 
         # Never trust parameters from the scary internet, only allow the white list through.
         def promoter_params
-          params.require(:promoter).permit(:name, :email, :password, :company_name, :phone_number, :picture_upload)
+          params.require(:promoter).permit(:name, :email, :password, :company_name, :phone_number, :picture_upload, station_ids: [])
         end
     end
