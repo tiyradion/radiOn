@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       if user = Station.find_by_email(params[:email])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-          session[:user_type] = "station"
+          session[:user_type] = "stations"
           session[:user_name] = user.name
           redirect_to root_url
         else
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       elsif user = Promoter.find_by_email(params[:email])
         if user && user.authenticate(params[:password])
           session[:user_id] = user.id
-          session[:user_type] = "promoter"
+          session[:user_type] = "promoters"
           session[:user_name] = user.name
           redirect_to root_url
         else

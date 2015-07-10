@@ -4,21 +4,21 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def station_logged_in?
-    unless Station.find_by_id(session[:user_id]) && session[:user_type] == "station"
+    unless Station.find_by_id(session[:user_id]) && session[:user_type] == "stations"
       redirect_to sessions_login_path, notice: "Please login"
     end
   end
 
   def promoter_logged_in?
-    unless Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoter"
+    unless Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
       redirect_to sessions_login_path, notice: "Please login"
     end
   end
 
   def logged_in?
-    if Station.find_by_id(session[:user_id]) && session[:user_type] == "station"
+    if Station.find_by_id(session[:user_id]) && session[:user_type] == "stations"
       @station = Station.find_by_id(session[:user_id])
-    elsif Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoter"
+    elsif Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
       @promoter = Promoter.find_by_id(session[:user_id])
     else
       redirect_to sessions_login_path, notice: "Please login"
