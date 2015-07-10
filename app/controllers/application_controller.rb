@@ -23,5 +23,5 @@ class ApplicationController < ActionController::Base
     else
       redirect_to sessions_login_path, notice: "Please login"
     end
-  # end
+  end
 end
