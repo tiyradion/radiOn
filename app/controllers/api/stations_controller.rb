@@ -1,12 +1,16 @@
 module Api
   class StationsController < ApplicationController
-    before_action :set_station, only: [:show]
+    before_action :set_station, only: [:show, :promoters]
     respond_to :json
     before_action :promoter_logged_in?, only: [:index]
 
     def index
       @stations = Station.all
       respond_with @stations
+    end
+
+    def promoters
+      respond_with @station.promoters
     end
 
     def show
@@ -24,5 +28,11 @@ module Api
       def station_params
         params.require(:station).permit(:name, :email, :password)
       end
+
+      # def promoter_logged_in?
+      #   unless Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
+      #     redirect_to sessions_login_path, notice: "Please login"
+      #   end
+      # end
   end
 end

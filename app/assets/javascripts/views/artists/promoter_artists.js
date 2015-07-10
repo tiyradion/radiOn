@@ -5,6 +5,7 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
   events: {
     "click .open-modal": "openModal",
     "click .close": "closeModal",
+    "click .artist-link": "openModal",
     "click .submit-new-artist": "ajaxUpload"
   },
 
@@ -38,7 +39,7 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
   closeModal: function() {
 
     $('#openModal').removeClass('showing');
-    
+
   },
 
   ajaxUpload: function () {

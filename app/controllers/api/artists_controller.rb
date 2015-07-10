@@ -51,5 +51,21 @@ module Api
       def artist_params
         params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file)
       end
+
+      # def logged_in?
+      #   if Station.find_by_id(session[:user_id]) && session[:user_type] == "stations"
+      #     @station = Station.find_by_id(session[:user_id])
+      #   elsif Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
+      #     @promoter = Promoter.find_by_id(session[:user_id])
+      #   else
+      #     redirect_to sessions_login_path, notice: "Please login"
+      #   end
+      # end
+      #
+      # def promoter_logged_in?
+      #   unless Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
+      #     redirect_to sessions_login_path, notice: "Please login"
+      #   end
+      # end
     end
 end

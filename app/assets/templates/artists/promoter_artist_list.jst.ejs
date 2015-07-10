@@ -1,12 +1,12 @@
 <div class="promo-artists-header">
   <h2 class="promo-contacts-h2">My Artists</h2>
-  <button class="open-modal">Add +</button>
+  <a class="open-modal">Add +</a>
 </div>
 
 <div id="openModal" class="modalDialog">
   <div>
 
-    <button class="close">X</button>
+    <a class="close">X</a>
     <h2 class="modal-title">New Artist</h2>
 
     <form class="new-artist-form pure-form pure-form-aligned">
@@ -41,7 +41,7 @@
 <div class="promo-artist-div pure-menu pure-menu-scrollable custom-restricted">
   <ul class="pure-menu-list">
   <% artists.forEach(function(artist) { %>
-    <li class="pure-menu-item"><a href="#openModal" class="pure-menu-link"><%- artist.name %></a></li>
+    <li class="pure-menu-item artist-link"><a class="pure-menu-link"><%- artist.name %></a></li>
   <% }) %>
   </ul>
 </div>
