@@ -1,9 +1,9 @@
 module Api
   class ArtistsController < ApplicationController
-    before_action :set_artist, only: [:show, :update, :destroy]
+    before_action :set_artist, only: [:show, :update, :comments, :destroy]
     respond_to :json
-    before_action :promoter_logged_in?, only: [:create, :update, :destroy]
-    before_action :logged_in?, only: [:index, :show]
+    # before_action :promoter_logged_in?, only: [:create, :update, :destroy]
+    # before_action :logged_in?, only: [:index, :show]
 
     def index
       @artists = Artist.all

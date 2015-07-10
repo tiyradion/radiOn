@@ -1,6 +1,6 @@
 module Api
   class PromotersController < ApplicationController
-    before_action :set_promoter, only: [:show]
+    before_action :set_promoter, only: [:show, :artists, :stations]
     respond_to :json
 
     def index
@@ -12,21 +12,21 @@ module Api
       respond_with @promoter
     end
 
+    def artists
+      respond_with @promoter.artists
+    end
+
+    def stations
+      respond_with @promoter
+    end
+
     private
-      # Use callbacks to share common setup or constraints between actions.
       def set_promoter
         @promoter = Promoter.find(params[:id])
       end
 
-      # Never trust parameters from the scary internet, only allow the white list through.
       def promoter_params
         params.require(:promoter).permit(:name, :email, :password, :company_name, :phone_number, :picture_upload)
       end
-
-      # def promoter_logged_in?
-      #   unless Promoter.find_by_id(session[:user_id]) && session[:user_type] == "promoters"
-      #     redirect_to sessions_login_path, notice: "Please login"
-      #   end
-      # end
   end
 end
