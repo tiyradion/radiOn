@@ -1,8 +1,8 @@
-Radion.Views.PromoterList = Backbone.View.extend({
+Radion.Views.StationContacts = Backbone.View.extend({
 
-  el: '.promoter-list',
+  el: '.station-contacts',
 
-  template: JST['promoters/promoter_list'],
+  template: JST['promoters/station_contacts'],
 
   initialize: function() {
 

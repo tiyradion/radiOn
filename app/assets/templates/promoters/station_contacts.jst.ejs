@@ -1,0 +1,10 @@
+<h2 class="station-contacts-h2">My Contacts</h2>
+<div class="station-contacts-div pure-menu pure-menu-scrollable custom-restricted">
+  <ul class="pure-menu-list">
+    <% promoters.forEach(function(promoter) { %>
+      <li class="pure-menu-item">
+        <a class="pure-menu-link"><%- promoter.name %></a>
+      </li>
+    <% }) %>
+  </ul>
+</div>

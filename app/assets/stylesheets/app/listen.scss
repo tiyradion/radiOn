@@ -1,0 +1,150 @@
+
+html {
+  background: rgba(255, 255, 255, 1) url("../bg.jpg") center center fixed;
+}
+
+header {
+  background-color: #eb7260;
+  box-shadow: 0px 2px 2px 0px gray;
+}
+
+.dial-low {
+  font-family: 'Megrim', cursive;
+  font-size: 2em;
+  margin-left: 1em;
+  padding: 0.3em;
+}
+
+.dial-low a {
+  text-decoration: none;
+  color: #FFFFFE;
+  padding-right: 0.5em;
+}
+
+.dial-low a:hover {
+  color: #78c0a8;
+}
+
+.band-menu {
+  display: inline-block;
+  float: right;
+  margin-top: -2em;
+  margin-right: 2em;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFE;
+}
+
+.listen-artist-info {
+  text-align: center;
+  color: #eb7260;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2em;
+  margin-top: 1em;
+  padding-top: 0.5em;
+}
+
+.music-div {
+  background: rgba(188, 181, 181, 0.4);
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 1em;
+}
+
+.listen-form {
+  text-align: center;
+  margin-top: 3em;
+  color: #FFFFFE;
+}
+
+.listen-form input {
+  color: black;
+}
+
+.comment-box {
+  height: 4em;
+}
+
+.checkbox {
+  margin-top: 5em;
+}
+
+.checkbox input {
+  margin-right: 2em;
+}
+
+.btn-listen-pg {
+  background-color: #FFFFFE;
+  margin-top: 5em;
+  color: #eb7260;
+  border: 1px solid #eb7260;
+  width: 15em;
+  height: 2em;
+}
+
+.btn-listen-pg:hover {
+  color: #78c0a8;
+  border: 1px solid #78c0a8;
+}
+
+#down-icon {
+  font-size: 2em;
+  display: inline-block;
+  position: relative;
+  float: right;
+  margin: 1.5em 3em auto auto;
+  color: #eb7260;
+}
+
+#down-icon:hover {
+  color: #78c0a8;
+}
+
+#audio-player  {
+  z-index: 1000;
+  display: inline-block;
+  position: relative;
+  float: left;
+	width: 35em;
+	height: 4em;
+	margin: 2em auto 2em 9em;
+  background-color: #FFFFFE;
+  box-shadow: 0px 3px 3px 0px gray;
+}
+
+#pButton  {
+  height: 4em;
+  width: 5em;
+  border: none;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  float:left;
+  outline: none;
+  color: #FFFFFE;
+  background-color: #eb7260;
+  margin-right: 3em;
+}
+
+#pButton:hover {
+  background-color: #91ada9;
+}
+
+.play{background: url('http://www.alexkatz.me/codepen/images/play.png') ;}
+.pause{background: url('http://www.alexkatz.me/codepen/images/pause.png') ;}
+
+#timeline {
+	width: 70%;
+	height: 1.2em;
+	margin-top: 20px;
+	float: left;
+	border-radius: 15px;
+	background: #E3E3E3;
+}
+
+#playhead {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	margin-top: 1px;
+	background: rgba(0, 0, 0,1);
+}
