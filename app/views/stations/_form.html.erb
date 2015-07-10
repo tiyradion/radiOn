@@ -1,4 +1,4 @@
-<%= form_for(@station) do |f| %>
+<%= form_for @station, html: { multipart: true } do |f| %>
   <% if @station.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
@@ -16,12 +16,44 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :station_name %><br>
+    <%= f.text_field :station_name %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :password %><br>
     <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br>
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2%><br>
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :picture_upload %><br>
+    <%= f.file_field :picture_upload %>
   </div>
   <div class="actions">
     <%= f.submit %>
