@@ -2,11 +2,7 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
   el: '.station-artists',
 
-  events: {
-    "click .submit-new-artist": "ajaxUpload"
-  },
-
-  template: JST['artists/station_artist_list'],
+  template: JST['artists/station_artists'],
 
   initialize: function() {
 
