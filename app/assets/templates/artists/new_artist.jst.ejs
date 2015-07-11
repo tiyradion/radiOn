@@ -1,0 +1,34 @@
+
+  <div>
+
+    <a class="close">X</a>
+    <h2 class="modal-title">
+      <%- (isNew ? 'New' : 'Edit') %> Artist
+    </h2>
+
+    <form class="new-artist-form pure-form pure-form-aligned">
+
+      <div class="new-artist pure-control-group">
+        <label for="new-artist-name">Artist Name</label>
+        <input class="new-artist-name" name="new-artist-name" placeholder="Artist name" value="<%- (isNew ? '' : artist.name) %>"/>
+      </div>
+
+      <div class="new-album pure-control-group">
+        <label for="new-album-name">Album Name</label>
+        <input class="new-album-name" name="new-album-name" placeholder="Album name" value="<%- (isNew ? '' : artist.album_name) %>"/>
+      </div>
+
+      <div class="new-track pure-control-group">
+        <label for="new-track-name">Track Name</label>
+        <input class="new-track-name" name="new-track-name" placeholder="Track name" value="<%- (isNew ? '' : artist.song_name) %>"/>
+      </div>
+
+      <div class="file-upload-div">
+        <input class="new-music-file" type="file">
+      </div>
+
+      <button class="submit-new-artist pure-button" type="button">Submit</button>
+
+    </form>
+
+  </div>
