@@ -6,12 +6,6 @@ Radion.Routers.Router = Backbone.Router.extend({
       "listen/:id": "listen"
     },
 
-    badUrl: function() {
-
-      var view = new Radion.Views.BadUrl();
-
-    },
-
     home: function() {
       if(Radion.userType === "promoters") {
         this.promoterDashboard();
@@ -22,9 +16,9 @@ Radion.Routers.Router = Backbone.Router.extend({
 
     promoterDashboard: function() {
       if(Radion.userType === "promoters") {
-        var mainView = new Radion.Views.PromoterDashboard();
-        var stationListView = new Radion.Views.PromoterContacts({model: new Radion.Collections.Stations()});
-        var artistListView = new Radion.Views.PromoterArtists({model: new Radion.Collections.Artists()});
+        var PromoterDashboardView = new Radion.Views.PromoterDashboard();
+        var promoterContactsView = new Radion.Views.PromoterContacts({model: new Radion.Collections.PromoterContacts()});
+        var promoterArtistsView = new Radion.Views.PromoterArtists({model: new Radion.Collections.PromoterArtists()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
@@ -34,8 +28,8 @@ Radion.Routers.Router = Backbone.Router.extend({
     stationDashboard: function() {
       if(Radion.userType === "stations") {
         var mainView = new Radion.Views.StationDashboard();
-        var promoterListView = new Radion.Views.StationContacts({model: new Radion.Collections.Promoters()});
-        var artistListView = new Radion.Views.StationArtists({model: new Radion.Collections.Artists()});
+        var stationContactsView = new Radion.Views.StationContacts({model: new Radion.Collections.StationContacts()});
+        var stationArtistsView = new Radion.Views.StationArtists({model: new Radion.Collections.StationArtists()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
@@ -48,6 +42,12 @@ Radion.Routers.Router = Backbone.Router.extend({
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
+
+    },
+
+    badUrl: function() {
+
+      var view = new Radion.Views.BadUrl();
 
     }
 
