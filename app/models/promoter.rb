@@ -1,5 +1,6 @@
 class Promoter < ActiveRecord::Base
   has_many :artists
+  has_many :requests, through: :stations
   has_secure_password
   has_and_belongs_to_many :stations
   has_attached_file :picture_upload

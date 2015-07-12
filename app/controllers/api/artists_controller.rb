@@ -27,10 +27,13 @@ module Api
     end
 
     def update
-      if session[:user_id] == @artist.promoter_id
+      if session[:user_id] == @artist.promoter_id || session[:user_type] == "promoters"
         @artist.update(artist_params)
         respond_with :api, @artist
-      else
+      elsif session[:user_type] == "Stations"
+        @request = Request.create(:requested, artist_id: @artist.id, station_id: session[:user_id])
+        # @comment = Comment.create()
+
         redirect_to root_url, notice: "No access to change this Artist. Not artist promoter"
       end
     end
