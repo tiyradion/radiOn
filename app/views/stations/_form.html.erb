@@ -1,16 +1,3 @@
-<%= form_for @station, html: { multipart: true } do |f| %>
-  <% if @station.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
-
-      <ul>
-      <% @station.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
 
   <html class="station-register-html">
@@ -23,48 +10,60 @@
   <p class="new-station-heading"><span class="station-lodial">loDial</span> - Sign Up!</p>
 
   <div class="station-register pure-form pure-form-aligned">
+    <%= form_for @station, html: { multipart: true } do |f| %>
+      <% if @station.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
+
+          <ul>
+          <% @station.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
     <div class="station-name-div">
-      <%= text_field :name, nil, placeholder: "Name", :class => "station-contact-name pure-input-1" %>
+      <%= f.text_field :name, placeholder: "Name", :class => "station-contact-name pure-input-1" %>
     </div>
 
     <div class="promo-company-name-div">
-      <%= text_field :station_name, nil, placeholder: "Radio Station", :class => "radio-station-name pure-input-1" %>
+      <%= f.text_field :station_name, placeholder: "Radio Station", :class => "radio-station-name pure-input-1" %>
     </div>
 
     <div class="station-email-div">
-      <%= text_field :email, nil, placeholder: "Email", :class => "station-email pure-input-1" %>
+      <%= f.text_field :email, placeholder: "Email", :class => "station-email pure-input-1" %>
     </div>
 
     <div class="promo-password-div">
-      <%= text_field :password, nil, placeholder: "Password", :class => "station-password pure-input-1" %>
+      <%= f.text_field :password, placeholder: "Password", :class => "station-password pure-input-1" %>
     </div>
 
     <div class="station-phone-number-div">
-      <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "station-phone pure-input-1" %>
+      <%= f.text_field :phone_number, placeholder: "Phone Number (optional)", :class => "station-phone pure-input-1" %>
     </div>
 
     <div class="mailing-address-div pure-form pure-g">
       <div class="station-address-1-div pure-u-1-2">
-        <%= text_field :address_1, nil, placeholder: "Mailing Address (optional)", :class => "station-address-1 pure-input-1" %>
+        <%= f.text_field :address_1, placeholder: "Mailing Address (optional)", :class => "station-address-1 pure-input-1" %>
       </div>
 
       <div class="station-address-2-div pure-u-1-2">
-        <%= text_field :address_2, nil, placeholder: "Mailing Address 2 (optional)", :class => "station-address-2 pure-input-1" %>
+        <%= f.text_field :address_2, placeholder: "Mailing Address 2 (optional)", :class => "station-address-2 pure-input-1" %>
       </div>
     </div>
 
     <div class="city-state-zip-div pure-form pure-g">
       <div class="station-city-div pure-u-1-3">
-        <%= text_field :city, nil, placeholder: "City (optional)", :class => "station-city pure-input-1" %>
+        <%= f.text_field :city, placeholder: "City (optional)", :class => "station-city pure-input-1" %>
       </div>
 
       <div class="station-state-div pure-u-1-3">
-        <%= text_field :state, nil, placeholder: "State (optional)", :class => "station-state pure-input-1" %>
+        <%= f.text_field :state, placeholder: "State (optional)", :class => "station-state pure-input-1" %>
       </div>
 
       <div class="station-zipcode-div pure-u-1-3">
-        <%= text_field :zipcode, nil, placeholder: "Zip (optional)", :class => "station-zipcode pure-input-1" %>
+        <%= f.text_field :zipcode, placeholder: "Zip (optional)", :class => "station-zipcode pure-input-1" %>
       </div>
     </div>
 
@@ -74,9 +73,9 @@
     </label>
 
     <div class="btn-create-station-div">
-      <%= submit_tag "Register", :class => "btn-create-station" %>
+      <%= f.submit "Register", :class => "btn-create-station" %>
     </div>
+    <% end %>
   </div>
 </div>
 </html>
-<% end %>

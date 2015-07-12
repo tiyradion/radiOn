@@ -2,9 +2,9 @@ module Api
   class ArtistsController < ApplicationController
     before_action :set_artist, only: [:show, :update, :comments, :destroy]
     respond_to :json
-    before_action :station_logged_in?, only: [:show]
-    # before_action :promoter_logged_in?, only: [:create, :update, :destroy]
-    # before_action :logged_in?, only: [:index, :show]
+    # before_action :station_logged_in?, only: [:show]
+    before_action :promoter_logged_in?, only: [:create, :update, :destroy]
+    before_action :logged_in?, only: [:index, :show]
 
     def index
       @artists = Artist.all
@@ -27,13 +27,21 @@ module Api
     end
 
     def update
-      @artist.update(artist_params)
-      respond_with :api, @artist
+      if session[:user_id] == @artist.promoter_id
+        @artist.update(artist_params)
+        respond_with :api, @artist
+      else
+        redirect_to root_url, notice: "No access to change this Artist. Not artist promoter"
+      end
     end
 
     def destroy
-      @artist.destroy
-      respond_with :api, @artist
+      if session[:user_id] == @artist.promoter_id
+        @artist.destroy
+        respond_with :api, @artist
+      else
+        redirect_to root_url, notice: "No access to delete this Artist. Not artist promoter"
+      end
     end
 
     private

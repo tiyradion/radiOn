@@ -1,15 +1,3 @@
-<%= form_for @promoter, html: { multipart: true } do |f| %>
-  <% if @promoter.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@promoter.errors.count, "error") %> prohibited this promoter from being saved:</h2>
-
-      <ul>
-      <% @promoter.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
 
@@ -23,25 +11,37 @@
   <p class="new-promo-heading"><span class="promo-lodial">loDial</span> - Sign Up!</p>
 
   <div class="promo-register pure-form pure-form-aligned">
+    <%= form_for @promoter, html: { multipart: true } do |f| %>
+      <% if @promoter.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@promoter.errors.count, "error") %> prohibited this promoter from being saved:</h2>
+
+          <ul>
+          <% @promoter.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
     <div class="promo-name-div">
-      <%= text_field :name, nil, placeholder: "Name", :class => "promo-name pure-input-1" %>
+      <%= f.text_field :name, placeholder: "Name", :class => "promo-name pure-input-1" %>
     </div>
 
     <div class="promo-company-name-div">
-      <%= text_field :company_name, nil, placeholder: "Company Name", :class => "promo-company-name pure-input-1" %>
+      <%= f.text_field :company_name, placeholder: "Company Name", :class => "promo-company-name pure-input-1" %>
     </div>
 
     <div class="promo-email-div">
-    <%= text_field :email, nil, placeholder: "Email", :class => "promo-email pure-input-1" %>
+    <%= f.text_field :email, placeholder: "Email", :class => "promo-email pure-input-1" %>
     </div>
 
     <div class="promo-password-div">
-      <%= text_field :password, nil, placeholder: "Password", :class => "promo-password pure-input-1" %>
+      <%= f.text_field :password, placeholder: "Password", :class => "promo-password pure-input-1" %>
     </div>
 
     <div class="promo-phone-number-div">
-    <%= text_field :phone_number, nil, placeholder: "Phone Number (optional)", :class => "promo-phone-number pure-input-1" %>
+    <%= f.text_field :phone_number, placeholder: "Phone Number (optional)", :class => "promo-phone-number pure-input-1" %>
     </div>
 
   <label class="file-upload">
@@ -50,11 +50,10 @@
   </label>
 
   <div class="btn-create-promo-div">
-    <%= submit_tag "Register", :class => "btn-create-promo" %>
+    <%= f.submit "Register", :class => "btn-create-promo" %>
   </div>
-
+  <% end %>
   </div>
   </div>
 </div>
   </html>
-<% end %>

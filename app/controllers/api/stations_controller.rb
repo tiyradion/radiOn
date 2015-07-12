@@ -3,6 +3,8 @@ module Api
     before_action :set_station, only: [:show, :promoters, :update]
     respond_to :json
     # before_action :promoter_logged_in?, only: [:index]
+    before_action :logged_in?, only: [:index, :show]
+    before_action :station_logged_in?, only: [:promoters, :update]
 
     def index
       @stations = Station.all

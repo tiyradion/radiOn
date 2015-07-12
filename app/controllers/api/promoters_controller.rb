@@ -2,6 +2,8 @@ module Api
   class PromotersController < ApplicationController
     before_action :set_promoter, only: [:show, :artists, :stations, :update]
     respond_to :json
+    before_action :promoter_logged_in?, only: [:stations, :artists]
+    before_action :logged_in?, only: [:show, :index]
 
     def index
       @promoters = Promoter.all
