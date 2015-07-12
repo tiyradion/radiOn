@@ -1,6 +1,6 @@
 <div class="promo-artists-header">
   <h2 class="promo-contacts-h2">My Artists</h2>
-  <a class="open-modal">Add +</a>
+  <a class="new-artist open-modal">Add +</a>
 </div>
 
 <div class="artist-modal"></div>
@@ -8,7 +8,7 @@
 <div class="promo-artist-div pure-menu pure-menu-scrollable custom-restricted">
   <ul class="pure-menu-list">
   <% artists.forEach(function(artist) { %>
-    <li class="pure-menu-item artist-link" data-artist-id="<%- artist.id %>"><a class="pure-menu-link"><%- artist.name %></a></li>
+    <li class="pure-menu-item edit-artist" data-artist-id="<%- artist.id %>"><a class="pure-menu-link"><%- artist.name %></a></li>
   <% }) %>
   </ul>
 </div>

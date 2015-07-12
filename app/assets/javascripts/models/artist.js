@@ -1,5 +1,5 @@
 Radion.Models.Artist = Backbone.Model.extend({
 
-  urlRoot: '/api/artists/'
+  urlRoot: '/api/artists'
 
 });

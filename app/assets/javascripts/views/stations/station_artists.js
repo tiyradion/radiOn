@@ -1,18 +1,16 @@
-Radion.Views.StationContacts = Backbone.View.extend({
+Radion.Views.StationArtists = Backbone.View.extend({
 
-  el: '.station-contacts',
+  el: '.station-artists',
 
-  template: JST['promoters/station_contacts'],
+  template: JST['stations/station_artists'],
 
   initialize: function() {
 
     this.listenTo(this.model, 'change remove add', this.render);
 
     this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
-      alert('Failed to load stations.');
+      alert('Failed to load artists.');
       console.error(arguments);
-
-    console.log(this.model);
     });
 
   },
@@ -20,7 +18,7 @@ Radion.Views.StationContacts = Backbone.View.extend({
   render: function () {
 
     this.$el.html(this.template({
-      promoters: this.model.toJSON()
+      artists: this.model.toJSON()
     }));
 
   }
