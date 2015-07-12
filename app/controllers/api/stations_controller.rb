@@ -10,6 +10,11 @@ module Api
       respond_with :api, @stations
     end
 
+    # def artists
+    #   artists = Artist.all
+    #   @artists = artists.reject {|artist| artist.rejected}
+    # end
+
     def promoters
       respond_with :api, @station.promoters
     end
