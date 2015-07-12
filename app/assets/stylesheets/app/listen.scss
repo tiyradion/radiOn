@@ -1,21 +1,20 @@
-
-html {
-  background: rgba(255, 255, 255, 1) url("../bg.jpg") center center fixed;
+.listen-html {
+  background: rgba(255, 255, 255, 1) url("../../../images/bg.jpg") center center fixed;
 }
 
-header {
+.listen-header {
   background-color: #eb7260;
   box-shadow: 0px 2px 2px 0px gray;
 }
 
-.dial-low {
+.listen-lodial {
   font-family: 'Megrim', cursive;
   font-size: 2em;
   margin-left: 1em;
   padding: 0.3em;
 }
 
-.dial-low a {
+.listen-lodial a {
   text-decoration: none;
   color: #FFFFFE;
   padding-right: 0.5em;
@@ -47,7 +46,8 @@ header {
   background: rgba(188, 181, 181, 0.4);
   width: 80%;
   margin: 0 auto;
-  padding-bottom: 1em;
+  margin-top: 5em;
+  padding-bottom: 2em;
 }
 
 .listen-form {
@@ -60,21 +60,27 @@ header {
   color: black;
 }
 
-.comment-box {
-  height: 4em;
+.text-area {
+  width: 66%;
+  color: black;
+}
+
+.checkboxes {
+  width: 100%;
+  margin-top: 2em;
+}
+
+.checkboxes div {
+  display: inline;
 }
 
 .checkbox {
   margin-top: 5em;
 }
 
-.checkbox input {
-  margin-right: 2em;
-}
-
 .btn-listen-pg {
   background-color: #FFFFFE;
-  margin-top: 5em;
+  margin-top: 3em;
   color: #eb7260;
   border: 1px solid #eb7260;
   width: 15em;
@@ -84,6 +90,11 @@ header {
 .btn-listen-pg:hover {
   color: #78c0a8;
   border: 1px solid #78c0a8;
+}
+
+.player-div {
+  z-index: 2000;
+  position: relative;
 }
 
 #down-icon {
@@ -100,7 +111,7 @@ header {
 }
 
 #audio-player  {
-  z-index: 1000;
+  z-index: 2000;
   display: inline-block;
   position: relative;
   float: left;
@@ -147,4 +158,25 @@ header {
 	border-radius: 50%;
 	margin-top: 1px;
 	background: rgba(0, 0, 0,1);
+}
+
+label.listen-options input {
+  display:none;
+}
+
+label.listen-options span {
+  cursor: pointer;
+  color: #eb7260;
+}
+
+label.listen-options span:hover {
+  color: #91ada9;
+}
+
+label.listen-options input:checked + span {
+  color: #91ada9;
+}
+
+.divider {
+  color: #eb7260;
 }

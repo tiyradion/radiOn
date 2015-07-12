@@ -1,18 +1,69 @@
-<div class="music-player">
-  <audio controls>
-    <source src="<%- artist.uploaded_file %>">
-  </audio>
-</div>
+<html class="listen-html">
+  <head>
+    <link rel="shortcut icon" href="http://www.favicon-generator.org/favicon-generator/htdocs/favicons/2015-07-07/ae43990ee430fc7b34feae5b251aac36.ico.png" type="image/x-icon">
+    <link rel="icon" href="http://www.favicon-generator.org/favicon-generator/htdocs/favicons/2015-07-07/ae43990ee430fc7b34feae5b251aac36.ico.png" type="image/x-icon">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/reset.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/listen.css">
+    <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  </head>
 
-<form class="listen-form pure-form pure-form-aligned">
-  <label for="comment-box">Comments</label>
-  <input class="comment-box pure-input-2-3" name="comment-box" placeholder="Comments"><br>
+  <body>
+    <header class="listen-header">
+      <h2 class="listen-lodial"><a href="#">loDial</a></h2>
+      <p class="band-menu">Promo Company > Band Name > Album Name > Song Name</p>
+    </header>
 
-  <div class="checkbox">
-    <input type="checkbox" name="cd" class="cd-checkbox" value="physical-cd"> Mail Me a Physical CD
-    <input type="checkbox" name="digital-cd" class="digital-cd" value="digital-cd"> Send me a Digital CD
+    <div class="music-div">
+    <div class="listen-artist-div">
+      <h2 class="listen-artist-info">Band Name</h2>
+    </div>
+
+    <div class="player-menu-div">
+
+      <div class="music-player">
+        <audio controls>
+          <source src="<%- artist.uploaded_file %>">
+        </audio>
+      </div>
+
+      <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+            <a href="#"><i class="fa fa-chevron-right" id="down-icon"></i></a>
+        <ul class="pure-menu-children">
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">View One Sheet</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">View Pictures</a></li>
+          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Go to Website</a></li>
+        </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <form class="listen-form pure-form pure-form-aligned">
+      <textarea maxlength="500" placeholder="Comments" class="text-area"></textarea><br>
+
+      <div class="checkboxes">
+        <label class="listen-options">
+          <input type="checkbox" name="mail" value="mail"/>
+            <span><i class="fa fa-envelope-o"></i> Send Me a Physical CD <span class="divider">|</span></span>
+          </label>
+        <label class="listen-options">
+          <input type="checkbox" name="laptop" value="laptop">
+          <span><i class="fa fa-laptop"></i> Send me a Digital CD <span class="divider">|</span></span>
+        </label>
+        <label class="listen-options">
+          <input type="checkbox" name="trash" value="trash">
+          <span><i class="fa fa-trash-o"></i> Delete from Artist List</span>
+        </label>
+      </div>
+
+      <button class="btn-listen-pg">Submit</button>
+
+    </form>
   </div>
-
-  <button class="btn-listen-pg">Submit +</button>
-
-</form>
+</body>
+</html>
