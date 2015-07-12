@@ -2,7 +2,7 @@ Radion.Views.Listen = Backbone.View.extend({
 
   el: 'main',
 
-  template: JST['artists/listen'],
+  template: JST['stations/listen'],
 
   initialize: function() {
 

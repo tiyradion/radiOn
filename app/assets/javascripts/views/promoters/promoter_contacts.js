@@ -2,7 +2,11 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
   el: '.promo-contacts',
 
-  template: JST['stations/promoter_contacts'],
+  events: {
+    "click .new-contact": "newContact"
+  },
+
+  template: JST['promoters/promoter_contacts'],
 
   initialize: function() {
 
@@ -10,10 +14,14 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
     this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
       alert('Failed to load stations.');
-      console.error(arguments);
 
-    console.log(this.model);
     });
+
+  },
+
+  newContact: function() {
+
+    $('.contacts-modal').append(new Radion.Views.newContact({model: new Radion.Collections.Artists()}).$el);
 
   },
 

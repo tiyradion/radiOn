@@ -3,11 +3,11 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
   el: '.promo-artists',
 
   events: {
-    "click .open-modal": "newArtist",
-    "click .artist-link": "editArtist"
+    "click .new-artist": "newArtist",
+    "click .edit-artist": "editArtist"
   },
 
-  template: JST['artists/promoter_artists'],
+  template: JST['promoters/promoter_artists'],
 
   initialize: function() {
 
@@ -27,7 +27,7 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
   },
 
   editArtist: function(e) {
-    
+
     var artistId = $(e.target).closest('li').data('artistId');
     var artist = this.model.get(artistId);
 

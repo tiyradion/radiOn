@@ -2,7 +2,7 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
   el: '.station-artists',
 
-  template: JST['artists/station_artists'],
+  template: JST['stations/station_artists'],
 
   initialize: function() {
 

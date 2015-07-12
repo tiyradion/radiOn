@@ -7,7 +7,7 @@ Radion.Views.NewArtist = Backbone.View.extend({
     'click .close': 'close'
   },
 
-  template: JST['artists/new_artist'],
+  template: JST['promoters/new_artist'],
 
   initialize: function() {
 
@@ -42,7 +42,7 @@ Radion.Views.NewArtist = Backbone.View.extend({
   },
 
   close: function() {
-    
+
     this.remove();
 
   },

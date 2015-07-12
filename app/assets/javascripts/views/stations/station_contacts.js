@@ -2,7 +2,7 @@ Radion.Views.StationContacts = Backbone.View.extend({
 
   el: '.station-contacts',
 
-  template: JST['promoters/station_contacts'],
+  template: JST['stations/station_contacts'],
 
   initialize: function() {
 

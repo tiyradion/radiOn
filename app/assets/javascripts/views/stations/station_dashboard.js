@@ -2,7 +2,7 @@ Radion.Views.StationDashboard = Backbone.View.extend({
 
   el: 'main',
 
-  template: JST['station_dashboard'],
+  template: JST['stations/station_dashboard'],
 
   initialize: function() {
 
