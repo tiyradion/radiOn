@@ -13,6 +13,8 @@ Radion.Views.Listen = Backbone.View.extend({
       console.error(arguments);
     });
 
+    console.log(this.model);
+
   },
 
   render: function () {
