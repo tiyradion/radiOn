@@ -6,6 +6,8 @@ Radion.Views.Listen = Backbone.View.extend({
 
   initialize: function() {
 
+    $('html').addClass('listen-html');
+
     this.listenTo(this.model, 'change remove add', this.render);
 
     this.model.fetch().done(this.render.bind(this)).fail(function () {
