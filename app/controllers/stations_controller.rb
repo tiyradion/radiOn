@@ -1,6 +1,6 @@
 class StationsController < ApplicationController
   before_action :set_station, only: [:edit, :update, :destroy]
-  # before_action :
+  before_action :station_logged_in?, only: [:edit, :update, :destroy]
 
   # GET /stations/new
   def new
