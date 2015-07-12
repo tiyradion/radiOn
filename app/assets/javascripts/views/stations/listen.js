@@ -2,7 +2,7 @@ Radion.Views.Listen = Backbone.View.extend({
 
   el: 'main',
 
-  template: JST['artists/listen'],
+  template: JST['stations/listen'],
 
   initialize: function() {
 
@@ -12,6 +12,8 @@ Radion.Views.Listen = Backbone.View.extend({
       alert('Failed to load artist.');
       console.error(arguments);
     });
+
+    console.log(this.model);
 
   },
 

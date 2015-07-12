@@ -12,5 +12,6 @@ window.Radion = {
 $(document).ready(function(){
   Radion.userId = $('#user-session-info').attr('data-userid');
   Radion.userType = $('#user-session-info').attr('data-usertype');
+  Radion.userName = $('#user-session-info').attr('data-username');
   Radion.initialize();
 });
