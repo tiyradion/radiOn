@@ -1,6 +1,8 @@
 <header class="listen-header">
   <h2 class="listen-lodial"><a href="#">loDial</a></h2>
-  <p class="band-menu"><%- artist.promoter_name %> > <%- artist.name %> > <%- artist.album_name %> > <%- artist.song_name %></p>
+
+  <p class="band-menu"><%- artist.promoter_name %> > <%- artist.name %> > <%- artist.album_name %> <%- artist.song_name %></p>
+
 </header>
 
 <div class="music-div">
@@ -16,6 +18,7 @@
         <source src="<%- artist.music_upload_file %>">
       </audio>
     </div>
+
 
     <div class="pure-menu pure-menu-horizontal">
       <ul class="pure-menu-list">
@@ -51,6 +54,5 @@
 
     <button class="btn-listen-pg">Submit</button>
 
-  </form>
-
-</div>
+    </form>
+  </div>
