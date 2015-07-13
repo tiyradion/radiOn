@@ -4,22 +4,22 @@ tina_turner:
   name: "Tina Turner"
   album_name: "What"
   song_name: "What's Love Got To Do With It"
-  promoter_id: bobby.id
+  promoter: :bobby
 
 michael_jackson:
   name: "Michael Jackson"
   album_name: "Thriller"
   song_name: "Thriller"
-  promoter_id: jimmy.id
+  promoter: :jimmy
 
 taylor_swift:
   name: "Taylor Swift"
   album_name: "Taylor Swift"
   song_name: "Shake It"
-  promoter_id: bobby.id
+  promoter: :bobby
 
 ray_charles:
   name: "Ray Charles"
   album_name: "Ray Charles"
   song_name: "Piano Awesome"
-  promoter_id: jimmy.id
+  promoter: :jimmy

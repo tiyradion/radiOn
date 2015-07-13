@@ -4,10 +4,10 @@ jimmy:
   name: "Jim James"
   email: "jim@jim.com"
   company_name: "Awesome Records"
-  password: "password"
+  password_digest: <%= BCrypt::Password.create("password") %>
 
 bobby:
   name: "Bob Biggs"
   email: "bob@bob.com"
   company_name: "Better Records"
-  password: "password"
+  password_digest: <%= BCrypt::Password.create("password") %>

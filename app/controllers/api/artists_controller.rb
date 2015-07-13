@@ -16,7 +16,11 @@ module Api
     end
 
     def comments
-      respond_with :api, @artist.comments
+      if session[:user_type] == "stations"
+        @artist.request_record(params[:request], session[:user_id])
+      end
+
+      respond_with :api, @artist
     end
 
     def create
@@ -30,10 +34,11 @@ module Api
       if session[:user_id] == @artist.promoter_id || session[:user_type] == "promoters"
         @artist.update(artist_params)
         respond_with :api, @artist
-      elsif session[:user_type] == "Stations"
-        @request = Request.create(:requested, artist_id: @artist.id, station_id: session[:user_id])
-        # @comment = Comment.create()
-
+        byebug
+      elsif session[:user_type] == "stations"
+        @artist.request_record(params[:request], session[:user_id])
+        respond_with :api, @artist
+      else
         redirect_to root_url, notice: "No access to change this Artist. Not artist promoter"
       end
     end

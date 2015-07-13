@@ -2,30 +2,30 @@
 
 one:
   description: "Awesome"
-  artist_id: michael_jackson.id
-  station_id: kathy.id
+  artist: :michael_jackson
+  station: :kathy
 
 two:
   description: "Classic"
-  artist_id: michael_jackson.id
-  station_id: david.id
+  artist: :michael_jackson
+  station: :david
 
 three:
   description: "Love it"
-  artist_id: ray_charles.id
-  station_id: david.id
+  artist: :ray_charles
+  station: :david
 
 four:
   description: "Upbeat"
-  artist_id: taylor_swift.id
-  station_id: kathy.id
+  artist: :taylor_swift
+  station: :kathy
 
 five:
   description: "Empowering"
-  artist_id: tina_turner.id
-  station_id: kathy.id
+  artist: :tina_turner
+  station: :kathy
 
 six:
   description: "Not what I was looking for"
-  artist_id: tina_turner.id
-  station_id: david.id
+  artist: :tina_turner
+  station: :david

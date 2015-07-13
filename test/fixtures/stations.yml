@@ -3,7 +3,7 @@
 kathy:
   name: "Chatty Kathy"
   email: "kathy@kathy.com"
-  password: "password"
+  password_digest: <%= BCrypt::Password.create("password") %>
   station_name: "Cool T-100"
   phone_number: "919-555-6666"
   address_1: "PO Box 100"
@@ -15,7 +15,7 @@ kathy:
 david:
   name: "DJ David"
   email: "david@david.com"
-  password: "password"
+  password_digest: <%= BCrypt::Password.create("password") %>
   station_name: "Diggin Z-150"
   phone_number: "919-444-6666"
   address_1: "101 Music St"
