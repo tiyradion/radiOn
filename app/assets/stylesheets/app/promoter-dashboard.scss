@@ -45,7 +45,7 @@
 .promo-contacts {
   z-index: 1;
   display: inline-block;
-  width: 100%;
+  width: 40%;
   position: relative;
   margin-left: 2em;
   margin-top: 3em;
@@ -80,6 +80,8 @@
 }
 
 .custom-restricted {
+  position: relative;
+  z-index: 1;
   height: 15em;
   width: 30em;
   border-radius: 4px;
@@ -115,6 +117,7 @@
 
 .promo-artist-div, .promo-contacts-div, .promo-other-div {
   background-color: #FFFFFE;
+  z-index: 1;
 }
 
 .promo-contacts {
@@ -150,7 +153,7 @@
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	z-index: 3;
+	z-index: 4;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
@@ -167,7 +170,6 @@
 .modalDialog > div {
 	width: 25em;
   height: 20em;
-	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
 	border-radius: 10px;
