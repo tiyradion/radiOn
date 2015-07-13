@@ -1,5 +1,5 @@
 .promo-dashboard {
-  background: rgba(255, 255, 255, 1) url("bg.jpg") center center fixed;
+  background: rgba(255, 255, 255, 1) url("../bg.jpg") center center fixed;
 }
 
 /*header*/
@@ -8,6 +8,7 @@
   width: 100%;
   background-color: #eb7260;
   box-shadow: 0px 2px 2px 0px gray;
+  z-index: 10;
 }
 
 .promo-welcome {
@@ -41,7 +42,8 @@
   padding-top: 3em;
 }
 
-.station-list {
+.promo-contacts {
+  z-index: 2;
   display: inline-block;
   width: 100%;
   position: relative;
@@ -76,6 +78,7 @@
   color: #91ada9;
   border: 1px solid #91ada9;
 }
+
 .custom-restricted {
   height: 15em;
   width: 30em;
@@ -83,8 +86,8 @@
   border: 1px solid #eae4da;
 }
 
-.artist-list {
-  z-index: 1000;
+.promo-artists {
+  z-index: 1;
   position: relative;
   display: inline-block;
   margin-top: 2em;
@@ -147,7 +150,7 @@
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	z-index: 99999;
+	z-index: 3;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
@@ -155,7 +158,8 @@
 	pointer-events: none;
 }
 
-.modalDialog:target {
+.modalDialog.showing {
+  display: block;
 	opacity:1;
 	pointer-events: auto;
 }
@@ -179,6 +183,7 @@
 	text-align: center;
 	top: -10px;
 	width: 24px;
+  cursor: pointer;
 	text-decoration: none;
 	font-weight: bold;
 	-webkit-border-radius: 12px;

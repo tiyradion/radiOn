@@ -1,12 +1,12 @@
-Radion.Views.PromoterContacts = Backbone.View.extend({
+Radion.Views.NewContact = Backbone.View.extend ({
 
-  el: '.promo-contacts',
+  className: 'modalDialog showing',
 
   events: {
-    "click .new-contact": "newContact"
+    'click .close': 'close'
   },
 
-  template: JST['promoters/promoter_contacts'],
+  template: JST['promoters/new_contact'],
 
   initialize: function() {
 
@@ -19,13 +19,14 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
   },
 
-  newContact: function() {
+  close: function() {
 
-    $('.contact-modal').append(new Radion.Views.NewContact({model: new Radion.Collections.Stations()}).$el);
+    console.log("close");
+    this.remove();
 
   },
 
-  render: function () {
+  render: function() {
 
     this.$el.html(this.template({
       stations: this.model.toJSON()
@@ -33,4 +34,4 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
   }
 
-});
+})
