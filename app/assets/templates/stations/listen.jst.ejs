@@ -1,54 +1,57 @@
 <header class="listen-header">
   <h2 class="listen-lodial"><a href="#">loDial</a></h2>
-  <p class="band-menu">Promo Company > Band Name > Album Name > Song Name</p>
+
+  <p class="band-menu"><%- artist.promoter_name %> > <%- artist.name %> > <%- artist.album_name %> <%- artist.song_name %></p>
 </header>
 
-    <div class="music-div">
-      <div class="listen-artist-div">
-        <h2 class="listen-artist-info">Band Name</h2>
-      </div>
+<div class="music-div">
 
-    <div class="player-menu-div">
+  <div class="listen-artist-div">
+    <h2 class="listen-artist-info">Band Name</h2>
+  </div>
 
-      <div class="music-player">
-        <audio controls>
-          <source src="<%- artist.music_upload_file %>">
-        </audio>
-      </div>
+  <div class="player-menu-div">
 
-      <div class="pure-menu pure-menu-horizontal">
-        <ul class="pure-menu-list">
-          <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-            <a href="#"><i class="fa fa-chevron-right" id="down-icon"></i></a>
-        <ul class="pure-menu-children">
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link">View One Sheet</a></li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link">View Pictures</a></li>
-          <li class="pure-menu-item"><a href="#" class="pure-menu-link">Go to Website</a></li>
-        </ul>
-          </li>
-        </ul>
-      </div>
+    <div class="music-player">
+      <audio controls>
+        <source src="<%- artist.music_upload_file %>">
+      </audio>
     </div>
 
-    <form class="listen-form pure-form pure-form-aligned">
-      <textarea maxlength="500" placeholder="Comments" class="text-area"></textarea><br>
 
-      <div class="checkboxes">
-        <label class="listen-options">
-          <input type="checkbox" name="mail" value="mail"/>
-            <span><i class="fa fa-envelope-o"></i> Send Me a Physical CD <span class="divider">|</span></span>
-          </label>
-        <label class="listen-options">
-          <input type="checkbox" name="laptop" value="laptop">
-          <span><i class="fa fa-laptop"></i> Send me a Digital CD <span class="divider">|</span></span>
-        </label>
-        <label class="listen-options">
-          <input type="checkbox" name="trash" value="trash">
-          <span><i class="fa fa-trash-o"></i> Delete from Artist List</span>
-        </label>
-      </div>
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+          <a href="#"><i class="fa fa-chevron-right" id="down-icon"></i></a>
+      <ul class="pure-menu-children">
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">View One Sheet</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">View Pictures</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Go to Website</a></li>
+      </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      <button class="btn-listen-pg">Submit</button>
+  <form class="listen-form pure-form pure-form-aligned">
+    <textarea maxlength="500" placeholder="Comments" class="text-area"></textarea><br>
+
+    <div class="checkboxes">
+      <label class="listen-options">
+        <input type="checkbox" name="mail" value="mail"/>
+          <span><i class="fa fa-envelope-o"></i> Send Me a Physical CD <span class="divider">|</span></span>
+        </label>
+      <label class="listen-options">
+        <input type="checkbox" name="laptop" value="laptop">
+        <span><i class="fa fa-laptop"></i> Send me a Digital CD <span class="divider">|</span></span>
+      </label>
+      <label class="listen-options">
+        <input type="checkbox" name="trash" value="trash">
+        <span><i class="fa fa-trash-o"></i> Delete from Artist List</span>
+      </label>
+    </div>
+
+    <button class="btn-listen-pg">Submit</button>
 
     </form>
   </div>
