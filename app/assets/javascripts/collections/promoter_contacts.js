@@ -1,5 +1,11 @@
 Radion.Collections.PromoterContacts = Backbone.Collection.extend({
 
-  url: '/api/promoters/:id/stations'
+  initialize: function() {
+    this.userId = Radion.userId;
+  },
+
+  url: function() {
+    return '/api/promoters/'+ Radion.userId +'/stations';
+  }
 
 });

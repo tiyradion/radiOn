@@ -1,0 +1,16 @@
+<div>
+
+  <a class="close">X</a>
+  <h2 class="modal-title">
+    All <% if(Radion.userType === "promoters") { %>Stations<% } %><% if(Radion.userType === "stations") { %>Promoters<% } %>
+  </h2>
+
+  <ul class="pure-menu-list">
+    <% users.forEach(function(user) { %>
+      <li class="pure-menu-item">
+        <a class="pure-menu-link"><%- user.name %></a>
+      </li>
+    <% }) %>
+  </ul>
+
+</div>

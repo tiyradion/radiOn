@@ -6,7 +6,7 @@ Radion.Views.NewContact = Backbone.View.extend ({
     'click .close': 'close'
   },
 
-  template: JST['promoters/new_contact'],
+  template: JST['new_contact'],
 
   initialize: function() {
 
@@ -29,7 +29,7 @@ Radion.Views.NewContact = Backbone.View.extend ({
   render: function() {
 
     this.$el.html(this.template({
-      stations: this.model.toJSON()
+      users: this.model.toJSON()
     }));
 
   }
