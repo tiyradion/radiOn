@@ -1,0 +1,16 @@
+<div>
+
+  <a class="close">X</a>
+  <h2 class="modal-title">
+    All Stations
+  </h2>
+
+  <ul class="pure-menu-list">
+    <% stations.forEach(function(station) { %>
+      <li class="pure-menu-item">
+        <a class="pure-menu-link"><%- station.name %></a>
+      </li>
+    <% }) %>
+  </ul>
+
+</div>
