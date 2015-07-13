@@ -40,14 +40,22 @@ class Api::ArtistsControllerTest < ActionController::TestCase
   end
 
   test "should add request" do
-    setup do
-      @station = stations(:david)
-      session[:user_id] = @station.id
-      session[:user_type] = "stations"
-      session[:user_name] = @station.name
-    end
+    @station = stations(:david)
+    session[:user_id] = @station.id
+    session[:user_type] = "stations"
+    session[:user_name] = @station.name
     assert_difference('Request.count', 1) do
-      patch :update, format: 'json', id: @artist, artist:{}, params:{request: true}
+      patch :update, format: 'json', id: @artist, request: "true", artist:{name: @artist.name}
+    end
+  end
+
+  test "should not add request" do
+    @station = stations(:david)
+    session[:user_id] = @station.id
+    session[:user_type] = "stations"
+    session[:user_name] = @station.name
+    assert_difference('Request.count', 0) do
+      patch :update, format: 'json', id: @artist, request: "", artist:{name: @artist.name}
     end
   end
 end
