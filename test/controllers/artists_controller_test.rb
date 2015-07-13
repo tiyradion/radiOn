@@ -39,8 +39,6 @@ class Api::ArtistsControllerTest < ActionController::TestCase
     assert_response :no_content
   end
 
-
-
   test "should add request" do
     setup do
       @station = stations(:david)
