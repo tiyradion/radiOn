@@ -28,12 +28,12 @@ Radion.Views.EditArtist = Backbone.View.extend({
     formData.append('artist[uploaded_file]', file);
 
     $.ajax({
-      url: '/api/artists', // The URL to post to
-      type: 'POST', // The HTTP method (e.g. POST)
-      data: formData, // The data to send to the server
-      processData: false, // Disable jQuery's mangling of the data
-      contentType: false, // Prevent jQuery from adding the content-type header
-      dataType: 'json' // What we expect back from server
+      url: '/api/artists',
+      type: 'POST',
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: 'json'
     }).done(this.remove()).fail(function () {
       console.log(arguments);
       alert('Failed to upload.');
