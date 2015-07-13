@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       member do
         get :artists
         get :stations
+        get :requests
       end
     end
   end
