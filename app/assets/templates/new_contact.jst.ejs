@@ -7,8 +7,8 @@
 
   <ul class="pure-menu-list">
     <% users.forEach(function(user) { %>
-      <li class="pure-menu-item">
-        <a class="pure-menu-link"><a><%- user.name %></a><button>+</button></a>
+      <li class="pure-menu-item" data-user-id="<%- user.id %>">
+        <a class="pure-menu-link"><a><%- user.name %></a><button type="button" class="btn-add-contact">+</button></a>
       </li>
     <% }) %>
   </ul>

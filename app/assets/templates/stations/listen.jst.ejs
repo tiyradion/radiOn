@@ -36,10 +36,10 @@
 
   <form class="listen-form pure-form pure-form-aligned">
     <textarea maxlength="500" placeholder="Comments" class="text-area"></textarea><br>
-
+    <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
     <div class="checkboxes">
       <label class="listen-options">
-        <input type="checkbox" name="mail" value="mail"/>
+        <input type="checkbox" name="mail"/>
           <span><i class="fa fa-envelope-o"></i> Send Me a Physical CD <span class="divider">|</span></span>
         </label>
       <label class="listen-options">

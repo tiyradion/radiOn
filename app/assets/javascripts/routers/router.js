@@ -24,7 +24,7 @@ Radion.Routers.Router = Backbone.Router.extend({
       if(Radion.userType === "promoters") {
         var promoterDashboardView = new Radion.Views.PromoterDashboard();
         var promoterContactsView = new Radion.Views.PromoterContacts({model: new Radion.Collections.PromoterContacts()});
-        var promoterArtistsView = new Radion.Views.PromoterArtists({model: new Radion.Collections.Artists()});
+        var promoterArtistsView = new Radion.Views.PromoterArtists({model: new Radion.Collections.PromoterArtists()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
@@ -35,7 +35,7 @@ Radion.Routers.Router = Backbone.Router.extend({
       if(Radion.userType === "stations") {
         var stationDashboardView = new Radion.Views.StationDashboard();
         var stationContactsView = new Radion.Views.StationContacts({model: new Radion.Collections.StationContacts()});
-        var stationArtistsView = new Radion.Views.StationArtists({model: new Radion.Collections.Artists()});
+        var stationArtistsView = new Radion.Views.StationArtists({model: new Radion.Collections.StationArtists()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }

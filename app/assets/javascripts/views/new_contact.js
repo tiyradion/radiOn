@@ -3,8 +3,11 @@ Radion.Views.NewContact = Backbone.View.extend ({
   className: 'modalDialog showing',
 
   events: {
+    'click .btn-add-contact': 'addContact',
     'click .close': 'close'
   },
+
+  myContacts: [],
 
   template: JST['new_contact'],
 
@@ -19,9 +22,25 @@ Radion.Views.NewContact = Backbone.View.extend ({
 
   },
 
+  addContact: function(e) {
+
+    var id = $(e.target).closest('li').data('userId').toString().split();
+
+    this.myContacts = this.myContacts.concat(id);
+
+    $.ajax({
+        url: '/api/promoters/7',
+        method: 'PUT',
+        data: this.myContacts
+      }).done().fail(function () {
+        alert('Failed to update contacts.');
+      })
+
+  },
+
   close: function() {
 
-    console.log("close");
+    this.trigger('close');
     this.remove();
 
   },

@@ -1,5 +1,7 @@
 Radion.Collections.PromoterArtists = Backbone.Collection.extend({
 
-  url: '/api/promoters/:id/artists'
+  url: function() {
+    return '/api/promoters/'+ Radion.userId +'/artists';
+  }
 
 });
