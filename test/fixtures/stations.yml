@@ -1,11 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+kathy:
+  name: "Chatty Kathy"
+  email: "kathy@kathy.com"
+  password_digest: <%= BCrypt::Password.create("password") %>
+  station_name: "Cool T-100"
+  phone_number: "919-555-6666"
+  address_1: "PO Box 100"
+  address_2: "100 Blackwell St"
+  city: "Durham"
+  state: "NC"
+  zipcode: "20230"
 
-two:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+david:
+  name: "DJ David"
+  email: "david@david.com"
+  password_digest: <%= BCrypt::Password.create("password") %>
+  station_name: "Diggin Z-150"
+  phone_number: "919-444-6666"
+  address_1: "101 Music St"
+  city: "New Orleans"
+  state: "LA"
+  zipcode: "93030"

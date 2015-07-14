@@ -1,49 +1,61 @@
 require 'test_helper'
 
-class ArtistsControllerTest < ActionController::TestCase
+class Api::ArtistsControllerTest < ActionController::TestCase
   setup do
-    @artist = artists(:one)
+    @artist = artists(:michael_jackson)
+    @promoter = promoters(:jimmy)
+    session[:user_id] = @promoter.id
+    session[:user_type] = "promoters"
+    session[:user_name] = @promoter.name
   end
 
   test "should get index" do
-    get :index
+    get :index, format: "json"
     assert_response :success
     assert_not_nil assigns(:artists)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
   test "should create artist" do
     assert_difference('Artist.count') do
-      post :create, artist: {  }
+      post :create, format: "json", artist: {name: @artist.name, album_name: @artist.album_name, song_name: @artist.song_name, promoter_id: session[:user_id] }
     end
-
-    assert_redirected_to artist_path(assigns(:artist))
+    assert_response :created
   end
 
   test "should show artist" do
-    get :show, id: @artist
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @artist
+    get :show, format: "json", id: @artist
     assert_response :success
   end
 
   test "should update artist" do
-    patch :update, id: @artist, artist: {  }
-    assert_redirected_to artist_path(assigns(:artist))
+    patch :update, format: "json", id: @artist, artist: { name: @artist.name, album_name: @artist.album_name, song_name: @artist.song_name, promoter_id: session[:user_id] }
+    assert_response :success
   end
 
   test "should destroy artist" do
     assert_difference('Artist.count', -1) do
-      delete :destroy, id: @artist
+      delete :destroy, format: "json", id: @artist
     end
+    assert_response :no_content
+  end
 
-    assert_redirected_to artists_path
+  test "should add request" do
+    @station = stations(:david)
+    session[:user_id] = @station.id
+    session[:user_type] = "stations"
+    session[:user_name] = @station.name
+    assert_difference('Request.count', 1) do
+      patch :update, format: 'json', id: @artist, request: "true", artist:{name: @artist.name}
+    end
+  end
+
+  test "should not add request" do
+    @station = stations(:david)
+    session[:user_id] = @station.id
+    session[:user_type] = "stations"
+    session[:user_name] = @station.name
+    assert_difference('Request.count', 0) do
+      patch :update, format: 'json', id: @artist, request: "", artist:{name: @artist.name}
+    end
   end
 end

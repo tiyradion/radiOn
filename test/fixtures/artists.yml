@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  user_id: 1
+tina_turner:
+  name: "Tina Turner"
+  album_name: "What"
+  song_name: "What's Love Got To Do With It"
+  promoter: :bobby
 
-two:
-  name: MyString
-  user_id: 1
+michael_jackson:
+  name: "Michael Jackson"
+  album_name: "Thriller"
+  song_name: "Thriller"
+  promoter: :jimmy
+
+taylor_swift:
+  name: "Taylor Swift"
+  album_name: "Taylor Swift"
+  song_name: "Shake It"
+  promoter: :bobby
+
+ray_charles:
+  name: "Ray Charles"
+  album_name: "Ray Charles"
+  song_name: "Piano Awesome"
+  promoter: :jimmy
