@@ -9,15 +9,12 @@ Rails.application.routes.draw do
 
   get 'sessions/logout'
 
-  resources :comments
   resources :stations, except: [:index, :show]
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
     resources :artists do
       member do
         post :feedbacks
-        # get :comments
-        # post :comments
       end
     end
     resources :stations, only: [:index, :show, :update] do
@@ -29,8 +26,6 @@ Rails.application.routes.draw do
       member do
         get :artists
         get :stations
-        get :requests
-        get :comments
       end
     end
   end

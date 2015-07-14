@@ -12,8 +12,7 @@ module Api
     end
 
     def artists
-      artists = Artist.all
-      @artists = artists.reject {|artist| artist.rejected}
+    respond_with :api, @stations.artists
     end
 
     def promoters

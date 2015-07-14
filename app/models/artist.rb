@@ -3,8 +3,11 @@ require "open-uri"
 class Artist < ActiveRecord::Base
   has_many :feedbacks
   belongs_to :promoter
-  has_many :stations, through: :feedbacks
-  has_attached_file :uploaded_file, :picture_upload_1, :picture_upload_2, :picture_upload_3
+  has_many :stations, through: :promoter
+  has_attached_file :uploaded_file
+  has_attached_file :picture_upload_1
+  has_attached_file :picture_upload_2
+  has_attached_file :picture_upload_3
   validates_attachment_content_type :uploaded_file, :content_type => ["audio/mpeg", "audio/mp3"]
   validates_attachment_content_type :picture_upload_1, :content_type => ["image/jpeg", "image/png"]
   validates_attachment_content_type :picture_upload_2, :content_type => ["image/jpeg", "image/png"]
