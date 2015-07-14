@@ -20,6 +20,8 @@ Radion.Views.EditArtist = Backbone.View.extend({
     var form = $('.new-artist-form');
     var musicSelector = $('input[type=file]', form);
     var file = musicSelector[0].files[0];
+    var id = $('.new-artist-id').val();
+    console.log(id)
 
     var formData = new FormData();
     formData.append('artist[name]', $('.new-artist-name', form).val());
@@ -28,8 +30,8 @@ Radion.Views.EditArtist = Backbone.View.extend({
     formData.append('artist[uploaded_file]', file);
 
     $.ajax({
-      url: '/api/artists',
-      type: 'POST',
+      url: '/api/artists/' + id,
+      type: 'PUT',
       data: formData,
       processData: false,
       contentType: false,

@@ -1,5 +1,7 @@
 Radion.Collections.StationArtists = Backbone.Collection.extend({
 
-  url: '/api/stations/:id/artists'
+  url: function() {
+    return '/api/stations/'+ Radion.userId +'/artists';
+  }
 
 });
