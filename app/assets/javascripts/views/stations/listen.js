@@ -3,8 +3,10 @@ Radion.Views.Listen = Backbone.View.extend({
   el: 'main',
 
   events: {
+    'click .btn-listen-pg': 'sendFeedback',
     'click #send-cd': 'textToggle'
   },
+
 
   template: JST['stations/listen'],
 
@@ -19,7 +21,33 @@ Radion.Views.Listen = Backbone.View.extend({
       console.error(arguments);
     });
 
-    console.log(this.model);
+  },
+
+  sendFeedback: function() {
+
+    var id = $('.listen-form').find('input[name=artist-id]').attr('data-artist-id');
+    var comment = $('.listen-form').find('.text-area').val();
+    var mail = $('.listen-form').find('input[name=mail]').prop('checked');
+
+    console.log(typeof id);
+
+    var feedback = {
+      comment: comment,
+      request: mail
+    };
+
+    $.ajax({
+      url: '/api/artists/' + id + '/feedbacks/',
+      type: 'POST',
+      data: feedback,
+      processData: false,
+      contentType: false,
+      dataType: 'json'
+    }).done().fail(function () {
+      console.log(arguments);
+      alert('Failed to upload.');
+    });
+
 
   },
 
