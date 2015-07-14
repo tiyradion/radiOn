@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :stations, only: [:index, :show, :update] do
       member do
         get :promoters
+        get :artists
       end
     end
     resources :promoters, only: [:index, :show, :update] do
