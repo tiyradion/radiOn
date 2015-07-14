@@ -9,26 +9,24 @@ Rails.application.routes.draw do
 
   get 'sessions/logout'
 
-  resources :comments
   resources :stations, except: [:index, :show]
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
     resources :artists do
       member do
-        get :comments
-        post :comments
+        post :feedbacks
       end
     end
     resources :stations, only: [:index, :show, :update] do
       member do
         get :promoters
+        get :artists
       end
     end
     resources :promoters, only: [:index, :show, :update] do
       member do
         get :artists
         get :stations
-        get :requests
       end
     end
   end
@@ -68,8 +66,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: "Awesome"
+  request: true
+  artist: :tina_turner
+  station: :david
+
+two:
+  comment: MyString
+  request: false
+  artist: :michael_jackson
+  station: :david
+
+three:
+  comment: "Awesome"
+  request: true
+  artist: :michael_jackson
+  station: :kathy
+
+four:
+  comment: MyString
+  request: false
+  artist: :ray_charles
+  station: :david
+
+five:
+  comment: "Awesome"
+  request: true
+  artist: :tina_turner
+  station: :kathy
+
+six:
+  comment: MyString
+  request: true
+  artist: :ray_charles
+  station: :kathy

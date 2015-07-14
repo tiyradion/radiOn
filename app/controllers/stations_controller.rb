@@ -1,6 +1,6 @@
 class StationsController < ApplicationController
   before_action :set_station, only: [:edit, :update, :destroy]
-  before_action :station_logged_in?, only: [:edit, :update, :destroy]
+  # before_action :station_logged_in?, only: [:edit, :update, :destroy]
 
   # GET /stations/new
   def new
@@ -20,6 +20,7 @@ class StationsController < ApplicationController
       if @station.save
         session[:user_id] = @station.id
         session[:user_type] = "stations"
+        session[:user_name] = @station.name
         format.html { redirect_to root_url, notice: 'Station was successfully created.' }
         format.json { render :show, status: :created, location: @station }
       else
@@ -61,7 +62,7 @@ class StationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def station_params
-      params.require(:station).permit(:name, :email, :password, :station_name,
+      params.require(:station).permit(:name, :email, :password, :station_name, :picture_upload,
         :phone_number, :address_1, :address_2, :city, :state, :zipcode, promoter_ids: [])
     end
 end

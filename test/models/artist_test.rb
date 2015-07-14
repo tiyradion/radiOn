@@ -4,6 +4,7 @@ class ArtistTest < ActiveSupport::TestCase
   setup do
     @artist = artists(:michael_jackson)
     @station = stations(:david)
+    @promoter = @artist.promoter
   end
 
   test "artist" do
@@ -14,12 +15,20 @@ class ArtistTest < ActiveSupport::TestCase
     assert_equal "Jim James", @artist.promoter.name
   end
 
-  test "number of comments" do
-    assert_equal 2, @artist.comments.count
+  test "number of feedbacks" do
+    assert_equal 2, @artist.feedbacks.count
   end
 
-  test "request record" do
-    @artist.request_record(true, @station.id)
-    assert_equal 1, @station.requests.count
-  end
+  # test "request record" do
+  #   @artist.request_record(true, @station.id)
+  #   assert_equal 1, @station.requests.count
+  #   assert_equal 1, @promoter.requests.count
+  # end
+  #
+  # test "add comment" do
+  #   @artist.add_comment("Awesome tunes", @station.id)
+  #   assert_equal 4, @station.comments.count
+  #   assert_equal 4, @promoter.comments.count
+
+  # end
 end

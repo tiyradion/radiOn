@@ -1,6 +1,6 @@
 module Api
   class ArtistsController < ApplicationController
-    before_action :set_artist, only: [:show, :update, :comments, :destroy]
+    before_action :set_artist, only: [:show, :update, :comments, :destroy, :feedbacks]
     respond_to :json
     # before_action :station_logged_in?, only: [:show]
     before_action :promoter_logged_in?, only: [:create, :destroy]
@@ -15,11 +15,10 @@ module Api
       respond_with :api, @artist
     end
 
-    def comments
+    def feedbacks
       if session[:user_type] == "stations"
-        @artist.request_record(params[:request], session[:user_id])
+        Feedback.create(comment: params[:comment], request: params[:request], station_id: session[:user_id], artist_id: @artist.id)
       end
-
       respond_with :api, @artist
     end
 
@@ -33,10 +32,6 @@ module Api
     def update
       if session[:user_id] == @artist.promoter_id && session[:user_type] == "promoters"
         @artist.update(artist_params)
-        respond_with :api, @artist
-      elsif session[:user_type] == "stations"
-        @artist.request_record(params[:request], session[:user_id])
-        # @artist.add_comment()
         respond_with :api, @artist
       else
         redirect_to root_url, notice: "No access to change this Artist. Not artist promoter"
@@ -58,7 +53,7 @@ module Api
     end
 
     def artist_params
-      params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file)
+      params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file, :picture_upload_1, :picture_upload_2, :picture_upload_3)
     end
   end
 end
