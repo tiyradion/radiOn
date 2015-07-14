@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requested: true
+  artist_id: tina_turner.id
+  station_id: kathy.id
+
+two:
+  requested: true
+  artist_id: tina_turner.id
+  station_id: david.id
+
+three:
+  requested: false
+  artist_id: michael_jackson.id
+  station_id: kathy.id
+
+four:
+  requested: true
+  artist_id: michael_jackson.id
+  station_id: david.id
+
+five:
+  requested: true
+  artist_id: taylor_swift.id
+  station_id: kathy.id
+
+six:
+  requested: false
+  artist_id: ray_charles.id
+  station_id: david.id

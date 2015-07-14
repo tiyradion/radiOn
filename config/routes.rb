@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :artists do
       member do
         get :comments
+        post :comments
       end
     end
     resources :stations, only: [:index, :show, :update] do
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
       member do
         get :artists
         get :stations
+        get :requests
       end
     end
   end

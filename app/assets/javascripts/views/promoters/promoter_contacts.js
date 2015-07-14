@@ -25,10 +25,7 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
     var modal = new Radion.Views.NewContact({model: new Radion.Collections.Stations(), myContacts: myContacts});
 
-    modal.once('close', function () {
-      this.refresh();
-      console.log("closed & refreshed");
-    });
+    modal.once('close', this.refresh());
 
     $('.contact-modal').append(modal.$el);
 

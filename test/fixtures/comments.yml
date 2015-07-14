@@ -1,11 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyText
-  artist_id: 1
-  user_id: 1
+  description: "Awesome"
+  artist: :michael_jackson
+  station: :kathy
 
 two:
-  description: MyText
-  artist_id: 1
-  user_id: 1
+  description: "Classic"
+  artist: :michael_jackson
+  station: :david
+
+three:
+  description: "Love it"
+  artist: :ray_charles
+  station: :david
+
+four:
+  description: "Upbeat"
+  artist: :taylor_swift
+  station: :kathy
+
+five:
+  description: "Empowering"
+  artist: :tina_turner
+  station: :kathy
+
+six:
+  description: "Not what I was looking for"
+  artist: :tina_turner
+  station: :david

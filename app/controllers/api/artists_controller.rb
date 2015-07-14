@@ -3,8 +3,8 @@ module Api
     before_action :set_artist, only: [:show, :update, :comments, :destroy]
     respond_to :json
     # before_action :station_logged_in?, only: [:show]
-    before_action :promoter_logged_in?, only: [:create, :update, :destroy]
-    before_action :logged_in?, only: [:index, :show]
+    before_action :promoter_logged_in?, only: [:create, :destroy]
+    before_action :logged_in?, only: [:index, :show, :update]
 
     def index
       @artists = Artist.all
@@ -16,7 +16,11 @@ module Api
     end
 
     def comments
-      respond_with :api, @artist.comments
+      if session[:user_type] == "stations"
+        @artist.request_record(params[:request], session[:user_id])
+      end
+
+      respond_with :api, @artist
     end
 
     def create
@@ -27,8 +31,12 @@ module Api
     end
 
     def update
-      if session[:user_id] == @artist.promoter_id
+      if session[:user_id] == @artist.promoter_id && session[:user_type] == "promoters"
         @artist.update(artist_params)
+        respond_with :api, @artist
+      elsif session[:user_type] == "stations"
+        @artist.request_record(params[:request], session[:user_id])
+        # @artist.add_comment()
         respond_with :api, @artist
       else
         redirect_to root_url, notice: "No access to change this Artist. Not artist promoter"
