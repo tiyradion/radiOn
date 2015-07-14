@@ -29,7 +29,7 @@ Radion.Views.Listen = Backbone.View.extend({
     var comment = $('.listen-form').find('.text-area').val();
     var mail = $('.listen-form').find('input[name=mail]').prop('checked');
 
-    console.log(typeof id);
+    console.log(id);
 
     var feedback = {
       comment: comment,
