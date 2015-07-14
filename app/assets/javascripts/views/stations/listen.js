@@ -2,6 +2,10 @@ Radion.Views.Listen = Backbone.View.extend({
 
   el: 'main',
 
+  events: {
+    'click #send-cd': 'textToggle'
+  },
+
   template: JST['stations/listen'],
 
   initialize: function() {
@@ -19,11 +23,18 @@ Radion.Views.Listen = Backbone.View.extend({
 
   },
 
+  textToggle: function () {
+    $('#text-area').toggle();
+  },
+
   render: function () {
 
     this.$el.html(this.template({
       artist: (this.model.toJSON())
     }));
+
+    $('#text-area').hide();
+
   }
 
 });
