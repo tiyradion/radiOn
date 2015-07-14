@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: 'json'} do
     resources :artists do
       member do
-        get :comments
-        post :comments
+        post :feedbacks
+        # get :comments
+        # post :comments
       end
     end
     resources :stations, only: [:index, :show, :update] do
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
         get :artists
         get :stations
         get :requests
+        get :comments
       end
     end
   end
@@ -68,8 +70,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end

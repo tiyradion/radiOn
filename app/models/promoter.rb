@@ -1,7 +1,7 @@
 class Promoter < ActiveRecord::Base
   has_many :artists
   has_many :stations
-  has_many :requests, through: :artists
+  has_many :feedbacks, through: :artists 
   has_secure_password
   has_and_belongs_to_many :stations
   has_attached_file :picture_upload
@@ -9,7 +9,4 @@ class Promoter < ActiveRecord::Base
   validates :name, :password, :company_name, presence: true
   validates :email, presence: true, uniqueness: true
 
-  def cd_request
-    self.requests.reject {|request| request.requested == false}
-  end
 end

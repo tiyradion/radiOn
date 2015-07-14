@@ -24,9 +24,9 @@ end
     phone_number: Faker::PhoneNumber.phone_number)
 end
 
-# 20.times do
-#   Comment.create(description: Faker::Company.catch_phrase, artist_id: rand(1..10), station_id: rand(1..5))
-# end
+20.times do
+  Comment.create(description: Faker::Company.catch_phrase, artist_id: rand(1..10), station_id: rand(1..5))
+end
 
 10.times do
   artist = Artist.new(name: Faker::App.author, album_name: Faker::App.name, song_name: Faker::Team.name, promoter_id: rand(1..5))
