@@ -1,5 +1,5 @@
 .listen-html {
-  background: rgba(255, 255, 255, 1) url("../../../images/bg.jpg") center center fixed;
+  background: rgba(255, 255, 255, 1) url("../bg.jpg") center center fixed;
 }
 
 .listen-header {
@@ -294,9 +294,4 @@ input#img-4:checked ~ .nav-dots label#img-dot-4 {
   text-align: center;
   margin-top: 2em;
   width: 100%;
-}
-
-.logout {
-  position: fixed;
-  bottom: 0;
 }

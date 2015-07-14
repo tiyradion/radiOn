@@ -21,7 +21,7 @@ Radion.Views.PromoterContacts = Backbone.View.extend({
 
   newContact: function() {
 
-    $('.contacts-modal').append(new Radion.Views.newContact({model: new Radion.Collections.Artists()}).$el);
+    $('.contact-modal').append(new Radion.Views.NewContact({model: new Radion.Collections.Stations()}).$el);
 
   },
 

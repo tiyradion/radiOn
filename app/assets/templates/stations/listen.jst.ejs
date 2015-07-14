@@ -1,12 +1,14 @@
 <header class="listen-header">
   <h2 class="listen-lodial"><a href="#">loDial</a></h2>
+
   <p class="band-menu"><%- artist.promoter_name %> > <%- artist.name %> > <%- artist.album_name %> <%- artist.song_name %></p>
+
 </header>
 
 <div class="music-div">
 
   <div class="listen-artist-div">
-    <h2 class="listen-artist-info">Band Name</h2>
+    <h2 class="listen-artist-info"><%- artist.name %></h2>
   </div>
 
   <div class="player-menu-div">
@@ -70,6 +72,7 @@
       </audio>
     </div>
 
+
   <form class="listen-form pure-form pure-form-aligned">
     <div class="checkboxes">
       <label class="listen-options">
@@ -77,6 +80,7 @@
           <span><i class="fa fa-envelope-o"></i> Send Me a CD! <span class="divider">|</span></span>
           <span><i class="fa fa-comment-o"></i> Add Comment</span>
         </label>
+
     </div>
 
         <textarea maxlength="500" placeholder="Comments" class="text-area" id="text-area"></textarea><br>
@@ -84,6 +88,5 @@
 
         <button class="btn-listen-pg">Submit</button>
 
-      </form>
-
-</div>
+    </form>
+  </div>
