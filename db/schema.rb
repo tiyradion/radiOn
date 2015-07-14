@@ -22,20 +22,16 @@ ActiveRecord::Schema.define(version: 20150713231637) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
-    t.string   "picture_upload_1_file_name"
-    t.string   "picture_upload_1_content_type"
-    t.integer  "picture_upload_1_file_size"
-    t.datetime "picture_upload_1_updated_at"
-    t.string   "picture_upload_2_file_name"
-    t.string   "picture_upload_2_content_type"
-    t.integer  "picture_upload_2_file_size"
-    t.datetime "picture_upload_2_updated_at"
-    t.string   "picture_upload_3_file_name"
-    t.string   "picture_upload_3_content_type"
-    t.integer  "picture_upload_3_file_size"
-    t.datetime "picture_upload_3_updated_at"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "description"
+    t.integer  "artist_id"
+    t.integer  "station_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -66,7 +62,16 @@ ActiveRecord::Schema.define(version: 20150713231637) do
     t.integer "promoter_id", null: false
   end
 
+  add_index "promoters_stations", ["promoter_id", "station_id"], name: "index_promoters_stations_on_promoter_id_and_station_id"
   add_index "promoters_stations", ["station_id", "promoter_id"], name: "index_promoters_stations_on_station_id_and_promoter_id"
+
+  create_table "requests", force: :cascade do |t|
+    t.boolean  "requested"
+    t.integer  "artist_id"
+    t.integer  "station_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stations", force: :cascade do |t|
     t.string   "name"

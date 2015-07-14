@@ -16,6 +16,10 @@
   <input id="user-session-info" type="hidden" data-userid="<%= session[:user_id] %>" data-username="<%= session[:user_name] %>" data-usertype="<%= session[:user_type] %>">
   <% if session[:user_id] %>
     <div class="logout"> <%= link_to "Logout", sessions_logout_path %> </div>
+    <header class="promo-dash-header">
+      <h2 class="promo-welcome">Welcome, <%= session[:user_name] %> </h2>
+      <h2 class="dial-low"><a>loDial</a></h2>
+    </header>
   <% end %>
   <main>
   <%= yield %>
