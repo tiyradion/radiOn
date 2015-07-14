@@ -2,24 +2,26 @@
 
   <a class="close">X</a>
   <h2 class="modal-title">
-    New Artist
+    Edit Artist
   </h2>
 
   <form class="new-artist-form pure-form pure-form-aligned">
 
+    <input class="new-artist-id" name="new-artist-id" type="hidden" value="<%- artist.id %>"/>
+
     <div class="new-artist pure-control-group">
       <label for="new-artist-name">Artist Name</label>
-      <input class="new-artist-name" name="new-artist-name" placeholder="Artist name" />
+      <input class="new-artist-name" name="new-artist-name" placeholder="Artist name" value="<%- artist.name %>"/>
     </div>
 
     <div class="new-album pure-control-group">
       <label for="new-album-name">Album Name</label>
-      <input class="new-album-name" name="new-album-name" placeholder="Album name" />
+      <input class="new-album-name" name="new-album-name" placeholder="Album name" value="<%- artist.album_name %>"/>
     </div>
 
     <div class="new-track pure-control-group">
       <label for="new-track-name">Track Name</label>
-      <input class="new-track-name" name="new-track-name" placeholder="Track name" />
+      <input class="new-track-name" name="new-track-name" placeholder="Track name" value="<%- artist.song_name %>" />
     </div>
 
     <div class="file-upload-div">

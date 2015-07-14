@@ -4,7 +4,7 @@
 
 /*header*/
 .station-dash-header {
-  z-index: 2;
+  z-index: 10;
   position: fixed;
   width: 100%;
   background-color: #eb7260;
@@ -149,7 +149,7 @@
 	bottom: 0;
 	left: 0;
 	background: rgba(0,0,0,0.8);
-	z-index: 99999;
+	z-index: 3;
 	opacity:0;
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
