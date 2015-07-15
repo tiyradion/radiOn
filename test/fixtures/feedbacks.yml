@@ -5,33 +5,45 @@ one:
   request: true
   artist: :tina_turner
   station: :david
+  reviewed: true
+  responded: false
 
 two:
-  comment: MyString
+  comment: "Over played"
   request: false
   artist: :michael_jackson
   station: :david
+  reviewed: false
+  responded: false
 
 three:
   comment: "Awesome"
   request: true
   artist: :michael_jackson
   station: :kathy
+  reviewed: false
+  responded: false
 
 four:
   comment: MyString
   request: false
   artist: :ray_charles
   station: :david
+  reviewed: true
+  responded: true
 
 five:
   comment: "Awesome"
   request: true
   artist: :tina_turner
   station: :kathy
+  reviewed: true
+  responded: true
 
 six:
   comment: MyString
   request: true
   artist: :ray_charles
   station: :kathy
+  reviewed: true
+  responded: false

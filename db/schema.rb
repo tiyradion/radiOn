@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150714185508) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "reviewed"
+    t.boolean  "responded"
   end
 
   create_table "promoters", force: :cascade do |t|
@@ -68,16 +69,7 @@ ActiveRecord::Schema.define(version: 20150714185508) do
     t.integer "promoter_id", null: false
   end
 
-  add_index "promoters_stations", ["promoter_id", "station_id"], name: "index_promoters_stations_on_promoter_id_and_station_id"
   add_index "promoters_stations", ["station_id", "promoter_id"], name: "index_promoters_stations_on_station_id_and_promoter_id"
-
-  create_table "requests", force: :cascade do |t|
-    t.boolean  "requested"
-    t.integer  "artist_id"
-    t.integer  "station_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "stations", force: :cascade do |t|
     t.string   "name"

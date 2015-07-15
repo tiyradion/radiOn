@@ -15,13 +15,6 @@ module Api
       respond_with :api, @artist
     end
 
-    def feedbacks
-      if session[:user_type] == "stations"
-        Feedback.create(comment: params[:comment], request: params[:request], station_id: session[:user_id], artist_id: @artist.id)
-      end
-      respond_with :api, @artist
-    end
-
     def create
       @artist = Artist.new(artist_params)
       @artist.promoter_id = session[:user_id]
