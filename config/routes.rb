@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       member do
         get :artists
         get :stations
+        # resources :feedbacks, only: [:index, :show, :update, :destroy]
       end
     end
   end
