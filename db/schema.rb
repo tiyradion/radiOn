@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713231637) do
+ActiveRecord::Schema.define(version: 20150714185508) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -22,16 +22,21 @@ ActiveRecord::Schema.define(version: 20150713231637) do
     t.string   "uploaded_file_content_type"
     t.integer  "uploaded_file_file_size"
     t.datetime "uploaded_file_updated_at"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.text     "description"
-    t.integer  "artist_id"
-    t.integer  "station_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "picture_upload_1_file_name"
+    t.string   "picture_upload_1_content_type"
+    t.integer  "picture_upload_1_file_size"
+    t.datetime "picture_upload_1_updated_at"
+    t.string   "picture_upload_2_file_name"
+    t.string   "picture_upload_2_content_type"
+    t.integer  "picture_upload_2_file_size"
+    t.datetime "picture_upload_2_updated_at"
+    t.string   "picture_upload_3_file_name"
+    t.string   "picture_upload_3_content_type"
+    t.integer  "picture_upload_3_file_size"
+    t.datetime "picture_upload_3_updated_at"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "bio"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -41,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150713231637) do
     t.integer  "station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "reviewed"
   end
 
   create_table "promoters", force: :cascade do |t|
