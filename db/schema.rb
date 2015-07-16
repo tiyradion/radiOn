@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20150714185508) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean  "reviewed"
+    t.boolean  "responded"
   end
 
   create_table "promoters", force: :cascade do |t|

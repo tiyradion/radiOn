@@ -40,11 +40,11 @@ josh = Promoter.create!(name: "Josh Zie", email: "jzie@compassmusic.com", passwo
   best_coast.save
 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: best_coast.id , station_id: bobby.id, reviewed: boolean.sample)
+    artist_id: best_coast.id , station_id: bobby.id, reviewed: false, responded: false)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: best_coast.id , station_id: susie.id, reviewed: boolean.sample)
+    artist_id: best_coast.id , station_id: susie.id, reviewed: true, responded: false)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: best_coast.id , station_id: ida.id, reviewed: boolean.sample)
+    artist_id: best_coast.id , station_id: ida.id, reviewed: true, responded: true)
 
 kathy = Promoter.create!(name: "Kathy Price", email: "kprice@plantgroup.com", password: "password", company_name: "Planetary Group",
   phone_number: "404-405-8557", station_ids: [rob.id, ida.id, susie.id])
@@ -118,7 +118,7 @@ sky = Promoter.create!(name: "Sky Taylor", email: "staylor@urbanmarketing.com", 
   frizzle.save
 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: frizzle.id , station_id: susie.id, reviewed: boolean.sample)
+    artist_id: frizzle.id , station_id: susie.id, reviewed: true, responded: true)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: frizzle.id , station_id: jimmy.id, reviewed: boolean.sample)
 
@@ -144,7 +144,7 @@ sky = Promoter.create!(name: "Sky Taylor", email: "staylor@urbanmarketing.com", 
   islands.save
 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: islands.id , station_id: ida.id, reviewed: boolean.sample)
+    artist_id: islands.id , station_id: ida.id, reviewed: true, responded: true )
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: islands.id , station_id: susie.id, reviewed: boolean.sample)
 
@@ -160,7 +160,7 @@ thomas = Promoter.create!(name: "Thomas Jackson", email: "tjackson@vitriolpromot
   blues.save
 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: blues.id , station_id: bobby.id, reviewed: boolean.sample)
+    artist_id: blues.id , station_id: bobby.id, reviewed: true, responded: true)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: blues.id , station_id: rob.id, reviewed: boolean.sample)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
@@ -176,11 +176,11 @@ thomas = Promoter.create!(name: "Thomas Jackson", email: "tjackson@vitriolpromot
   yeasayer.save
 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: yeasayer.id , station_id: bobby.id, reviewed: boolean.sample)
+    artist_id: yeasayer.id , station_id: bobby.id, reviewed: true, responded: true)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: yeasayer.id , station_id: rob.id, reviewed: boolean.sample)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: yeasayer.id , station_id: jimmy.id, reviewed: boolean.sample)
+    artist_id: yeasayer.id , station_id: jimmy.id, reviewed: true, responded: true)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: yeasayer.id , station_id: ida.id, reviewed: boolean.sample)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,

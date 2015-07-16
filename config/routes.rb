@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'dashboard/home'
 
   root 'dashboard#home'
@@ -13,9 +12,7 @@ Rails.application.routes.draw do
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
     resources :artists do
-      member do
-        post :feedbacks
-      end
+      resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :show, :update] do
       member do
@@ -24,10 +21,10 @@ Rails.application.routes.draw do
       end
     end
     resources :promoters, only: [:index, :show, :update] do
+      resources :feedbacks, only: [:index, :show, :update]
       member do
         get :artists
         get :stations
-        # resources :feedbacks, only: [:index, :show, :update, :destroy]
       end
     end
   end
