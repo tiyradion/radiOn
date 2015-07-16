@@ -4,14 +4,14 @@
 
 <% artists.forEach(function(artist) { %>
 
-<div class="station-artist">
+<div class="artist station-artist">
 <a href="#listen/<%- artist.id %>">
   <div>
-    <div class="station-artist-name"><%- artist.name %></div>
-    <div class="station-artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+    <div class="artist-name"><%- artist.name %></div>
+    <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
   </div>
 </a>
-<a class="station-artist-remove">X</a>
+<a class="artist-remove">X</a>
 </div>
 
 <% }) %>

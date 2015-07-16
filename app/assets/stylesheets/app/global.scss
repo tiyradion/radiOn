@@ -23,7 +23,7 @@ main {
   z-index: 10;
 }
 
-.welcome {
+.drop {
   margin-top: 1em;
   margin-right: 2em;
   display: inline-block;
@@ -47,29 +47,23 @@ main {
   color: #FFFFFE;
 }
 
-/*contacts*/
-
-.all-contacts {
-  position: relative;
-  width: 90%;
+.logout {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2em;
+  height: 2em;
 }
 
-.btn-add-contact {
-  float: right;
-  vertical-align: center;
-  text-align: center;
+.logout a {
   position: relative;
   color: #eb7260;
-  border: none;
-  background-color: #FFFFFE;
-  font-size: 1.5em;
-  margin-top: -0.3em;
+  border: 2px solid #eb7260;
+  padding: 0.3em;
 }
 
-.btn-add-contact:hover {
+.logout a:hover {
   color: #91ada9;
-}
-
-.all-contacts-menu {
-  width: 100%;
+  border: 2px solid #91ada9;
 }

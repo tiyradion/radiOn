@@ -35,8 +35,8 @@
 }
 
 .promo-feedback {
-  background: #21252B;
-  color: white;
+  background: white;
+  color: #21252B;
   position: relative;
   @include span-columns(12 of 12);
   margin-bottom: 1.5em;
@@ -56,7 +56,7 @@
   &:after{
     content: '';
     display: block;
-    padding-top: 100%;
+    padding-bottom: 100%;
   }
 }
 

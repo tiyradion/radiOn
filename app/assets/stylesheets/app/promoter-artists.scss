@@ -7,15 +7,29 @@
   margin-top: 3em;
 }
 
+.promo-artists {
+  position: absolute;
+  background: #E0DEDE;
+  @include span-columns(15 of 15, block-collapse);
+  padding: modular-scale(1, 1em, $golden);
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .promo-artists-header {
-  width: 100%;
+  @include span-columns(15 of 15);
   text-align: center;
   display: block;
 }
 
+.promo-artist {
+  @include omega(5n);
+  @include span-columns(3 of 15);
+}
 
-
-.btn-new-artist {
+.add-artist {
   position: relative;
   display: inline-block;
   float: right;

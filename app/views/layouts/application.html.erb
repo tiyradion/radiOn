@@ -18,7 +18,7 @@
   <% if session[:user_id] %>
     <header class="dash-header">
       <h2 class="dial-low"><a href="#dashboard">loDial</a></h2>
-      <h2 class="welcome">Welcome, <%= session[:user_name] %> </h2>
+      <h2 class="drop"><%= session[:user_name] %> <i class="fa fa-angle-down"></i></h2>
       <h2 class="logout"> <%= link_to "Logout", sessions_logout_path %> </div>
     </header>
   <% end %>

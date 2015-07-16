@@ -51,6 +51,8 @@ Radion.Views.EditArtist = Backbone.View.extend({
 
   render: function() {
 
+    console.log(this.model);
+
     this.$el.html(this.template({
       artist: this.model.toJSON(),
       isNew: this.model.isNew()

@@ -1,0 +1,26 @@
+/*contacts*/
+
+.all-contacts {
+  position: relative;
+  width: 90%;
+}
+
+.btn-add-contact {
+  float: right;
+  vertical-align: center;
+  text-align: center;
+  position: relative;
+  color: #eb7260;
+  border: none;
+  background-color: #FFFFFE;
+  font-size: 1.5em;
+  margin-top: -0.3em;
+}
+
+.btn-add-contact:hover {
+  color: #91ada9;
+}
+
+.all-contacts-menu {
+  width: 100%;
+}

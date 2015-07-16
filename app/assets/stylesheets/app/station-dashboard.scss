@@ -27,20 +27,23 @@
 }
 
 .station-artist {
-  color: white;
-  position: relative;
   @include omega(4n);
   @include span-columns(3 of 12);
+}
+
+.artist {
+  color: white;
+  position: relative;
   margin-bottom: 1.5em;
 }
 
-.station-artist-name {
+.artist-name {
   text-align: center;
   background: #E97263;
   width: 100%;
 }
 
-.station-artist-name {
+.artist-name {
   padding: 0.3em;
   color: white;
   text-decoration: none;
@@ -49,7 +52,7 @@
   border-radius: 5px 5px 0px 0px;
 }
 
-.station-artist-profile {
+.artist-profile {
   background-size: cover;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px 0px 5px 5px;
@@ -61,7 +64,7 @@
   }
 }
 
-.station-artist-remove {
+.artist-remove {
   z-index: 3;
   background: #eb7260;
   color: #FFFFFF;
@@ -82,6 +85,6 @@
   box-shadow: 1px 1px 3px #000;
 }
 
-.station-artist-remove:hover {
+.artist-remove:hover {
   background: #91ada9;
 }
