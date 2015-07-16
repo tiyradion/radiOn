@@ -1,6 +1,6 @@
 Radion.Views.PromoterArtists = Backbone.View.extend({
 
-  el: '.promo-artists',
+  el: 'main',
 
   events: {
     "click .add-artist": "newArtist",

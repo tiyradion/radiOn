@@ -4,6 +4,7 @@ Radion.Routers.Router = Backbone.Router.extend({
       "404": "badUrl",
       "": "dashboard",
       "dashboard": "dashboard",
+      "artists": "artists",
       "listen/:id": "listen"
     },
 
@@ -41,6 +42,10 @@ Radion.Routers.Router = Backbone.Router.extend({
         var mainView = new Radion.Views.BadUrl();
       }
 
+    },
+
+    artists: function() {
+      var promoterArtistsView = new Radion.Views.PromoterArtists({model: new Radion.Collections.PromoterArtists()});
     },
 
     listen: function(id) {

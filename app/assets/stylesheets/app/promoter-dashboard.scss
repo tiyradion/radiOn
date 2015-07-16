@@ -25,7 +25,6 @@
   z-index: 1;
   display: inline-block;
   padding: modular-scale(1, 1em, $golden);
-  margin-top: 3em;
   top: 0;
   bottom: 0;
   right: 0;
@@ -33,4 +32,45 @@
 
 .feedback-header {
   @include span-columns(12 of 12);
+}
+
+.promo-feedback {
+  background: #21252B;
+  color: white;
+  position: relative;
+  @include span-columns(12 of 12);
+  margin-bottom: 1.5em;
+  padding: 1%;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.feedback-profile {
+  display: inline-block;
+  width: 8%;
+  background-size: cover;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  &:after{
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+}
+
+.feedback-text {
+  width: 90%;
+  display: inline-block;
+}
+
+.feedback-comment {
+  width: 45%;
+  display: inline-block;
+}
+
+.feedback-request {
+  width: 45%;
+  display: inline-block;
 }
