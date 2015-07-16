@@ -3,8 +3,8 @@ Radion.Views.Listen = Backbone.View.extend({
   el: 'main',
 
   events: {
-    'click .btn-listen-pg': 'sendFeedback',
-    'click #send-cd': 'textToggle'
+    'click .slider-icons': 'textToggle',
+    'click .btn-listen-pg': 'sendFeedback'
   },
 
 
@@ -12,6 +12,7 @@ Radion.Views.Listen = Backbone.View.extend({
 
   initialize: function() {
 
+    $('html').removeClass('station-dashboard');
     $('html').addClass('listen-html');
 
     this.listenTo(this.model, 'change remove add', this.render);
@@ -19,7 +20,12 @@ Radion.Views.Listen = Backbone.View.extend({
     this.model.fetch().done(this.render.bind(this)).fail(function () {
       alert('Failed to load artist.');
       console.error(arguments);
+
     });
+
+    this.textToggle;
+
+    this.musicPlayer;
 
   },
 
@@ -51,9 +57,17 @@ Radion.Views.Listen = Backbone.View.extend({
 
   },
 
-  textToggle: function () {
-    $('#text-area').toggle();
+  textToggle: function (e) {
+    var formEvent = ($(e.target).attr ('id'));
+    $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
+    $(".comments").animate({bottom: '6em'}, "medium")
   },
+
+  musicPlayer: function () {
+
+  },
+
+
 
   render: function () {
 
