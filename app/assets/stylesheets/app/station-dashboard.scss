@@ -1,7 +1,7 @@
 /*dashboard background*/
 
 .station-dashboard {
-  background: #e0dede;
+  background: #FFFFFE;
 }
 
 /*dashboard content*/
@@ -23,6 +23,10 @@
 }
 
 .station-artists h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
   display: inline-block;
 }
 
