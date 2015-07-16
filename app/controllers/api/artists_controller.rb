@@ -7,7 +7,15 @@ module Api
     before_action :logged_in?, only: [:index, :show, :update]
 
     def index
-      @artists = Artist.all
+      if session[:user_type] == "stations" && session[:user_id] == params[:station_id]
+        station = Station.find(params[:station_id])
+        @artists = station.artists
+      elsif session[:user_type] == "promoters" && session[:user_id] == params[:promoter_id]
+        promoter = Promoter.find(params[:promoter_id])
+        @artists = promoter.artists
+      else
+        redirect_to root_url, notice: "No access to this Artist."
+      end
       respond_with :api, @artists
     end
 

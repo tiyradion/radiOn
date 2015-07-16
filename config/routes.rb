@@ -15,15 +15,15 @@ Rails.application.routes.draw do
       resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :show, :update] do
+      resources :artists, only: [:index, :show]
       member do
         get :promoters
-        get :artists
       end
     end
     resources :promoters, only: [:index, :show, :update] do
       resources :feedbacks, only: [:index, :show, :update]
+      resources :artists, only: [:index, :show, :create, :update, :destroy]
       member do
-        get :artists
         get :stations
       end
     end
