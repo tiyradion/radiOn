@@ -2,20 +2,12 @@ module Api
   class ArtistsController < ApplicationController
     before_action :set_artist, only: [:show, :update, :comments, :destroy, :feedbacks]
     respond_to :json
-    # before_action :station_logged_in?, only: [:show]
+    before_action :set_user, only: [:index]
     before_action :promoter_logged_in?, only: [:create, :destroy]
     before_action :logged_in?, only: [:index, :show, :update]
 
     def index
-      if session[:user_type] == "stations" && session[:user_id] == params[:station_id]
-        station = Station.find(params[:station_id])
-        @artists = station.artists
-      elsif session[:user_type] == "promoters" && session[:user_id] == params[:promoter_id]
-        promoter = Promoter.find(params[:promoter_id])
-        @artists = promoter.artists
-      else
-        redirect_to root_url, notice: "No access to this Artist."
-      end
+      @artists = @user.artists
       respond_with :api, @artists
     end
 
@@ -40,7 +32,7 @@ module Api
     end
 
     def destroy
-      if session[:user_id] == @artist.promoter_id
+      if session[:user_id] == @artist.promoter_id && session[:user_type] == "promoters"
         @artist.destroy
         respond_with :api, @artist
       else
@@ -51,6 +43,14 @@ module Api
     private
     def set_artist
       @artist = Artist.find(params[:id])
+    end
+
+    def set_user
+      if session[:user_type] == "stations"
+        @user = Station.find(params[:station_id])
+      else
+        @user = Promoter.find(params[:promoter_id])
+      end
     end
 
     def artist_params

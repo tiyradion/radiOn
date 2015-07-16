@@ -30,7 +30,7 @@ class PromotersController < ApplicationController
       def update
         respond_to do |format|
           if @promoter.update(promoter_params)
-            format.html { redirect_to @promoter, notice: 'Promoter was successfully updated.' }
+            format.html { redirect_to root_url, notice: 'Promoter was successfully updated.' }
             format.json { render :show, status: :ok, location: @promoter }
           else
             format.html { render :edit }

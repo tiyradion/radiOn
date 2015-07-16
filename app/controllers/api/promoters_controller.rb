@@ -14,10 +14,6 @@ module Api
       respond_with :api, @promoter
     end
 
-    def artists
-      respond_with :api, @promoter.artists
-    end
-
     def stations
       # @promoter.update(promoter_params, station_ids:[])
       respond_with :api, @promoter.stations
@@ -26,15 +22,6 @@ module Api
     def update
       @promoter.update(promoter_params)
       respond_with :api, @artist
-    end
-
-    def requests
-      respond_with :api, @promoter.requests
-      # @promoter.cd_request
-    end
-
-    def comments
-      respond_with :api, @promoter.comments
     end
 
     private

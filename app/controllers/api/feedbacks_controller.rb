@@ -23,7 +23,7 @@ module Api
   end
 
   def create
-      Feedback.create(comment: params[:comment], request: params[:request], station_id: session[:user_id], artist_id: params[:artist_id], reviewed: false, responded: false)
+      Feedback.create(comment: params[:comment], request: params[:request], station_id: params[:station_id], artist_id: params[:artist_id], reviewed: false, responded: false)
       respond_with :api, @feedback
   end
 

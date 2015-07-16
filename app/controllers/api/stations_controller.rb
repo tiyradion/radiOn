@@ -11,10 +11,6 @@ module Api
       respond_with :api, @stations
     end
 
-    def artists
-    respond_with :api, @station.artists
-    end
-
     def promoters
       respond_with :api, @station.promoters
     end

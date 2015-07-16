@@ -10,12 +10,15 @@ Rails.application.routes.draw do
 
   resources :stations, except: [:index, :show]
   resources :promoters, except: [:index, :show]
+
   namespace :api, defaults: {format: 'json'} do
     resources :artists do
       resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :show, :update] do
-      resources :artists, only: [:index, :show]
+      resources :artists, only: [:index, :show] do
+        resources :feedbacks, only: [:create]
+      end
       member do
         get :promoters
       end
