@@ -4,6 +4,10 @@ ruby '2.2.2'
 
 gem 'backbone-on-rails'
 
+gem 'bourbon'
+
+gem 'neat'
+
 gem 'puma'
 
 gem "paperclip", "~> 4.3"

@@ -1,6 +1,6 @@
 Radion.Views.StationContacts = Backbone.View.extend({
 
-  el: '.station-contacts',
+  el: '.contacts',
 
   events: {
     "click .new-contact": "newContact"

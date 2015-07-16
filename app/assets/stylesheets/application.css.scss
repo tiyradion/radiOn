@@ -10,7 +10,20 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree ./reset
- *= require_tree ./app
  *= require_self
  */
+
+@import 'reset/reset';
+@import 'bourbon';
+@import 'neat';
+@import 'app/global';
+@import 'app/login';
+@import 'app/promoter-register';
+@import 'app/station-register';
+@import 'app/dashboard';
+@import 'app/promoter-dashboard';
+@import 'app/station-dashboard';
+@import 'app/contacts';
+@import 'app/artists';
+@import 'app/promoter-artists';
+@import 'app/listen';

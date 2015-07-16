@@ -1,12 +1,27 @@
-<div class="promo-artists-header">
-  <h2 class="promo-contacts-h2">My Artists</h2>
-  <a class="add-artist open-modal">Add +</a>
-</div>
+<div class="dash-div">
 
-<div class="promo-artist-div pure-menu pure-menu-scrollable custom-restricted">
-  <ul class="pure-menu-list">
+  <div class="promo-artists">
+
+    <div class="promo-artists-header">
+      <h2 class="promo-contacts-h2">My Artists</h2>
+      <a class="add-artist open-modal">Add +</a>
+    </div>
+
     <% artists.forEach(function(artist) { %>
-      <li class="pure-menu-item edit-artist" data-artist-id="<%- artist.id %>"><a class="pure-menu-link"><%- artist.name %></a></li>
+
+    <div class="artist promo-artist">
+      <input type="hidden" name="artist-id" data-id="<%- artist.id %>">
+      <div>
+        <div class="artist-name"><%- artist.name %></div>
+        <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+      </div>
+      <a class="remove remove-promoter-artist">X</a>
+    </div>
+
     <% }) %>
-  </ul>
+
+  </div>
+
+  <div class="artist-modal"><div>
+
 </div>

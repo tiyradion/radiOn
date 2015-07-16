@@ -1,6 +1,6 @@
 Radion.Views.PromoterContacts = Backbone.View.extend({
 
-  el: '.promo-contacts',
+  el: '.contacts',
 
   events: {
     "click .new-contact": "newContact"

@@ -1,0 +1,29 @@
+.artist {
+  color: white;
+  position: relative;
+  margin-bottom: 1.5em;
+}
+
+.artist-name {
+  text-align: center;
+  background-color: black;
+  width: 100%;
+  padding: 0.3em;
+  color: white;
+  text-decoration: none;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.artist-profile {
+  background-size: cover;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 5px 5px;
+  &:after{
+    content: '';
+    display: block;
+    padding-top: 80%;
+  }
+}

@@ -1,0 +1,49 @@
+.dash-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 3em;
+}
+
+.contacts {
+  position: absolute;
+  @include span-columns(3 of 15, block-collapse);
+  background: #21252B;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.contact-header {
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.contacts h2 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.contacts-add {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.2em;
+  color: #eb7260;
+  margin-top: -0.2em;
+  margin-left: 21em;
+  border: 1px solid #eb7260;
+}
+
+.contacts-add:hover {
+  color: #91ada9;
+  border: 1px solid #91ada9;
+}
+
+.contact {
+  color: white;
+}
