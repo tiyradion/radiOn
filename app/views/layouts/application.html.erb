@@ -11,14 +11,15 @@
   <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <input id="user-session-info" type="hidden" data-userid="<%= session[:user_id] %>" data-username="<%= session[:user_name] %>" data-usertype="<%= session[:user_type] %>">
   <% if session[:user_id] %>
-    <div class="logout"> <%= link_to "Logout", sessions_logout_path %> </div>
-    <header class="promo-dash-header">
-      <h2 class="promo-welcome">Welcome, <%= session[:user_name] %> </h2>
-      <h2 class="dial-low"><a>loDial</a></h2>
+    <header class="dash-header">
+      <h2 class="dial-low"><a href="#dashboard">loDial</a></h2>
+      <h2 class="welcome">Welcome, <%= session[:user_name] %> </h2>
+      <h2 class="logout"> <%= link_to "Logout", sessions_logout_path %> </div>
     </header>
   <% end %>
   <main>

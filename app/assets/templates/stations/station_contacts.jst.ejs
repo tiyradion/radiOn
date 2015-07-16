@@ -1,14 +1,15 @@
-<div class="promo-contact-header">
-  <h2 class="promo-contacts-h2">My Contacts</h2>
-  <a class="new-contact promo-contacts-add">Add +</a>
+<div class="pure-menu custom-restricted-width">
+
+<div class="contact-header">
+  <h2 class="pure-menu-heading">Contacts</h2>
 </div>
 
-<div class="station-contacts-div pure-menu pure-menu-scrollable custom-restricted">
-  <ul class="pure-menu-list">
-    <% promoters.forEach(function(promoter) { %>
-      <li class="pure-menu-item">
-        <a class="pure-menu-link"><%- promoter.name %></a>
-      </li>
-    <% }) %>
-  </ul>
+<ul class="pure-menu-list">
+  <% promoters.forEach(function(promoter) { %>
+    <li class="contact pure-menu-item">
+      <a href="#" class="pure-menu-link"><%- promoter.name %></a>
+    </li>
+  <% }) %>
+</ul
+
 </div>

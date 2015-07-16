@@ -1,11 +1,18 @@
-<div class="station-artists-header">
-  <h2 class="station-contacts-h2">My Artists</h2>
+<div class="artists-header">
+  <h2 class="pure-menu-heading">New Artists</h2>
 </div>
 
-<div class="station-artist-div pure-menu pure-menu-scrollable custom-restricted">
-  <ul class="pure-menu-list">
-  <% artists.forEach(function(artist) { %>
-    <li class="pure-menu-item"><a href="#listen/<%- artist.id %>" class="pure-menu-link"><%- artist.name %></a></li>
-  <% }) %>
-  </ul>
+<% artists.forEach(function(artist) { %>
+
+<div class="station-artist">
+<a href="#listen/<%- artist.id %>">
+  <div>
+    <div class="station-artist-name"><%- artist.name %></div>
+    <div class="station-artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+  </div>
+</a>
+<a class="station-artist-remove">X</a>
 </div>
+
+
+<% }) %>

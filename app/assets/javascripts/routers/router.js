@@ -3,6 +3,7 @@ Radion.Routers.Router = Backbone.Router.extend({
   routes: {
       "404": "badUrl",
       "": "dashboard",
+      "dashboard": "dashboard",
       "listen/:id": "listen"
     },
 
@@ -24,7 +25,7 @@ Radion.Routers.Router = Backbone.Router.extend({
       if(Radion.userType === "promoters") {
         var promoterDashboardView = new Radion.Views.PromoterDashboard();
         var promoterContactsView = new Radion.Views.PromoterContacts({model: new Radion.Collections.PromoterContacts()});
-        var promoterArtistsView = new Radion.Views.PromoterArtists({model: new Radion.Collections.PromoterArtists()});
+        var promoterFeedbacksView = new Radion.Views.PromoterFeedbacks({model: new Radion.Collections.PromoterFeedbacks()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
