@@ -38,12 +38,17 @@
   <% } else { %>
 
     <div class="feedback-text">
-      <p><%- feedback.station.name %> doesn't like this music :(</p>
+      <div>
+        <p><%- feedback.station.name %></p>
+      </div>
+      <div>
+        <p>"<%- feedback.comment %>"</p>
+      </div>
     </div>
 
   <% } %>
 
-  <a class="artist-remove">X</a>
+  <a class="remove remove-promoter-feedback">X</a>
 
 </div>
 
