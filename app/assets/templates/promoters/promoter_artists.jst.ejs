@@ -10,7 +10,7 @@
     <% artists.forEach(function(artist) { %>
 
     <div class="artist promo-artist">
-      <input type="hidden" name="artist-id" data-id="<%- artist.id %>">
+      <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
       <div>
         <div class="artist-name"><%- artist.name %></div>
         <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
