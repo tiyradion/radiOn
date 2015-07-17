@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :show, :update] do
+      resources :rankings, only: [:index, :show, :update, :create, :destroy]
       member do
         get :promoters
         get :artists
