@@ -2,7 +2,6 @@ module Api
   class StationsController < ApplicationController
     before_action :set_station, only: [:show, :promoters, :update, :artists]
     respond_to :json
-    # before_action :promoter_logged_in?, only: [:index]
     before_action :logged_in?, only: [:index, :show]
     before_action :station_logged_in?, only: [:promoters, :update]
 
@@ -12,7 +11,8 @@ module Api
     end
 
     def artists
-    respond_with :api, @station.artists
+      @artists = @station.artists_not_reviewed
+      respond_with :api, @artists
     end
 
     def promoters

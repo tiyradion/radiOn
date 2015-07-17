@@ -8,12 +8,9 @@ class Station < ActiveRecord::Base
   validates :name, :station_name, :password_digest, presence: true
   validates :email, presence: true, uniqueness: true
 
-  def artists_reviewed
-
-    self.artists.each do |artist|
-      artist.feedbacks.reject {|feedback| feedback.station_id == self.id }
-
-    end
+  def artists_not_reviewed
+    unreviewed_ids = self.artists.map {|artist| artist.id} - self.feedbacks.map {|feedback| feedback.artist_id}
+    unreviewed_ids.map {|id| Artist.find(id)}
   end
 
   def picture_upload_url(url)
