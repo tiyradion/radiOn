@@ -7,45 +7,59 @@
 
   <form class="new-artist-form pure-form pure-form-aligned">
 
-    <div class="new-artist pure-control-group">
-      <label for="new-artist-name">Artist Name</label>
+    <div class="new-artist pure-control-group pure-input-1">
       <input class="new-artist-name" name="new-artist-name" placeholder="Artist name" />
     </div>
 
     <div class="new-album pure-control-group">
-      <label for="new-album-name">Album Name</label>
       <input class="new-album-name" name="new-album-name" placeholder="Album name" />
     </div>
 
     <div class="new-track pure-control-group">
-      <label for="new-track-name">Track Name</label>
       <input class="new-track-name" name="new-track-name" placeholder="Track name" />
     </div>
 
     <div class="new-track pure-control-group">
-      <label for="new-track-name">Bio</label>
-      <input class="new-artist-bio" name="new-artist-bio" placeholder="Bio" />
+      <textarea maxlength="1400" placeholder="Artist Bio" class="new-artist-bio" id="text-area"></textarea>
     </div>
 
-      <label for="new-picture-file-1">Picture 1</label>
-      <input class="new-picture-file-1" type="file">
+    <div class="picture-group-1">
+      <label class="picture-upload" id="pu1">
+        <input class="new-picture-file-1" type="file">
+        <span class="picture-upload-label">Add Artist Photo <i class="fa fa-picture-o"></i></span>
+      </label>
 
-      <label for="new-picture-file-2">Picture 2</label>
-      <input class="new-picture-file-2" type="file">
+      <label class="picture-upload">
+        <input class="new-picture-file-2" type="file">
+        <span class="picture-upload-label">Add Artist Photo <i class="fa fa-picture-o"></i></span>
+      </label>
+    </div>
 
-      <label for="new-picture-file-3">Picture 3</label>
-      <input class="new-picture-file-3" type="file">
+    <div class="picture-group-2">
+      <label class="picture-upload" id="pu2">
+        <input class="new-picture-file-3" type="file">
+        <span class="picture-upload-label">Add Artist Photo <i class="fa fa-picture-o"></i></span>
+      </label>
 
-      <label for="new-picture-file-4">Picture 4</label>
-      <input class="new-picture-file-4" type="file">
+      <label class="picture-upload">
+        <input class="new-picture-file-4" type="file">
+        <span class="picture-upload-label">Add Artist Photo <i class="fa fa-picture-o"></i></span>
+      </label>
+    </div>
 
-      <label for="new-picture-file-5">Picture 5</label>
-      <input class="new-picture-file-5" type="file">
+    <div class="picture-group-2">
+      <label class="picture-upload" id="pu3">
+        <input class="new-picture-file-5" type="file">
+        <span class="picture-upload-label">Add Artist Photo <i class="fa fa-picture-o"></i></span>
+      </label>
 
-      <label for="new-music-file">Sample Track</label>
-      <input class="new-music-file" type="file">
+      <label class="picture-upload">
+        <input class="new-music-file" type="file">
+        <span class="picture-upload-label">Upload Music Sample <i class="fa fa-music"></i></span>
+      </label>
+    </div>
 
-    <button class="submit-new-artist pure-button" type="button">Submit</button>
+    <button class="submit-new-artist" type="button">Submit</button>
 
   </form>
 

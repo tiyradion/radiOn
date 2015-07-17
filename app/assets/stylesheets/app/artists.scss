@@ -5,10 +5,13 @@
 }
 
 .artist-name {
+  display: none;
+  position: absolute;
+  z-index: 2;
   text-align: center;
-  background-color: black;
+  background: rgba(235, 114, 96, 0.9);
   width: 100%;
-  padding: 0.3em;
+  padding: 0.5em;
   color: white;
   text-decoration: none;
   -moz-border-radius: 0px;
@@ -20,10 +23,14 @@
   background-size: cover;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px 0px 5px 5px;
-  border-radius: 0px 0px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
   &:after{
     content: '';
     display: block;
-    padding-top: 80%;
+    padding-top: 90%;
   }
+}
+
+#artist-route:hover .artist-name {
+  display: block;
 }

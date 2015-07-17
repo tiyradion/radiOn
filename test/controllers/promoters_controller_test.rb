@@ -50,7 +50,7 @@ class Api::PromotersControllerTest < ActionController::TestCase
   end
 
   test "should add stations" do
-    patch :contacts, format: 'json', id: @promoter.id, station_ids: [@station.id]
+    patch :update, format: 'json', id: @promoter.id, station_ids: [@station.id]
     assert_response :success
   end
 #
