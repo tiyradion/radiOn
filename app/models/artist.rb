@@ -4,6 +4,7 @@ class Artist < ActiveRecord::Base
   has_many :feedbacks
   belongs_to :promoter
   has_many :stations, through: :promoter
+  has_many :rankings
   has_attached_file :uploaded_file
   has_attached_file :picture_upload_1
   has_attached_file :picture_upload_2
