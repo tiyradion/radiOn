@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150714185508) do
     t.string   "picture_upload_3_content_type"
     t.integer  "picture_upload_3_file_size"
     t.datetime "picture_upload_3_updated_at"
-<<<<<<< HEAD
     t.string   "picture_upload_4_file_name"
     t.string   "picture_upload_4_content_type"
     t.integer  "picture_upload_4_file_size"
@@ -43,8 +42,6 @@ ActiveRecord::Schema.define(version: 20150714185508) do
     t.string   "picture_upload_5_content_type"
     t.integer  "picture_upload_5_file_size"
     t.datetime "picture_upload_5_updated_at"
-=======
->>>>>>> master
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.text     "bio"
