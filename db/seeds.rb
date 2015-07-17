@@ -70,12 +70,45 @@ josh = Promoter.create!(name: "Josh Zie", email: "jzie@compassmusic.com", passwo
   best_coast.uploaded_picture_5_url("https://s3.amazonaws.com/radion-college-radio/band6.jpg")
   best_coast.save
 
+
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: bobby.id, reviewed: false)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: susie.id, reviewed: true, responded: false)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: ida.id, reviewed: true, responded: true)
+
+  reg_exp = Artist.new(name: "Reg Exp", album_name: "Expressions", song_name: "Why Do Limit Me?", promoter_id: josh.id, bio: bio.sample)
+  reg_exp.uploaded_music_url("https://s3.amazonaws.com/radion-college-radio/Blackbird+Blackbird+-+Left+To+Hurt.mp3")
+  reg_exp.uploaded_picture_1_url("https://s3.amazonaws.com/radion-college-radio/band2.jpg")
+  reg_exp.uploaded_picture_2_url("https://s3.amazonaws.com/radion-college-radio/band12.jpg")
+  reg_exp.uploaded_picture_3_url("https://s3.amazonaws.com/radion-college-radio/band10.jpg")
+  reg_exp.uploaded_picture_4_url("https://s3.amazonaws.com/radion-college-radio/band11.jpg")
+  reg_exp.uploaded_picture_5_url("https://s3.amazonaws.com/radion-college-radio/band7.jpg")
+  reg_exp.save
+
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: best_coast.id , station_id: bobby.id, reviewed: false, responded: false)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: best_coast.id , station_id: susie.id, reviewed: true, responded: false)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
-    artist_id: best_coast.id , station_id: ida.id, reviewed: true, responded: true)
+    artist_id: best_coast.id , station_id: ida.id, reviewed: true)
+
+  errors = Artist.new(name: "Errors", album_name: "NoStandard", song_name: "Red Page", promoter_id: josh.id, bio: bio.sample)
+  errors.uploaded_music_url("https://s3.amazonaws.com/radion-college-radio/Yeasayer+-+2080.mp3")
+  errors.uploaded_picture_1_url("https://s3.amazonaws.com/radion-college-radio/band3.jpg")
+  errors.uploaded_picture_2_url("https://s3.amazonaws.com/radion-college-radio/band1.jpg")
+  errors.uploaded_picture_3_url("https://s3.amazonaws.com/radion-college-radio/band11.jpg")
+  errors.uploaded_picture_4_url("https://s3.amazonaws.com/radion-college-radio/band12.jpg")
+  errors.uploaded_picture_5_url("https://s3.amazonaws.com/radion-college-radio/band8.jpg")
+  errors.save
+
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: bobby.id, reviewed: false, responded: false)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: susie.id, reviewed: true)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: best_coast.id , station_id: ida.id, reviewed: true, responded: false)
 
 kathy = Promoter.create!(name: "Kathy Price", email: "kprice@plantgroup.com", password: "password", company_name: "Planetary Group",
   phone_number: "404-405-8557", station_ids: [rob.id, ida.id, susie.id])
@@ -193,9 +226,41 @@ sky = Promoter.create!(name: "Sky Taylor", email: "staylor@urbanmarketing.com", 
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: islands.id , station_id: susie.id, reviewed: boolean.sample)
 
+  fixnum = Artist.new(name: "Fixnums", album_name: "Numbers", song_name: "Times", promoter_id: sky.id, bio: bio.sample)
+  fixnum.uploaded_music_url("https://s3.amazonaws.com/radion-college-radio/Still+Corners+-+Fireflies.mp3")
+  fixnum.uploaded_picture_1_url("https://s3.amazonaws.com/radion-college-radio/band1.jpg")
+  fixnum.uploaded_picture_2_url("https://s3.amazonaws.com/radion-college-radio/band6.jpg")
+  fixnum.uploaded_picture_3_url("https://s3.amazonaws.com/radion-college-radio/band3.jpg")
+  fixnum.uploaded_picture_4_url("https://s3.amazonaws.com/radion-college-radio/band9.jpg")
+  fixnum.uploaded_picture_5_url("https://s3.amazonaws.com/radion-college-radio/band12.jpg")
+  fixnum.save
+
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: islands.id , station_id: ida.id, reviewed: true, responded: true )
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: islands.id , station_id: susie.id, reviewed: boolean.sample)
+
 thomas = Promoter.create!(name: "Thomas Jackson", email: "tjackson@vitriolpromotion.com", password: "password", company_name: "Vitriol Promotion",
   phone_number: "901-333-8117", station_ids: [bobby.id, rob.id, ida.id, jimmy.id, susie.id])
   thomas.picture_upload_url("https://s3.amazonaws.com/radion-college-radio/thomas.jpg")
+
+  low = Artist.new(name: "LoRiders", album_name: "Life Ride", song_name: "Lows", promoter_id: thomas.id, bio: bio.sample)
+  low.uploaded_music_url("https://s3.amazonaws.com/radion-college-radio/Future+Islands+-+Tin+Man.mp3")
+  low.uploaded_picture_1_url("https://s3.amazonaws.com/radion-college-radio/band6.jpg")
+  low.uploaded_picture_2_url("https://s3.amazonaws.com/radion-college-radio/band9.jpg")
+  low.uploaded_picture_3_url("https://s3.amazonaws.com/radion-college-radio/band5.jpg")
+  low.uploaded_picture_4_url("https://s3.amazonaws.com/radion-college-radio/band11.jpg")
+  low.uploaded_picture_5_url("https://s3.amazonaws.com/radion-college-radio/band1.jpg")
+  low.save
+
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: low.id , station_id: bobby.id, reviewed: true, responded: true)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: low.id , station_id: rob.id, reviewed: boolean.sample)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: low.id , station_id: jimmy.id, reviewed: boolean.sample)
+  Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
+    artist_id: low.id , station_id: ida.id, reviewed: boolean.sample)
 
   blues = Artist.new(name: "Blues Brothers", album_name: "Bros", song_name: "Life", promoter_id: thomas.id, bio: bio.sample)
   blues.uploaded_music_url("https://s3.amazonaws.com/radion-college-radio/Yeasayer+-+2080.mp3")
@@ -234,3 +299,13 @@ thomas = Promoter.create!(name: "Thomas Jackson", email: "tjackson@vitriolpromot
     artist_id: yeasayer.id , station_id: ida.id, reviewed: boolean.sample)
   Feedback.create(comment: Faker::Company.catch_phrase, request: boolean.sample,
     artist_id: yeasayer.id , station_id: susie.id, reviewed: boolean.sample)
+
+  count = 1
+  10.times do
+    Ranking.create!(rank: count, station_id: bobby.id, artist_id: count)
+    Ranking.create!(rank: count, station_id: rob.id, artist_id: count+3)
+    Ranking.create!(rank: count, station_id: jimmy.id, artist_id: count+2)
+    Ranking.create!(rank: count, station_id: susie.id, artist_id: count)
+    Ranking.create!(rank: count, station_id: ida.id, artist_id: count+2)
+    count += 1
+  end
