@@ -46,7 +46,8 @@ module Api
     end
 
     def artist_params
-      params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file, :picture_upload_1, :picture_upload_2, :picture_upload_3)
+      params.require(:artist).permit(:name, :album_name, :song_name, :uploaded_file, :picture_upload_1, :picture_upload_2,
+       :picture_upload_3, :picture_upload_4, :picture_upload_5)
     end
   end
 end

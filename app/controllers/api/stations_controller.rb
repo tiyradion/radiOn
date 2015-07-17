@@ -12,6 +12,16 @@ module Api
     end
 
     def artists
+      # @artists = []
+      # station_artists = @station.artists
+      # station_artists.each do |artist|
+      #   artist.feedbacks.each do |feedback|
+      #     if feedback.station.id == @station.id && feedback.request == nil
+      #       @artists << feedback.artist
+      #     end
+      #   end
+      # end
+      # @artists
     respond_with :api, @station.artists
     end
 
