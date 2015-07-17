@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :stations, except: [:index, :show]
   resources :promoters, except: [:index, :show]
   namespace :api, defaults: {format: 'json'} do
-    resources :artists do
+    resources :artists, except: [:destroy] do
       resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :show, :update] do
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     end
     resources :promoters, only: [:index, :show, :update] do
       resources :feedbacks, only: [:index, :show, :update]
+      resources :artists, only: [:destroy]
       member do
         get :artists
         get :stations
