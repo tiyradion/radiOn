@@ -11,7 +11,8 @@
     <% contacts.forEach(function(contact) { %>
       <li class="contact pure-menu-item">
         <a class="pure-menu-link"><%- contact.name %>
-        <button type="button" class="remove-contact">X</button></a>
+          <button type="button" class="remove-contact" data-contact-id="<%- contact.id %>">X</button>
+        </a>
       </li>
     <% }) %>
   </ul

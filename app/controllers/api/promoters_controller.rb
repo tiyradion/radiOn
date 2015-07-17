@@ -1,6 +1,6 @@
 module Api
   class PromotersController < ApplicationController
-    before_action :set_promoter, only: [:show, :artists, :stations, :update, :requests, :comments]
+    before_action :set_promoter, only: [:show, :artists, :stations, :update]
     respond_to :json
     before_action :promoter_logged_in?, only: [:stations, :artists]
     before_action :logged_in?, only: [:show, :index]
@@ -24,8 +24,8 @@ module Api
     end
 
     def update
-      @promoter.update(promoter_params)
-      respond_with :api, @artist
+      @promoter.update(station_ids: params[:station_ids])
+      respond_with :api, @promoter
     end
 
     def requests
