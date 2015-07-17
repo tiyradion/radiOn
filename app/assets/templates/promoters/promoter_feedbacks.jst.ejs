@@ -5,6 +5,7 @@
 <% feedbacks.forEach(function(feedback) { %>
 
 <div class="promo-feedback">
+  <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
   <div class="feedback-profile" style="background-image: url(<%- feedback.station.picture_upload %>);">
   </div>
 
@@ -13,7 +14,7 @@
     <div class="feedback-text">
       <div class="feedback-comment">
         <div>
-          <p><%- feedback.station.name %> at <%- feedback.station.station_name %></p>
+          <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
         </div>
         <div>
           <p>"<%- feedback.comment %>"</p>
@@ -21,10 +22,11 @@
       </div>
       <div class="feedback-request">
         <div>
-          <p>Send <%- feedback.artist.album_name %> by <%- feedback.artist.name %> to:</p>
+          <p>Send a copy to:</p>
         </div>
         <div>
           <ul>
+            <li><%- feedback.station.name %></li>
             <li><%- feedback.station.address_1 %></li>
             <% if(feedback.station.address_2 !== null) { %>
             <li><%- feedback.station.address_2 %></li>
@@ -39,7 +41,7 @@
 
     <div class="feedback-text">
       <div>
-        <p><%- feedback.station.name %></p>
+        <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
       </div>
       <div>
         <p>"<%- feedback.comment %>"</p>
