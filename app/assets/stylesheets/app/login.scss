@@ -27,13 +27,14 @@ a {
 
 .login-div {
   z-index: 0;
-  width: 40%;
+  width: 50%;
   text-align: center;
   background-color: #FFFFFE;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   margin: 0 auto;
   padding: 3em;
+  margin-top: 3em;
   border-radius: 10px;
   box-shadow: 0px 5px 5px 0px #423f40;
 }
@@ -126,9 +127,12 @@ a {
 
 .login-footer {
   font-family: 'Roboto Condensed', sans-serif;
+  color: #91ada9;
   text-align: center;
-  margin-top: 3em;
-  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 1em;
 }
 
 .login-footer-title {

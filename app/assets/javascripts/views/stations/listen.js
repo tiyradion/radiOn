@@ -61,7 +61,7 @@ Radion.Views.Listen = Backbone.View.extend({
   textToggle: function (e) {
     var formEvent = ($(e.target).attr ('id'));
     $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
-    $(".comments").animate({bottom: '6em'}, "medium")
+    $(".comments").animate({bottom: '10em'}, "medium")
   },
 
   musicPlayer: function () {
@@ -96,8 +96,6 @@ Radion.Views.Listen = Backbone.View.extend({
     this.$el.html(this.template({
       artist: (this.model.toJSON())
     }));
-
-    $('#text-area').hide();
 
     $('audio').get(0).addEventListener('timeupdate', this.progressBar, true);
   }
