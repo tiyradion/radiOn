@@ -2,6 +2,8 @@ class Station < ActiveRecord::Base
   has_many :feedbacks
   has_and_belongs_to_many :promoters
   has_many :artists, through: :promoters
+  has_many :rankings
+  accepts_nested_attributes_for :rankings, limit: 10
   has_secure_password
   has_attached_file :picture_upload
   validates_attachment_content_type :picture_upload, :content_type => ["image/jpeg", "image/jpg", "image/png"]
