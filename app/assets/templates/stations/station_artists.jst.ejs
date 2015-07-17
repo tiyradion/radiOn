@@ -5,6 +5,7 @@
 <% artists.forEach(function(artist) { %>
 
 <div class="artist station-artist">
+<input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
 <a href="#listen/<%- artist.id %>">
   <div>
     <div class="artist-name"><%- artist.name %></div>

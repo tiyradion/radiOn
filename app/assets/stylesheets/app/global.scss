@@ -1,5 +1,5 @@
 body {
-  position: fixed;
+
   top: 0;
   bottom: 0;
   left: 0;
@@ -7,7 +7,6 @@ body {
 }
 
 main {
-  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -19,18 +18,8 @@ main {
   position: fixed;
   width: 100%;
   background-color: #eb7260;
-  box-shadow: 0px 2px 2px 0px gray;
+  box-shadow: 0px 1px 1px 0px gray;
   z-index: 10;
-}
-
-.drop {
-  margin-top: 1em;
-  margin-right: 2em;
-  display: inline-block;
-  float: right;
-  font-size: 1.2em;
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #FFFFFE;
 }
 
 .dial-low {
@@ -93,4 +82,74 @@ main {
 
 .remove:hover {
   background: #91ada9;
+}
+
+#primary_nav_wrap {
+	margin-top:15px
+}
+
+#primary_nav_wrap ul {
+	list-style:none;
+	position:relative;
+  float: right;
+	margin:0;
+	padding:0;
+}
+
+#primary_nav_wrap ul a {
+	display:block;
+	text-decoration:none;
+	font-weight: 300;
+	font-size: 1.2em;
+	line-height:32px;
+	padding:0 15px;
+  color: #423f40;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#primary_nav_wrap ul li {
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+#drop li:first-child {
+  color: white;
+}
+
+#primary_nav_wrap ul li.current-menu-item {
+	background:#ddd
+}
+
+#primary_nav_wrap ul li:hover {
+	background:#f6f6f6
+}
+
+#primary_nav_wrap ul ul {
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li {
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul a {
+	line-height:120%;
+	padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul {
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul {
+	display:block
 }

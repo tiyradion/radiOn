@@ -1,13 +1,17 @@
 <div class="picture-div">
-  <img src="https://subpop-img.s3.amazonaws.com/asset/artist_images/attachments/000/004/170/max_960/13143.jpg?1389020445"/>
+  <img src="<%- artist.picture_upload_1_file %>"/>
 </div>
 
 <div class="info-div">
+
   <div class="band-menu">
+
     <h2 class="listen-artist-name"><%- artist.name %></h2>
+
     <div class="album-details">
       <h3 class="album-name"><%- artist.album_name %></h3>
     </div>
+
   </div>
 
   <div class="music-div">
@@ -17,6 +21,7 @@
     </div>
 
     <div class="player-menu-div">
+
       <div class="music-player">
 
         <audio>
@@ -25,7 +30,7 @@
 
         <div id="audio-player">
 
-          <button id="pButton" class="play" onclick="play()"></button>
+          <button id="pButton" class="play"></button>
 
           <div id="timeline">
             <div id="playhead"></div>
@@ -44,10 +49,10 @@
   <div id="listen-picture-div">
 
     <div class="logo-image">
-      <img src="http://wp-images.emusic.com/blogs/3/files/2013/01/2288.jpg" alt="Placeholder Image" />
+      <img src="<%- artist.picture_upload_2_file %>" alt="Placeholder Image" />
     </div>
     <div class="logo-image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/PostalService_cover300dpi.jpg" alt="Placeholder Image" />
+      <img src="<%- artist.picture_upload_3_file %>" alt="Placeholder Image" />
     </div>
     <div class="logo-image">
       <img src="http://assets.rollingstone.com/assets/images/video/new-postal-service-track-surfaces-20130211/postalservice-306-1358784439-1359996682-1360604573.jpeg" alt="Placeholder Image" />
@@ -65,8 +70,8 @@
       <label class="listen-options">
       <input type="checkbox" name="mail" value="mail" id="send-cd"/>
         <div class="icons">
-          <span id="send-cd-icon"><i class="fa fa-envelope-o"></i> Send Me a CD <span class="divider">|</span></span>
-          <span id="no-cd-icon"><i class="fa fa-times"></i> Don't Send Me a CD </span>
+          <span class="slider-icons" id="send-cd-icon"><i class="fa fa-envelope-o"></i> Send Me a CD <span class="divider">|</span></span>
+          <span class="slider-icons" id="no-cd-icon"><i class="fa fa-times"></i> Don't Send Me a CD </span>
         </div>
       </label>
 
@@ -91,5 +96,4 @@
     </p>
 
   </div>
-
 </div>

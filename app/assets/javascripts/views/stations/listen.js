@@ -3,15 +3,17 @@ Radion.Views.Listen = Backbone.View.extend({
   el: 'main',
 
   events: {
+    'click .slider-icons': 'textToggle',
     'click .btn-listen-pg': 'sendFeedback',
-    'click #send-cd': 'textToggle'
+    'click .play': 'play',
+    'click .pause': 'pause'
   },
-
 
   template: JST['stations/listen'],
 
   initialize: function() {
 
+    $('html').removeClass('station-dashboard');
     $('html').addClass('listen-html');
 
     this.listenTo(this.model, 'change remove add', this.render);
@@ -19,7 +21,12 @@ Radion.Views.Listen = Backbone.View.extend({
     this.model.fetch().done(this.render.bind(this)).fail(function () {
       alert('Failed to load artist.');
       console.error(arguments);
+
     });
+
+    this.textToggle;
+
+    this.musicPlayer;
 
   },
 
@@ -51,8 +58,37 @@ Radion.Views.Listen = Backbone.View.extend({
 
   },
 
-  textToggle: function () {
-    $('#text-area').toggle();
+  textToggle: function (e) {
+    var formEvent = ($(e.target).attr ('id'));
+    $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
+    $(".comments").animate({bottom: '6em'}, "medium")
+  },
+
+  musicPlayer: function () {
+
+  },
+
+  progressBar: function () {
+    var oAudio = $('audio').get(0);
+    //get current time in seconds
+    var elapsedTime = Math.round(oAudio.currentTime);
+
+    var fWidth = (elapsedTime / oAudio.duration) * ($('#timeline').width() - 18);
+
+    $('#playhead').css({ left: fWidth });
+  },
+
+  pause: function () {
+    var music = $('audio').get(0);
+    music.pause();
+    $('.pause').addClass('play').removeClass('pause');
+  },
+
+  play: function () {
+    var music = $('audio').get(0);
+
+    music.play();
+    $('.play').addClass('pause').removeClass('play');
   },
 
   render: function () {
@@ -63,6 +99,7 @@ Radion.Views.Listen = Backbone.View.extend({
 
     $('#text-area').hide();
 
+    $('audio').get(0).addEventListener('timeupdate', this.progressBar, true);
   }
 
 });

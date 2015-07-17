@@ -1,0 +1,19 @@
+<div class="pure-menu custom-restricted-width">
+
+  <div class="contact-header">
+    <h2 class="pure-menu-heading">Contacts</h2>
+  </div>
+
+  <ul class="pure-menu-list">
+    <li class="contact pure-menu-item">
+      <a class="pure-menu-link">All Contacts</a>
+    </li>
+    <% contacts.forEach(function(contact) { %>
+      <li class="contact pure-menu-item">
+        <a class="pure-menu-link"><%- contact.name %></a>
+        <button type="button" class="remove-contact">X</button>
+      </li>
+    <% }) %>
+  </ul
+
+</div>

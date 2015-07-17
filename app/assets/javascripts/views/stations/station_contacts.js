@@ -6,16 +6,13 @@ Radion.Views.StationContacts = Backbone.View.extend({
     "click .new-contact": "newContact"
   },
 
-  template: JST['stations/station_contacts'],
+  template: JST['contacts'],
 
   initialize: function() {
 
     this.listenTo(this.model, 'change remove add', this.render);
 
-    this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
-      alert('Failed to load stations.');
-
-    });
+    this.refresh();
 
   },
 
@@ -25,10 +22,18 @@ Radion.Views.StationContacts = Backbone.View.extend({
 
   },
 
+  refresh: function () {
+
+    this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
+      alert('Failed to load stations.');
+    });
+
+  },
+
   render: function () {
 
     this.$el.html(this.template({
-      promoters: this.model.toJSON()
+      contacts: this.model.toJSON()
     }));
 
   }

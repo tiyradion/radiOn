@@ -5,14 +5,16 @@
     All <% if(Radion.userType === "promoters") { %>Stations<% } %><% if(Radion.userType === "stations") { %>Promoters<% } %>
   </h2>
 
-<div class="all-contacts-menu pure-menu pure-menu-scrollable">
-  <ul class="pure-menu-list">
-    <% users.forEach(function(user) { %>
-      <li class="pure-menu-item" data-user-id="<%- user.id %>">
-        <div class="all-contacts pure-menu-link"><a><%- user.name %></a><button type="button" class="btn-add-contact">+</button></div>
-      </li>
-    <% }) %>
-  </ul>
+  <div class="all-contacts-menu pure-menu pure-menu-scrollable">
 
-</div>
+    <ul class="pure-menu-list">
+      <% users.forEach(function(user) { %>
+        <li class="pure-menu-item" data-user-id="<%- user.id %>">
+          <div class="all-contacts pure-menu-link"><a><%- user.name %></a><button type="button" class="btn-add-contact">+</button></div>
+        </li>
+      <% }) %>
+    </ul>
+
+  </div>
+
 </div>
