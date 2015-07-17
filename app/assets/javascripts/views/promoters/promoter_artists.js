@@ -4,8 +4,8 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
 
   events: {
     "click .add-artist": "newArtist",
-    "click .artist": "editArtist",
-    "click .remove-artist": "removeArtist"
+    "click .artist-target": "editArtist",
+    "click .remove-promoter-artist": "removeArtist"
   },
 
   template: JST['promoters/promoter_artists'],
@@ -26,7 +26,8 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
 
   editArtist: function(e) {
 
-    var artistId = $('[name="artist-id"]').data('id');
+    var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
+    console.log(artistId);
     var artist = this.model.get(artistId);
 
     $('.artist-modal').append(new Radion.Views.EditArtist({ model: artist }).$el);
@@ -38,9 +39,9 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
     var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
 
     $.ajax({
-      url: '/api/promoters/' + promoterId + '/feedbacks/' + artistId,
-      type: 'DELETE',
-    }).done().fail(function () {
+      url: '/api/promoters/' + promoterId + '/artists/' + artistId,
+      method: 'DELETE',
+    }).done(this.refresh()).fail(function () {
       console.log(arguments);
       alert('Failed to delete.');
     });
@@ -52,7 +53,7 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
     this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
       alert('Failed to load stations.');
     });
-    
+
   },
 
   render: function () {

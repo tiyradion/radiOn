@@ -23,14 +23,12 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     $.ajax({
       url: '/api/promoters/' + promoterId + '/feedbacks/' + feedbackId,
-      type: 'PATCH',
-      data: {responded: true},
-      processData: false,
-      contentType: false,
-      dataType: 'json'
+      type : 'PATCH',
+      contentType : 'application/json',
+      data: JSON.stringify({ "op": "replace", "path": "/responded", "value": "true" }),
     }).done().fail(function () {
       console.log(arguments);
-      alert('Failed to respond.');
+      alert('Failed to remove feedback.');
     });
 
   },

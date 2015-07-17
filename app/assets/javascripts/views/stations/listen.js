@@ -36,8 +36,6 @@ Radion.Views.Listen = Backbone.View.extend({
     var comment = $('.listen-form').find('.text-area').val();
     var mail = $('.listen-form').find('input[name=mail]').prop('checked');
 
-    console.log(id);
-
     var feedback = {
       comment: comment,
       request: mail
@@ -61,11 +59,7 @@ Radion.Views.Listen = Backbone.View.extend({
   textToggle: function (e) {
     var formEvent = ($(e.target).attr ('id'));
     $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
-    $(".comments").animate({bottom: '6em'}, "medium")
-  },
-
-  musicPlayer: function () {
-
+    $(".comments").animate({bottom: '10em'}, "medium")
   },
 
   progressBar: function () {
@@ -96,8 +90,6 @@ Radion.Views.Listen = Backbone.View.extend({
     this.$el.html(this.template({
       artist: (this.model.toJSON())
     }));
-
-    $('#text-area').hide();
 
     $('audio').get(0).addEventListener('timeupdate', this.progressBar, true);
   }

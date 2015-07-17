@@ -4,14 +4,15 @@
     <h2 class="pure-menu-heading">Contacts</h2>
   </div>
 
-  <ul class="pure-menu-list">
-    <li class="contact pure-menu-item">
+  <ul class="all-contacts pure-menu-list">
+    <li class="all-contact pure-menu-item">
       <a class="pure-menu-link">All Contacts</a>
     </li>
     <% contacts.forEach(function(contact) { %>
       <li class="contact pure-menu-item">
-        <a class="pure-menu-link"><%- contact.name %></a>
-        <button type="button" class="remove-contact">X</button>
+        <a class="pure-menu-link"><%- contact.name %>
+          <button type="button" class="remove-contact" data-contact-id="<%- contact.id %>">X</button>
+        </a>
       </li>
     <% }) %>
   </ul
