@@ -19,4 +19,9 @@ class Station < ActiveRecord::Base
     self.picture_upload = URI.parse(url)
     self.save
   end
+
+  def unresponded_feedback(promoter_id)
+    all_unresponded = self.feedbacks.reject {|feedback| feedback.responded == true}
+    (all_unresponded.select {|feedback| feedback.promoter.id == promoter_id}).count
+  end
 end

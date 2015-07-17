@@ -34,18 +34,18 @@ class Api::ArtistsControllerTest < ActionController::TestCase
 
   test "should destroy artist" do
     assert_difference('Artist.count', -1) do
-      delete :destroy, format: "json", id: @artist
+      delete :destroy, format: "json", promoter_id: @promoter.id, id: @artist.id
     end
     assert_response :no_content
   end
 
-  test "should add feedback" do
+  test "should create feedback" do
     @station = stations(:david)
     session[:user_id] = @station.id
     session[:user_type] = "stations"
     session[:user_name] = @station.name
     assert_difference('Feedback.count', 1) do
-      post :feedbacks, format: 'json', id: @artist, request: "true", comment: "Yes" 
+      post :create, format: 'json', artist_id: @artist.id, request: "true", comment: "Yes"
     end
   end
 
