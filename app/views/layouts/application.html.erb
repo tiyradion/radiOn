@@ -18,7 +18,22 @@
   <% if session[:user_id] %>
     <header class="dash-header">
       <h2 class="dial-low"><a href="#dashboard">loDial</a></h2>
-      <h2 class="drop"><%= session[:user_name] %> <i class="fa fa-angle-down"></i></h2>
+      <nav id="primary_nav_wrap">
+      <ul>
+        <li id="drop"><a href="#"><%= session[:user_name] %> <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <% if session[:user_type] === "promoters" %>
+            <li><a href="#artists">Artists</a></li>
+            <% end %>
+            <% if session[:user_type]=== "stations" %>
+            <li><a href="#charts">Charts</a></li>
+            <% end %>
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="sessions/logout">Logout</a></li>
+            </li>
+            </ul>
+          </ul>
+      </nav>
       <h2 class="logout"> <%= link_to "Logout", sessions_logout_path %> </div>
     </header>
   <% end %>

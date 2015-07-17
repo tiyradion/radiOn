@@ -265,11 +265,15 @@ bottom: -6em;
 	float: left;
 	border-radius: 15px;
 	background: #E3E3E3;
+  position: relative;
 }
 
 #playhead {
+  position: absolute;
 	width: 18px;
 	height: 18px;
+  left: 0;
+  top: 0;
 	border-radius: 50%;
 	margin-top: 1px;
 	background: rgba(0, 0, 0,1);
