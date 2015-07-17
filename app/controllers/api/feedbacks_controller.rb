@@ -30,7 +30,7 @@ module Api
 
   def update
     if session[:user_id] == @feedback.promoter.id
-      @feedback.update(:reviewed, :responded)
+      @feedback.update(feedback_params)
       respond_with :api, @feedback
     else
       redirect_to root_url, notice: "No access to review this artist feedback."
