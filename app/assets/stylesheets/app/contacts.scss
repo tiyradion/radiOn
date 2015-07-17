@@ -3,6 +3,7 @@
 .all-contacts {
   position: absolute;
   width: 100%;
+  cursor: pointer;
 }
 
 .btn-add-contact:hover {
@@ -10,6 +11,7 @@
 }
 
 .contact {
+  cursor: pointer;
   position: absolute;
   left: 0;
 }

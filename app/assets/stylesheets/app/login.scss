@@ -66,17 +66,19 @@ a {
 
 .radio-btn-label {
   padding-top: 2em;
-  margin-top: 1em;
+  padding-bottom: 0.5em;
+  margin-top: 0.5em;
   color: #eb7260;
   text-align: center;
   border-bottom: 0.1em dashed #f00;
-  height: 0.5em;
+  height: 0.9em;
 }
 
 .radio-btn-label span {
   display: inline-block;
   background: #fff;
-  padding:0 0.25em;
+  padding:0 0.50em;
+  padding-bottom: 2em;
 }
 
 .login-represent-div button {
