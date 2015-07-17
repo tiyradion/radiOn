@@ -19,9 +19,7 @@ Radion.Views.Contacts = Backbone.View.extend({
 
   newContact: function() {
 
-    var myContacts = this.model.pluck('id');
-
-    var modal = new Radion.Views.NewContact({model: new Radion.Collections.Stations(), myContacts: myContacts});
+    var modal = new Radion.Views.NewContact({model: new Radion.Collections.Stations(), myContacts: this.model})
 
     modal.once('close', this.refresh());
 
