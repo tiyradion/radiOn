@@ -18,7 +18,7 @@ Radion.Views.NewArtist = Backbone.View.extend({
   ajaxUpload: function() {
 
     var form = $('.new-artist-form');
-    var pictureSelector1 = $('.new-picture-file-1', form);
+    var pictureSelector1 = $('.new-picture-files', form);
     var pictureFile1 = pictureSelector1[0].files[0];
     var pictureSelector2 = $('.new-picture-file-2', form);
     var pictureFile2 = pictureSelector2[0].files[0];

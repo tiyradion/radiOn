@@ -5,7 +5,8 @@ Radion.Routers.Router = Backbone.Router.extend({
       "": "dashboard",
       "dashboard": "dashboard",
       "artists": "artists",
-      "listen/:id": "listen"
+      "listen/:id": "listen",
+      "chart": "chart"
     },
 
     badUrl: function() {
@@ -55,6 +56,14 @@ Radion.Routers.Router = Backbone.Router.extend({
         var mainView = new Radion.Views.BadUrl();
       }
 
+    },
+
+    chart: function() {
+      if(Radion.userType === "stations") {
+        var chartView = new Radion.Views.Chart({model: new Radion.Models.Chart()});
+      } else {
+        var mainView = new Radion.Views.BadUrl();
+      }
     }
 
 });
