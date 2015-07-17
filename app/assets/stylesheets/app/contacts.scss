@@ -1,26 +1,28 @@
 /*contacts*/
 
 .all-contacts {
-  position: relative;
-  width: 90%;
-}
-
-.btn-add-contact {
-  float: right;
-  vertical-align: center;
-  text-align: center;
-  position: relative;
-  color: #eb7260;
-  border: none;
-  background-color: #FFFFFE;
-  font-size: 1.5em;
-  margin-top: -0.3em;
+  position: absolute;
+  width: 100%;
 }
 
 .btn-add-contact:hover {
   color: #91ada9;
 }
 
-.all-contacts-menu {
-  width: 100%;
+.contact {
+  position: absolute;
+  left: 0;
+}
+
+.remove-contact {
+  position: absolute;
+  right: 0;
+  border: none;
+  color: #eb7260;
+  background-color: #FFFFFE;
+}
+
+.remove-contact:hover {
+  color: #91ada9;
+  background-color: #f0f1ee;
 }
