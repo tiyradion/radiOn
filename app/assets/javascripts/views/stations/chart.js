@@ -13,8 +13,6 @@ Radion.Views.Chart = Backbone.View.extend({
 
     this.refresh();
 
-    });
-
   },
 
   refresh: function() {
