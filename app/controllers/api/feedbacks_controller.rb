@@ -8,7 +8,7 @@ module Api
 
   def index
     if session[:user_id] == @promoter.id
-      @feedbacks = @promoter.feedbacks.reject {|feedback| feedback.responded == true}
+      @feedbacks = @promoter.all_unresponded_feedback
       respond_with :api, @feedbacks
     else
       redirect_to root_url, notice: "No access to review this feedback"

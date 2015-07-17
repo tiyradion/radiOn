@@ -12,4 +12,8 @@ class Promoter < ActiveRecord::Base
     self.picture_upload = URI.parse(url)
     self.save
   end
+
+  def all_unresponded_feedback
+    self.feedbacks.reject {|feedback| feedback.responded == true}
+  end
 end
