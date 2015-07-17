@@ -1,7 +1,7 @@
 module Api
   class FeedbacksController < ApplicationController
-  before_action :set_feedback, only: [:show, :artists, :stations, :update, :requests, :comments]
-  before_action :set_promoter, only: [:index, :show, :artists, :stations, :update, :requests, :comments]
+  before_action :set_feedback, only: [:show, :artists, :stations, :update]
+  before_action :set_promoter, only: [:index, :show, :artists, :stations, :update]
   respond_to :json
   before_action :promoter_logged_in?, only: [:index, :update, :show]
   before_action :station_logged_in?, only: [:create]
@@ -30,7 +30,7 @@ module Api
 
   def update
     if session[:user_id] == @feedback.promoter.id
-      @feedback.update(feedback_params)
+      @feedback.update!(request: params[:request], reviewed: params[:reviewed], responded: params[:responded])
       respond_with :api, @feedback
     else
       redirect_to root_url, notice: "No access to review this artist feedback."

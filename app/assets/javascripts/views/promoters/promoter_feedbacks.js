@@ -25,8 +25,8 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
       url: '/api/promoters/' + promoterId + '/feedbacks/' + feedbackId,
       type : 'PATCH',
       contentType : 'application/json',
-      data: JSON.stringify({ "op": "replace", "path": "/responded", "value": "true" }),
-    }).done().fail(function () {
+      data: JSON.stringify({"responded": "true" }),
+    }).done(this.refresh()).fail(function () {
       console.log(arguments);
       alert('Failed to remove feedback.');
     });
