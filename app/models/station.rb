@@ -7,7 +7,7 @@ class Station < ActiveRecord::Base
   has_secure_password
   has_attached_file :picture_upload
   validates_attachment_content_type :picture_upload, :content_type => ["image/jpeg", "image/jpg", "image/png"]
-  validates :name, :station_name, :password_digest, presence: true
+  validates :name, :station_name, presence: true
   validates :email, presence: true, uniqueness: true
 
   def artists_not_reviewed

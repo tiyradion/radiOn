@@ -24,7 +24,7 @@ module Api
     end
 
     def update
-      @station.update(station_params)
+      @station.update(promoter_ids: params[:promoter_ids])
       respond_with :api, @station
     end
 
