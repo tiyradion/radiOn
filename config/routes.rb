@@ -14,16 +14,18 @@ Rails.application.routes.draw do
     resources :artists, except: [:destroy] do
       resources :feedbacks, only: [:create]
     end
-    resources :stations, only: [:index, :show, :update] do
+    resources :stations, only: [:index, :update] do
       resources :rankings, only: [:index, :show, :update, :create, :destroy]
+      resources :promoters, only: [:show]
       member do
         get :promoters
         get :artists
       end
     end
-    resources :promoters, only: [:index, :show, :update] do
+    resources :promoters, only: [:index, :update] do
       resources :feedbacks, only: [:index, :show, :update]
       resources :artists, only: [:destroy]
+      resources :stations, only: [:show]
       member do
         get :artists
         get :stations

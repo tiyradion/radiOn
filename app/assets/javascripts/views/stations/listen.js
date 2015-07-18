@@ -36,8 +36,6 @@ Radion.Views.Listen = Backbone.View.extend({
     var comment = $('.listen-form').find('.text-area').val();
     var mail = $('.listen-form').find('input[name=mail]').prop('checked');
 
-    console.log(id);
-
     var feedback = {
       comment: comment,
       request: mail
@@ -62,10 +60,6 @@ Radion.Views.Listen = Backbone.View.extend({
     var formEvent = ($(e.target).attr ('id'));
     $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
     $(".comments").animate({bottom: '10em'}, "medium")
-  },
-
-  musicPlayer: function () {
-
   },
 
   progressBar: function () {

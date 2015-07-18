@@ -7,7 +7,7 @@ class Station < ActiveRecord::Base
   has_secure_password
   has_attached_file :picture_upload
   validates_attachment_content_type :picture_upload, :content_type => ["image/jpeg", "image/jpg", "image/png"]
-  validates :name, :station_name, :password_digest, presence: true
+  validates :name, :station_name, presence: true
   validates :email, presence: true, uniqueness: true
 
   def artists_not_reviewed
@@ -18,5 +18,10 @@ class Station < ActiveRecord::Base
   def picture_upload_url(url)
     self.picture_upload = URI.parse(url)
     self.save
+  end
+
+  def unresponded_feedback(promoter_id)
+    all_unresponded = self.feedbacks.reject {|feedback| feedback.responded == true}
+    all_unresponded.select {|feedback| feedback.promoter.id == promoter_id}
   end
 end

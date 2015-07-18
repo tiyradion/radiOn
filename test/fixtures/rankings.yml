@@ -2,10 +2,40 @@
 
 one:
   rank: 1
-  station_id: 1
-  artist_id: 1
+  station: :kathy
+  artist: :michael_jackson
 
 two:
+  rank: 2
+  station: :kathy
+  artist: :tina_turner
+
+three:
+  rank: 3
+  station: :kathy
+  artist: :taylor_swift
+
+four:
+  rank: 4
+  station: :kathy
+  artist: :ray_charles
+
+five:
   rank: 1
-  station_id: 1
-  artist_id: 1
+  station: :david
+  artist: :tina_turner
+
+six:
+  rank: 2
+  station: :david
+  artist: :ray_charles
+
+seven:
+  rank: 3
+  station: :kathy
+  artist: :taylor_swift
+
+eight:
+  rank: 4
+  station: :kathy
+  artist: :michael_jackson

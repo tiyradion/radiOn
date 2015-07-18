@@ -15,7 +15,7 @@
 </head>
 <body>
   <input id="user-session-info" type="hidden" data-userid="<%= session[:user_id] %>" data-username="<%= session[:user_name] %>" data-usertype="<%= session[:user_type] %>">
-  <% if session[:user_id] %>
+  <% if session[:user_id] && params[:action] != "edit"%>
     <header class="dash-header">
       <h2 class="dial-low"><a href="#dashboard">loDial</a></h2>
       <nav id="primary_nav_wrap">
@@ -26,18 +26,20 @@
             <li><a href="#artists">Artists</a></li>
             <% end %>
             <% if session[:user_type]=== "stations" %>
-            <li><a href="#charts">Charts</a></li>
+            <li><a href="#chart">Chart</a></li>
             <% end %>
-            <li><a href="#">Edit Profile</a></li>
+            <li><a href= <%= "/#{session[:user_type]}/#{session[:user_id]}/edit" %>>Edit Profile</a></li>
             <li><a href="sessions/logout">Logout</a></li>
             </li>
             </ul>
           </ul>
       </nav>
     </header>
-  <% end %>
   <main>
   <%= yield %>
   </main>
+  <% else %>
+    <%= yield %>
+  <% end %>
 </body>
 </html>
