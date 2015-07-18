@@ -17,7 +17,6 @@ Radion.Views.NewContact = Backbone.View.extend ({
 
     this.model.fetch({silent: true}).done(this.render.bind(this)).fail(function () {
       alert('Failed to load stations.');
-
     });
 
   },
@@ -55,4 +54,4 @@ Radion.Views.NewContact = Backbone.View.extend ({
 
   }
 
-})
+});

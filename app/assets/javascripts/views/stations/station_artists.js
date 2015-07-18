@@ -18,19 +18,20 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
   removeArtist: function(e) {
 
-    var stationId = Radion.userId;
     var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
 
     $.ajax({
-      url: '/api/promoters/' + stationId + '/artists/' + artistId,
-      type: 'PATCH',
-      data: {responded: true},
+      url: '/api/artists/' + artistId + '/feedbacks',
+      type: 'POST',
+      data: {
+        comment: "",
+        request: false
+      },
       processData: false,
       contentType: false,
       dataType: 'json'
-    }).done().fail(function () {
+    }).done(this.refresh()).fail(function () {
       console.log(arguments);
-      alert('Failed to respond.');
     });
 
   },
