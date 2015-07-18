@@ -19,7 +19,13 @@ Radion.Views.Contacts = Backbone.View.extend({
 
   newContact: function() {
 
-    var modal = new Radion.Views.NewContact({model: new Radion.Collections.Stations(), myContacts: this.model});
+    if(Radion.userType === "promoters") {
+      var allContacts = new Radion.Collections.Stations();
+    } else {
+      var allContacts = new Radion.Collections.Promoters();
+    }
+
+    var modal = new Radion.Views.NewContact({model: allContacts, myContacts: this.model});
 
     modal.once('close', this.refresh());
 

@@ -39,16 +39,8 @@ Radion.Views.NewContact = Backbone.View.extend ({
         url: '/api/' + Radion.userType + '/' + Radion.userId,
         method: 'PATCH',
         data: contactIds
-      }).done(this.refresh()).fail(function () {
+      }).done(this.close()).fail(function () {
         alert("Failed to remove contact.");
-      })
-
-    $.ajax({
-        url: '/api/promoters/7',
-        method: 'PUT',
-        data: ids
-      }).done().fail(function () {
-        alert('Failed to update contacts.');
       })
 
   },
