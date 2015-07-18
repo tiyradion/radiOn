@@ -42,7 +42,7 @@ Radion.Views.Contacts = Backbone.View.extend({
     }
 
     $.ajax({
-      url: '/api/promoters/' + Radion.userId,
+      url: '/api/' +Radion.userType + '/' + Radion.userId,
       method: 'PATCH',
       data: contactIds
     }).done(this.refresh()).fail(function () {
