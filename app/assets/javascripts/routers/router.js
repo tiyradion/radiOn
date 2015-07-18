@@ -26,7 +26,7 @@ Radion.Routers.Router = Backbone.Router.extend({
     promoterDashboard: function() {
       if(Radion.userType === "promoters") {
         var promoterDashboardView = new Radion.Views.PromoterDashboard();
-        var promoterContactsView = new Radion.Views.Contacts({model: new Radion.Collections.PromoterContacts(), contacts: new Radion.Collections.Stations()});
+        var promoterContactsView = new Radion.Views.Contacts({model: new Radion.Collections.PromoterContacts()});
         var promoterFeedbacksView = new Radion.Views.PromoterFeedbacks({model: new Radion.Collections.PromoterFeedbacks()});
       } else {
         var mainView = new Radion.Views.BadUrl();

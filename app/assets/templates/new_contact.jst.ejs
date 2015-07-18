@@ -9,9 +9,11 @@
 
     <ul class="pure-menu-list">
       <% users.forEach(function(user) { %>
-        <li class="pure-menu-item" data-user-id="<%- user.id %>">
-          <div class="all-contacts pure-menu-link"><a><%- user.name %></a><button type="button" class="btn-add-contact">+</button></div>
-        </li>
+        <div>
+          <li class="pure-menu-item">
+            <a class="pure-menu-link"><%- user.name %></a><button type="button" class="btn-add-contact" data-user-id="<%- user.id %>">+</button>
+          </li>
+        </div>
       <% }) %>
     </ul>
 
