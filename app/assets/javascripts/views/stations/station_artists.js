@@ -14,6 +14,10 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
     this.refresh();
 
+    Radion.globalEvents.on('allNotes', this.render, this);
+    Radion.globalEvents.on('singleNote', this.renderSingle, this);
+    Radion.globalEvents.trigger('removeNotes', this.render, this);
+
   },
 
   removeArtist: function(e) {
@@ -48,6 +52,18 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
     this.$el.html(this.template({
       artists: this.model.toJSON()
+    }));
+
+  },
+
+  renderSingle: function (id) {
+
+    var single = _.filter(this.model.toJSON(), function (artist) {
+      return artist.promoter_id === id;
+    });
+
+    this.$el.html(this.template({
+      artists: single
     }));
 
   }

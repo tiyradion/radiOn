@@ -7,12 +7,12 @@
 
   <ul class="all-contacts pure-menu-list">
     <li class="all-contact pure-menu-item">
-      <a class="pure-menu-link">All Contacts</a>
+      <a class="pure-menu-link all-notes">All Contacts</a>
     </li>
     <% contacts.forEach(function(contact) { %>
       <li class="contact pure-menu-item">
-        <a class="pure-menu-link"><%- contact.name %>
-          <button type="button" class="remove-contact" data-contact-id="<%- contact.id %>">X</button>
+        <a class="pure-menu-link single-note" data-contact-id="<%- contact.id %>"><%- contact.name %>
+        <button type="button" class="remove-contact" data-contact-id="<%- contact.id %>">X</button>
         </a>
       </li>
     <% }) %>

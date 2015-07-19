@@ -14,6 +14,9 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     this.refresh();
 
+    Radion.globalEvents.on('allNotes', this.render, this);
+    Radion.globalEvents.on('singleNote', this.renderSingle, this);
+
   },
 
   removeFeedback: function (e) {
@@ -45,6 +48,17 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
       feedbacks: this.model.toJSON()
     }));
 
+  },
+
+  renderSingle: function (id) {
+
+    var single = _.filter(this.model.toJSON(), function (feedback) {
+      return feedback.station.id === id;
+    });
+
+    this.$el.html(this.template({
+      feedbacks: single
+    }));
   }
 
 });
