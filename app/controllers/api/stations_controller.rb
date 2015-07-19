@@ -19,6 +19,14 @@ module Api
       respond_with :api, @station.promoters
     end
 
+    def rankings
+      @rankings = @station.rankings
+      @rankings.each do |ranking|
+        ranking.update(ranking_params)
+      end
+      respond_with :api, @rankings
+    end
+
     def show
       respond_with :api, @station
     end
@@ -36,6 +44,10 @@ module Api
       def station_params
         params.require(:station).permit(:name, :email, :password, :station_name,
           :phone_number, :address_1, :address_2, :city, :state, :zipcode, promoter_ids: [])
+      end
+
+      def ranking_params
+        params.require(:ranking).permit(:rank, :station_id, :artist_id)
       end
   end
 end

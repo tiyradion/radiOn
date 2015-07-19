@@ -20,7 +20,7 @@
       <h2 class="dial-low"><a href="#dashboard">loDial</a></h2>
       <nav id="primary_nav_wrap">
       <ul id="drop">
-        <li><a href="#"><%= session[:user_name] %> <i class="fa fa-angle-down"></i></a>
+        <li><a href="#"><span id="drop-down"><%= session[:user_name] %> <i class="fa fa-angle-down"></i></span></a>
           <ul>
             <% if session[:user_type] === "promoters" %>
             <li><a href="#artists">Artists</a></li>

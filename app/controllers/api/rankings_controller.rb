@@ -22,7 +22,7 @@ module Api
 
     def update
       if session[:user_id] == @ranking.station_id && session[:user_type] == "stations"
-        @ranking.update(artist_params)
+        @ranking.update(ranking_params)
         respond_with :api, @ranking
       else
         redirect_to root_url, notice: "No access to change this ranking."
@@ -45,6 +45,10 @@ module Api
 
       def set_station
         @station = Station.find(params[:station_id])
+      end
+
+      def ranking_params
+        params.require(:ranking).permit(:rank, :station_id, :artist_id)
       end
   end
 end
