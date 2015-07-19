@@ -14,7 +14,7 @@
 
       <div class="feedback-text">
         <div class="feedback-comment">
-          <div>
+          <div class="radio-reviewer>
             <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
           </div>
           <div>
@@ -36,6 +36,7 @@
             </ul>
           </div>
         </div>
+        <a class="remove remove-promoter-feedback">X</a>
       </div>
 
     <% } else { %>
@@ -45,14 +46,13 @@
           <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
         </div>
         <div>
-          <p>"<%- feedback.comment %>"</p>
+          <p class="rejection-feedback">"<%- feedback.comment %>"</p>
         </div>
+      <div class="rejection-message">
+        <p>Please Do Not Send Album</p>
       </div>
 
     <% } %>
-
-    <a class="remove remove-promoter-feedback">X</a>
-
   </div>
 </div>
 

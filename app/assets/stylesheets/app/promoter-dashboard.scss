@@ -1,5 +1,5 @@
 .promo-dashboard {
-  background: #e0dede;
+  background: #F0F1EE;
 }
 
 .promo-feedbacks {
@@ -14,37 +14,38 @@
   right: 0;
 }
 
-.container-wrapper {
-  z-index: 1;
-  position: absolute;
-  overflow: scroll;
-  margin-top: 2em;
-}
-
 .feedback-header {
-  position: fixed;
-  z-index: 100;
   top: 5em;
+  z-index: 2;
 }
 
 .feedback-header h2 {
-  position: absolute;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.5em;
   margin-bottom: 1em;
 }
 
+.container-wrapper {
+  overflow: scroll;
+}
+
 .promo-feedback {
-  background: white;
+  background: #FFFFFE;
   color: #21252B;
   position: relative;
   @include span-columns(12 of 12);
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-left: 0.5em;
 }
 
 .feedback-profile {
   display: inline-block;
-  width: 8%;
+  width: 9%;
   background-size: cover;
   -moz-border-radius: 0px;
   -webkit-border-radius: 50%;
@@ -69,4 +70,21 @@
 .feedback-request {
   width: 30%;
   display: inline-block;
+}
+
+.rejection-message {
+  width: 30%;
+  display: inline-block;
+  float: right;
+  margin-right: 4em;
+  margin-top: -2em;
+}
+
+.remove-promoter-feedback {
+  border: none;
+  float: right;
+  position: relative;
+  vertical-align: middle;
+  top: 0;
+  cursor: pointer;
 }
