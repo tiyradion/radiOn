@@ -60,7 +60,7 @@ Radion.Routers.Router = Backbone.Router.extend({
 
     chart: function() {
       if(Radion.userType === "stations") {
-        var chartView = new Radion.Views.Chart({model: new Radion.Models.Chart()});
+        var chartView = new Radion.Views.Chart({model: new Radion.Collections.Rankings()});
       } else {
         var mainView = new Radion.Views.BadUrl();
       }
