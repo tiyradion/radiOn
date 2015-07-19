@@ -22,7 +22,8 @@ module Api
     def rankings
       @rankings = @station.rankings
       @rankings.each do |ranking|
-        ranking.update(ranking_params)
+        artist = Artist.find_by_name(params[:name])
+        ranking.update(rank: params[:rank], artist_id: artist.id)
       end
       respond_with :api, @rankings
     end

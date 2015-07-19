@@ -4,7 +4,9 @@ Radion.Views.Contacts = Backbone.View.extend({
 
   events: {
     "click .new-contact": "newContact",
-    "click .remove-contact": "removeContact"
+    "click .remove-contact": "removeContact",
+    "click .all-notes": "allNotes",
+    "click .single-note": "singleNote",
   },
 
   template: JST['contacts'],
@@ -19,17 +21,22 @@ Radion.Views.Contacts = Backbone.View.extend({
 
   newContact: function() {
 
-    var myContacts = this.model.pluck('id');
+    if(Radion.userType === "promoters") {
+      var allContacts = new Radion.Collections.Stations();
+    } else {
+      var allContacts = new Radion.Collections.Promoters();
+    }
 
-    var modal = new Radion.Views.NewContact({model: new Radion.Collections.Stations(), myContacts: myContacts});
+    var modal = new Radion.Views.NewContact({model: allContacts, myContacts: this.model});
 
-    modal.once('close', this.refresh());
+    Radion.globalEvents.on('newContact', this.refresh(), this);
 
     $('.contact-modal').append(modal.$el);
 
   },
 
   removeContact: function(e) {
+    e.stopPropagation();
 
     var theId = parseInt($(e.target).data('contactId'));
 
@@ -44,12 +51,26 @@ Radion.Views.Contacts = Backbone.View.extend({
     }
 
     $.ajax({
-      url: '/api/promoters/' + Radion.userId,
+      url: '/api/' + Radion.userType + '/' + Radion.userId,
       method: 'PATCH',
       data: contactIds
     }).done(this.refresh()).fail(function () {
       alert("Failed to remove contact.");
     })
+
+  },
+
+  allNotes: function () {
+
+    Radion.globalEvents.trigger('allNotes');
+
+  },
+
+  singleNote: function (e) {
+
+    var id = parseInt($(e.target).data('contactId'));
+
+    Radion.globalEvents.trigger('singleNote', id);
 
   },
 

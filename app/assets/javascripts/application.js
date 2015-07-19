@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require radion
+//= require global_events
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
