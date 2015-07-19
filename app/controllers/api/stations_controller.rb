@@ -1,6 +1,6 @@
 module Api
   class StationsController < ApplicationController
-    before_action :set_station, only: [:show, :promoters, :update, :artists]
+    before_action :set_station, only: [:show, :promoters, :update, :rankings, :artists]
     respond_to :json
     before_action :logged_in?, only: [:index, :show]
     before_action :station_logged_in?, only: [:promoters, :update]
