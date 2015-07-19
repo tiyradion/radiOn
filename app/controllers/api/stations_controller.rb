@@ -20,7 +20,6 @@ module Api
     end
 
     def rankings
-      byebug
       @rankings = @station.rankings
       @rankings.each do |ranking|
         artist = Artist.find_by_name(params[:name])
