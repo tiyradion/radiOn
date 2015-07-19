@@ -1,6 +1,6 @@
 module Api
   class StationsController < ApplicationController
-    before_action :set_station, only: [:show, :promoters, :update, :artists]
+    before_action :set_station, only: [:show, :promoters, :update, :artists, :rankings]
     respond_to :json
     before_action :logged_in?, only: [:index, :show]
     before_action :station_logged_in?, only: [:promoters, :update]
@@ -20,9 +20,11 @@ module Api
     end
 
     def rankings
+      byebug
       @rankings = @station.rankings
       @rankings.each do |ranking|
-        ranking.update(ranking_params)
+        artist = Artist.find_by_name(params[:name])
+        ranking.update(rank: params[:rank], artist_id: artist.id)
       end
       respond_with :api, @rankings
     end
