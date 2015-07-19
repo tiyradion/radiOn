@@ -37,26 +37,26 @@ main {
 
 /*Remove*/
 
-.remove {
-  z-index: 3;
-  background: #eb7260;
-  color: #FFFFFF;
-  line-height: 25px;
-  position: absolute;
-  right: -12px;
-  text-align: center;
-  top: -10px;
-  width: 24px;
-  cursor: pointer;
-  text-decoration: none;
-  font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -moz-box-shadow: 1px 1px 3px #000;
-  -webkit-box-shadow: 1px 1px 3px #000;
-  box-shadow: 1px 1px 3px #000;
-}
+// .remove {
+//   z-index: 3;
+//   background: #eb7260;
+//   color: #FFFFFF;
+//   line-height: 25px;
+//   position: absolute;
+//   right: -12px;
+//   text-align: center;
+//   top: -10px;
+//   width: 24px;
+//   cursor: pointer;
+//   text-decoration: none;
+//   font-weight: bold;
+//   -webkit-border-radius: 12px;
+//   -moz-border-radius: 12px;
+//   border-radius: 12px;
+//   -moz-box-shadow: 1px 1px 3px #000;
+//   -webkit-box-shadow: 1px 1px 3px #000;
+//   box-shadow: 1px 1px 3px #000;
+// }
 
 .remove:hover {
   background: #91ada9;
@@ -67,16 +67,16 @@ main {
 }
 
 #primary_nav_wrap ul {
-	list-style:none;
-	position:relative;
+	list-style: none;
+	position: relative;
   float: right;
 	margin-right: 3em;
-	padding:0;
+	padding: 0;
 }
 
 #primary_nav_wrap ul a {
-	display:block;
-	text-decoration:none;
+	display: block;
+	text-decoration: none;
 	font-weight: 300;
 	font-size: 1.2em;
 	line-height: 1.5em;
@@ -95,11 +95,11 @@ main {
 }
 
 #primary_nav_wrap ul li.current-menu-item {
-	background:#ddd
+	background: #ddd;
 }
 
 #primary_nav_wrap ul li:hover {
-	background:#f6f6f6
+	background: #eb7260;
 }
 
 #primary_nav_wrap ul ul {
@@ -108,24 +108,32 @@ main {
 	top:100%;
 	left:0;
 	background:#fff;
-	padding:0
+	padding:0;
 }
 
 #primary_nav_wrap ul ul li {
-	float:none;
-	width:200px
+	float: none;
+	width: 7.35em;
 }
 
 #primary_nav_wrap ul ul a {
-	line-height:120%;
-	padding:10px 15px
+	padding: 0.5em;
 }
 
 #primary_nav_wrap ul ul ul {
-	top:0;
-	left:100%
+	left: 100%
 }
 
 #primary_nav_wrap ul li:hover > ul {
-	display:block
+	display: block
+}
+
+#drop-down {
+  color: #FFFFFE;
+  padding-bottom: 5em;
+}
+
+#drop-down:hover {
+  background-color: #FFFFFE;
+  color: #91ada9;
 }
