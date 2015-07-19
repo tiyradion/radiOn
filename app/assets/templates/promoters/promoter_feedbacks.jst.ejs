@@ -6,19 +6,19 @@
 <% feedbacks.forEach(function(feedback) { %>
 
   <div class="promo-feedback">
-    <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
-    <div class="feedback-profile" style="background-image: url(<%- feedback.station.picture_upload %>);">
+      <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
+      <div class="feedback-profile" style="background-image: url(<%- feedback.station.picture_upload %>);">
     </div>
 
     <% if(feedback.request === true) { %>
 
       <div class="feedback-text">
         <div class="feedback-comment">
-          <div class="radio-reviewer>
-            <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
+          <div>
+            <p> <span class="radio-reviewer"><%- feedback.station.name %> at <%- feedback.station.station_name %></span> <span class="artist-reviewed"><%- feedback.artist.album_name %> by <%- feedback.artist.name %></span>:</p>
           </div>
           <div>
-            <p>"<%- feedback.comment %>"</p>
+            <p class="feedback-quote">"<%- feedback.comment %>"</p>
           </div>
         </div>
         <div class="feedback-request">
@@ -43,10 +43,10 @@
 
       <div class="feedback-text">
         <div>
-          <p><%- feedback.station.name %> at <%- feedback.station.station_name %> reviewed <%- feedback.artist.album_name %> by <%- feedback.artist.name %>:</p>
+          <p><span class="radio-reviewer"><%- feedback.station.name %> at <%- feedback.station.station_name %></span><span class="artist-reviewed"><%- feedback.artist.album_name %> by <%- feedback.artist.name %></span>:</p>
         </div>
         <div>
-          <p class="rejection-feedback">"<%- feedback.comment %>"</p>
+          <p class="feedback-quote">"<%- feedback.comment %>"</p>
         </div>
       <div class="rejection-message">
         <p>Please Do Not Send Album</p>
