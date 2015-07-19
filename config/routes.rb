@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :rankings, only: [:index, :show, :update, :create, :destroy]
       resources :promoters, only: [:show]
       member do
+        put :rankings
         get :promoters
         get :artists
       end

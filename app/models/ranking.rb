@@ -4,4 +4,5 @@ class Ranking < ActiveRecord::Base
   validates :station_id, presence: true
   validates :rank, presence: true, uniqueness: {scope: [:station_id, :artist_id]}
   validates :artist, presence: true, uniqueness: {scope: [:station_id]}
+  default_scope { order(rank: :asc) }
 end
