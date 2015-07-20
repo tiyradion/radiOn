@@ -41,6 +41,8 @@ Radion.Views.Listen = Backbone.View.extend({
       request: mail
     };
 
+    console.log(feedback);
+
     $.ajax({
       url: '/api/artists/' + id + '/feedbacks/',
       type: 'POST',
