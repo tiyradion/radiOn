@@ -31,7 +31,6 @@ Radion.Views.Listen = Backbone.View.extend({
   },
 
   sendFeedback: function() {
-
      var id = $('.comments-form').find('input[name=artist-id]').attr('data-artist-id');
      var comment = $('.comments-form').find('.text-area').val();
      var mail = $('input[name=mail]:checked').val() === "true";
