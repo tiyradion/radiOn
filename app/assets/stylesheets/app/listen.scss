@@ -107,13 +107,8 @@ label.listen-options input:checked + span {
 .icons {
   display: inline-block;
   position: relative;
-  padding-top: 0.5em;
-  // position: absolute;
-  // display: block;
-  // width: 100%;
-  // text-align: center;
-  // padding-top: 0.5em;
-  // z-index: 6;
+  padding-top: 0.2em;
+  margin-top: 1em;
 }
 
 .divider {
@@ -137,7 +132,7 @@ label.listen-options input:checked + span {
 .text-area-div {
   position: relative;
   width: 100%;
-  padding-top: 3em;
+  padding-top: 2em;
 }
 
 .text-area {

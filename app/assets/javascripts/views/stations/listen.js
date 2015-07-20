@@ -60,7 +60,7 @@ Radion.Views.Listen = Backbone.View.extend({
   textToggle: function (e) {
     var formEvent = ($(e.target).attr ('id'));
     $("#send-cd").prop('checked', formEvent === 'send-cd-icon')
-    $(".comments").animate({bottom: '10em'}, "medium")
+    $(".comments").animate({bottom: '11em'}, "medium")
   },
 
   progressBar: function () {
