@@ -14,8 +14,10 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
     this.refresh();
 
-    Radion.globalEvents.on('allNotes', this.render, this);
-    Radion.globalEvents.on('singleNote', this.renderSingle, this);
+    this.listenTo(Radion.globalEvents, 'allNotes', this.render);
+    this.listenTo(Radion.globalEvents, 'singleNote', this.renderSingle);
+    // Radion.globalEvents.on('allNotes', this.render, this);
+    // Radion.globalEvents.on('singleNote', this.renderSingle, this);
     Radion.globalEvents.trigger('removeNotes', this.render, this);
 
   },
