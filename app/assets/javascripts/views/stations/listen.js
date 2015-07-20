@@ -49,7 +49,7 @@ Radion.Views.Listen = Backbone.View.extend({
       //  processData: false,
       //  contentType: false,
        dataType: 'json'
-     }).done().fail(function () {
+     }).done(location.hash = "dashboard").fail(function () {
        console.log(arguments);
        alert('Failed to upload.');
      });
