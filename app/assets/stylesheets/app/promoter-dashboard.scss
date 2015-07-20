@@ -109,7 +109,9 @@
   display: inline-block;
   position: relative;
   float: right;
+  margin-right: -3.5em;
   font-size: 1em;
+  cursor: pointer;
 }
 
 .remove-negative-feedback {
@@ -117,5 +119,9 @@
   display: inline-block;
   position: relative;
   float: right;
+  top: 0;
+  margin-right: -4em;
   font-size: 1em;
+  font-weight: 400;
+  cursor: pointer;
 }
