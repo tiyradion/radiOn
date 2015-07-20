@@ -8,8 +8,10 @@
       <p class="js-rank" data-rank="<%- ranking.rank %>"><%- ranking.rank %></p>
     </div>
     <div class="js-ranking-album">
-      <p class="js-album-name" data-album-name="<%- ranking.album_name %>"><%- ranking.album_name %></p>
-      <p class="js-artist-name" data-artist-name="<%- ranking.name %>"><%- ranking.name %></p>
+      <p class="js-album-name" data-album-name="<%- ranking.album_name %>">
+        <% if (ranking.album_name !== undefined) { %><%- ranking.album_name %><% } %></p>
+      <p class="js-artist-name" data-artist-name="<%- ranking.name %>">
+        <% if (ranking.artist_name !== undefined) { %><%- ranking.artist_name %><% } %></p>
     </div>
   </div>
   <% }) %>
