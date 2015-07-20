@@ -7,11 +7,11 @@
 
   <div class="all-contacts-menu pure-menu pure-menu-scrollable">
 
-    <ul class="pure-menu-list">
+    <ul class="all-contacts-list pure-menu-list">
       <% users.forEach(function(user) { %>
         <div>
           <li class="pure-menu-item">
-            <a class="pure-menu-link"><%- user.name %></a><button type="button" class="btn-add-contact" data-user-id="<%- user.id %>">+</button>
+            <a class="contact-a pure-menu-link"><%- user.name %><button type="button" class="btn-add-contact" data-user-id="<%- user.id %>">+</button></a>
           </li>
         </div>
       <% }) %>
