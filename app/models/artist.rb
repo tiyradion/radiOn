@@ -1,7 +1,7 @@
 require "open-uri"
 
 class Artist < ActiveRecord::Base
-  has_many :feedbacks
+  has_many :feedbacks, dependent: :destroy
   belongs_to :promoter
   has_many :stations, through: :promoter
   has_many :rankings
