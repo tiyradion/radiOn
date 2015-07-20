@@ -8,21 +8,32 @@ Radion.Views.NewRanking = Backbone.View.extend({
 
   template: JST['stations/new_ranking'],
 
-  initialize: function() {
+  initialize: function(options) {
 
     this.listenTo(this.model, 'change remove add', this.render);
 
     this.refresh();
 
+    this.options = options;
+
   },
 
   addRanking: function (e) {
 
+    var artistId = $(e.target).closest('.station-artist').data('artistId');
+    var albumName = $(e.target).closest('.station-artist').data('albumName');
+    var artistName = $(e.target).closest('.station-artist').data('artistName');
 
+    console.log(albumName);
+    console.log(artistName);
 
-  },
+    var div = '[name=' + this.options.rank + ']';
 
-  close: function() {
+    $(div).attr('data-artist-id', artistId);
+    $(div).find('.js-album-name').attr('data-album-name', albumName);
+    $(div).find('.js-artist-name').attr('data-artist-name', artistName);
+    $(div).find('.js-album-name').html(albumName);
+    $(div).find('.js-artist-name').html(artistName);
 
     this.remove();
 

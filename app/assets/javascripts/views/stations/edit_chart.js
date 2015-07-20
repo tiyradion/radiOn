@@ -19,9 +19,11 @@ Radion.Views.Chart = Backbone.View.extend({
 
   },
 
-  newRanking: function () {
+  newRanking: function (e) {
 
-    $('.ranking-modal').append(new Radion.Views.NewRanking({model: new Radion.Collections.Artists()}).$el);
+    var rank = $(e.target).closest('.ranking-div').data('rank');
+
+    $('.ranking-modal').append(new Radion.Views.NewRanking({model: new Radion.Collections.Artists(), rank: rank}).$el);
 
   },
 
@@ -37,7 +39,6 @@ Radion.Views.Chart = Backbone.View.extend({
 
     for(i=0; i<10; ++i) {
       var div = '[name=' + (i + 1) + ']';
-      console.log(div);
       chart[i] = {
         id: $(div).data('id'),
         station_id: $(div).data('station-id'),
@@ -59,8 +60,6 @@ Radion.Views.Chart = Backbone.View.extend({
       console.log(arguments);
       alert('Failed to update.');
     });
-    //
-    // location.hash = "dashboard";
 
   },
 
