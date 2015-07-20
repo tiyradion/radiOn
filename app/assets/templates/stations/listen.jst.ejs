@@ -77,9 +77,10 @@
 
       <form class="comments-form">
 
+        <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
         <div class="text-area-div">
           <textarea maxlength="500" placeholder="What Did You Think?" class="text-area" id="text-area"></textarea><br>
-          <button class="btn-listen-pg">Submit</button>
+          <button type="button" class="btn-listen-pg">Submit</button>
         </div>
 
       </form>
