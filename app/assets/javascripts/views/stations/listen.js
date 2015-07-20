@@ -31,30 +31,31 @@ Radion.Views.Listen = Backbone.View.extend({
   },
 
   sendFeedback: function() {
+     var id = $('.comments-form').find('input[name=artist-id]').attr('data-artist-id');
+     var comment = $('.comments-form').find('.text-area').val();
+     var mail = $('input[name=mail]:checked').val() === "true";
 
-    var id = $('.listen-form').find('input[name=artist-id]').attr('data-artist-id');
-    var comment = $('.listen-form').find('.text-area').val();
-    var mail = $('.listen-form').find('input[name=mail]').prop('checked');
+     var feedback = {
+       comment: comment,
+       request: mail
+     };
 
-    var feedback = {
-      comment: comment,
-      request: mail
-    };
+     console.log(feedback);
 
-    $.ajax({
-      url: '/api/artists/' + id + '/feedbacks/',
-      type: 'POST',
-      data: feedback,
-      processData: false,
-      contentType: false,
-      dataType: 'json'
-    }).done().fail(function () {
-      console.log(arguments);
-      alert('Failed to upload.');
-    });
+     $.ajax({
+       url: '/api/artists/' + id + '/feedbacks',
+       type: 'POST',
+       data: feedback,
+       processData: false,
+       contentType: false,
+       dataType: 'json'
+     }).done().fail(function () {
+       console.log(arguments);
+       alert('Failed to upload.');
+     });
 
 
-  },
+   },
 
   textToggle: function (e) {
     var formEvent = ($(e.target).attr ('id'));

@@ -1,102 +1,104 @@
 <div class="picture-div">
-  <img src="<%- artist.picture_upload_1_file %>"/>
+ <img src="<%- artist.picture_upload_1_file %>"/>
 </div>
 
 <div class="info-div">
 
-  <div class="band-menu">
+ <div class="band-menu">
 
-    <h2 class="listen-artist-name"><%- artist.name %></h2>
+   <h2 class="listen-artist-name"><%- artist.name %></h2>
 
-    <div class="album-details">
-      <h3 class="album-name"><%- artist.album_name %></h3>
-    </div>
+   <div class="album-details">
+     <h3 class="album-name"><%- artist.album_name %></h3>
+   </div>
 
-  </div>
+ </div>
 
-  <div class="music-div">
+ <div class="music-div">
 
-    <div class="listen-artist-div">
-      <h2 class="listen-artist-info"><%- artist.name %></h2>
-    </div>
+   <div class="listen-artist-div">
+     <h2 class="listen-artist-info"><%- artist.name %></h2>
+   </div>
 
-    <div class="player-menu-div">
+   <div class="player-menu-div">
 
-      <div class="music-player">
+     <div class="music-player">
 
-        <audio>
-          <source src="<%- artist.music_upload_file %>">
-        </audio>
+       <audio>
+         <source src="<%- artist.music_upload_file %>">
+       </audio>
 
-        <div id="audio-player">
+       <div id="audio-player">
 
-          <button id="pButton" class="play"></button>
+         <button id="pButton" class="play"></button>
 
-          <div id="timeline">
-            <div id="playhead"></div>
-          </div>
+         <div id="timeline">
+           <div id="playhead"></div>
+         </div>
 
-        </div>
+       </div>
 
+     </div>
+
+   </div>
+
+   <p class="song-name">"<%- artist.song_name %>"</p>
+
+ </div>
+
+ <div id="listen-picture-div">
+
+   <div class="logo-image">
+     <img src="<%- artist.picture_upload_2_file %>" alt="Placeholder Image" />
+   </div>
+   <div class="logo-image">
+     <img src="<%- artist.picture_upload_3_file %>" alt="Placeholder Image" />
+   </div>
+   <div class="logo-image">
+     <img src="http://assets.rollingstone.com/assets/images/video/new-postal-service-track-surfaces-20130211/postalservice-306-1358784439-1359996682-1360604573.jpeg" alt="Placeholder Image" />
+   </div>
+   <div class="logo-image">
+     <img src="http://www.trbimg.com/img-51264ce2/turbine/os-os-postal.jpg-20130221/600/600x450" alt="Placeholder Image" />
+   </div>
+
+ </div>
+
+ <div class="slider">
+
+   <form class="comments">
+
+     <label class="listen-options">
+      <input type="radio" name="mail" id="send-cd" value="true" />
+      <div class="icons">
+         <span class="slider-icons" id="send-cd-icon"><i class="fa fa-envelope-o"></i> Send Me a CD <span class="divider">|</span></span>
       </div>
+     </label>
 
-    </div>
+     <label class="listen-options">
+      <input type="radio" name="mail" id="send-cd" value="false" />
+      <div class="icons">
+         <span class="slider-icons" id="no-cd-icon"><i class="fa fa-times"></i> Don't Send Me a CD </span>
+      </div>
+     </label>
 
-    <p class="song-name">"<%- artist.song_name %>"</p>
+       <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
+       <div class="text-area-div">
+         <textarea maxlength="500" placeholder="What Did You Think?" class="text-area" id="text-area"></textarea><br>
+         <button type="button" class="btn-listen-pg">Submit</button>
+       </div>
 
-  </div>
+     </div>
 
-  <div id="listen-picture-div">
+   </form>
 
-    <div class="logo-image">
-      <img src="<%- artist.picture_upload_2_file %>" alt="Placeholder Image" />
-    </div>
-    <div class="logo-image">
-      <img src="<%- artist.picture_upload_3_file %>" alt="Placeholder Image" />
-    </div>
-    <div class="logo-image">
-      <img src="http://assets.rollingstone.com/assets/images/video/new-postal-service-track-surfaces-20130211/postalservice-306-1358784439-1359996682-1360604573.jpeg" alt="Placeholder Image" />
-    </div>
-    <div class="logo-image">
-      <img src="http://www.trbimg.com/img-51264ce2/turbine/os-os-postal.jpg-20130221/600/600x450" alt="Placeholder Image" />
-    </div>
+ </div>
 
-  </div>
+ <div class="bio-div">
 
-  <div class="slider">
+   <p class="bio">Pork belly 90's cold-pressed you probably haven't heard of them freegan, hoodie messenger bag leggings polaroid biodiesel. Dreamcatcher PBR&B High Life, readymade direct trade butcher meh banjo kitsch narwhal photo booth. Cornhole fashion axe Helvetica vegan, swag squid small batch heirloom fanny pack crucifix. Semiotics meggings chia, irony Truffaut actually lomo. Actually +1 3 wolf moon sriracha chillwave 90's post-ironic, American Apparel forage. PBR&B put a bird on it tattooed leggings fashion axe, Kickstarter taxidermy seitan selvage church-key Tumblr health goth meh post-ironic. Taxidermy Odd Future forage artisan cronut.<br><br>
 
-    <div class="comments">
+   Normcore hoodie disrupt, salvia gentrify Thundercats roof party craft beer mlkshk pour-over bitters YOLO literally lo-fi. Wolf migas before they sold out, keytar leggings Pitchfork 8-bit typewriter pug flexitarian. Occupy fanny pack fingerstache, typewriter Odd Future authentic cornhole small batch mumblecore High Life tousled Pitchfork Bushwick mlkshk. Chillwave jean shorts keytar, bitters migas stumptown semiotics plaid Pitchfork. Tumblr slow-carb Helvetica, before they sold out iPhone narwhal Marfa bitters artisan deep v fap street art American Apparel cray ennui. Etsy flannel mustache, wolf vegan farm-to-table heirloom forage Shoreditch cliche. Taxidermy pug YOLO before they sold out cred Bushwick.
+   </p>
 
-    <div class="icons">
-      <label class="listen-options">
-        <input type="checkbox" name="mail" value="mail" id="send-cd"/>
-        <span class="slider-icons" id="send-cd-icon"><i class="fa fa-envelope-o"></i> Send Me a CD <span class="divider">|</span></span>
-          </label>
-      <label class="listen-options">
-        <input type="checkbox" name="no-mail" value="no-mail" id="dont-send-cd"/>
-        <span class="slider-icons" id="no-cd-icon"><i class="fa fa-times"></i> Don't Send Me a CD </span>
-      </label>
-    </div>
-
-      <form class="comments-form">
-
-        <div class="text-area-div">
-          <textarea maxlength="500" placeholder="What Did You Think?" class="text-area" id="text-area"></textarea><br>
-          <button class="btn-listen-pg">Submit</button>
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-  <div class="bio-div">
-
-    <p class="bio">Pork belly 90's cold-pressed you probably haven't heard of them freegan, hoodie messenger bag leggings polaroid biodiesel. Dreamcatcher PBR&B High Life, readymade direct trade butcher meh banjo kitsch narwhal photo booth. Cornhole fashion axe Helvetica vegan, swag squid small batch heirloom fanny pack crucifix. Semiotics meggings chia, irony Truffaut actually lomo. Actually +1 3 wolf moon sriracha chillwave 90's post-ironic, American Apparel forage. PBR&B put a bird on it tattooed leggings fashion axe, Kickstarter taxidermy seitan selvage church-key Tumblr health goth meh post-ironic. Taxidermy Odd Future forage artisan cronut.<br><br>
-
-    Normcore hoodie disrupt, salvia gentrify Thundercats roof party craft beer mlkshk pour-over bitters YOLO literally lo-fi. Wolf migas before they sold out, keytar leggings Pitchfork 8-bit typewriter pug flexitarian. Occupy fanny pack fingerstache, typewriter Odd Future authentic cornhole small batch mumblecore High Life tousled Pitchfork Bushwick mlkshk. Chillwave jean shorts keytar, bitters migas stumptown semiotics plaid Pitchfork. Tumblr slow-carb Helvetica, before they sold out iPhone narwhal Marfa bitters artisan deep v fap street art American Apparel cray ennui. Etsy flannel mustache, wolf vegan farm-to-table heirloom forage Shoreditch cliche. Taxidermy pug YOLO before they sold out cred Bushwick.
-    </p>
-
-  </div>
+ </div>
 </div>

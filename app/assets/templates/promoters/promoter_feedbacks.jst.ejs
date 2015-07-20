@@ -1,3 +1,6 @@
+<div class="promo-chart">
+</div>
+
 <div class="feedback-header">
   <h2 class="pure-menu-heading">Feedback</h2>
 </div>
@@ -6,7 +9,6 @@
 <% feedbacks.forEach(function(feedback) { %>
 
   <div class="promo-feedback">
-      <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
       <div class="feedback-profile" style="background-image: url(<%- feedback.station.picture_upload %>);">
     </div>
 
@@ -36,6 +38,8 @@
             </ul>
           </div>
         </div>
+        <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
+        <a class="remove remove-promoter-feedback">X</a>
       </div>
 
     <% } else { %>
@@ -49,7 +53,8 @@
         </div>
       <div class="rejection-message">
         <p>Please Do Not Send Album</p>
-    <a class="remove remove-negative-feedback">X</a>
+        <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
+        <a class="remove remove-promoter-feedback">X</a>
       </div>
 
     <% } %>

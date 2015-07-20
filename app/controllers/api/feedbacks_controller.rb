@@ -29,8 +29,12 @@ module Api
   end
 
   def create
-      Feedback.create(comment: params[:comment], request: params[:request], station_id: session[:user_id], artist_id: params[:artist_id], reviewed: false, responded: false)
-      respond_with :api, @feedback
+    # byebug
+      @feedback = Feedback.new(feedback_params)
+      @feedback.update(station_id: session[:user_id], artist_id: params[:artist_id], reviewed: false, responded: false)
+      if @feedback.save
+        respond_with :api, @artist
+      end
   end
 
   def update
@@ -52,7 +56,7 @@ module Api
     end
 
     def feedback_params
-      params.require(:promoter).permit(:comment, :request, :artist_id, :station_id, :reviewed, :responded)
+      params.require(:feedback).permit(:comment, :request, :artist_id, :station_id, :reviewed, :responded)
     end
   end
 end

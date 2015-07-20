@@ -19,7 +19,7 @@ class StationsController < ApplicationController
     respond_to do |format|
       if @station.save
         10.times do
-          Ranking.create(rank: count, artist_id: "", station_id: @station.id)
+          Ranking.create(rank: count, station_id: @station.id)
           count += 1
         end
         session[:user_id] = @station.id
