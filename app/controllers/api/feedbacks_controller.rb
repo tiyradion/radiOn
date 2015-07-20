@@ -29,12 +29,10 @@ module Api
   end
 
   def create
-    # byebug
-      @feedback = Feedback.new(feedback_params)
-      @feedback.update(station_id: session[:user_id], artist_id: params[:artist_id], reviewed: false, responded: false)
-      if @feedback.save
-        respond_with :api, @artist
-      end
+    @feedback = Feedback.new(comment: params[:comment], request: params[:request], station_id: session[:user_id], artist_id: params[:artist_id], reviewed: false, responded: false)
+    @feedback.save
+    artist = Artist.find(params[:artist_id])
+    respond_with :api, artist
   end
 
   def update

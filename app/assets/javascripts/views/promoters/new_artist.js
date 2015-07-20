@@ -39,8 +39,8 @@ Radion.Views.NewArtist = Backbone.View.extend({
     formData.append('artist[picture_upload_1]', pictureFile1);
     formData.append('artist[picture_upload_2]', pictureFile2);
     formData.append('artist[picture_upload_3]', pictureFile3);
-    // formData.append('artist[picture_upload_4_file]', pictureFile4);
-    // formData.append('artist[picture_upload_5_file]', pictureFile5);
+    formData.append('artist[picture_upload_4]', pictureFile4);
+    formData.append('artist[picture_upload_5]', pictureFile5);
     formData.append('artist[uploaded_file]', musicFile);
 
     $.ajax({
