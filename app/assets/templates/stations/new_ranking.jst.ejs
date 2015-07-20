@@ -1,0 +1,18 @@
+<div class="artists-header">
+  <h2 class="pure-menu-heading">New Artists</h2>
+
+
+<% artists.forEach(function(artist) { %>
+
+<div class="artist station-artist">
+  <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
+  <a id="artist-route" class="ranking-artist">
+      <div class="artist-name"><%- artist.name %></div>
+      <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+  </a>
+  <a class="remove remove-station-artist">X</a>
+</div>
+
+<% }) %>
+
+</div>

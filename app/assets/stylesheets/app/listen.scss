@@ -105,12 +105,15 @@ label.listen-options input:checked + span {
 }
 
 .icons {
-  position: absolute;
-  display: block;
-  width: 100%;
-  text-align: center;
+  display: inline-block;
+  position: relative;
   padding-top: 0.5em;
-  z-index: 6;
+  // position: absolute;
+  // display: block;
+  // width: 100%;
+  // text-align: center;
+  // padding-top: 0.5em;
+  // z-index: 6;
 }
 
 .divider {

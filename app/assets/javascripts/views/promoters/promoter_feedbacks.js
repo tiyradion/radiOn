@@ -23,6 +23,7 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     var promoterId = Radion.userId;
     var feedbackId = $(e.target).siblings('[name="feedback-id"]').attr('data-feedback-id');
+    console.log(feedbackId);
 
     $.ajax({
       url: '/api/promoters/' + promoterId + '/feedbacks/' + feedbackId,
@@ -44,6 +45,8 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
   render: function () {
 
+    Radion.globalEvents.trigger('rerender');
+
     this.$el.html(this.template({
       feedbacks: this.model.toJSON()
     }));
@@ -52,6 +55,10 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
   renderSingle: function (id) {
 
+    Radion.globalEvents.trigger('rerender');
+
+    var promoterChartView = new Radion.Views.PromoterChart({model: new Radion.Collections.Rankings({id: id})});
+
     var single = _.filter(this.model.toJSON(), function (feedback) {
       return feedback.station.id === id;
     });
@@ -59,6 +66,7 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
     this.$el.html(this.template({
       feedbacks: single
     }));
+
   }
 
 });
