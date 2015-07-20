@@ -22,6 +22,6 @@ class Station < ActiveRecord::Base
 
   def unresponded_feedback(promoter_id)
     all_unresponded = self.feedbacks.reject {|feedback| feedback.responded == true}
-    all_unresponded.select {|feedback| feedback.promoter.id == promoter_id}
+    all_unresponded.select {|feedback| feedback.promoter.id == promoter_id && feedback.artist_id != nil}
   end
 end
