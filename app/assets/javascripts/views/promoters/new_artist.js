@@ -18,7 +18,7 @@ Radion.Views.NewArtist = Backbone.View.extend({
   ajaxUpload: function() {
 
     var form = $('.new-artist-form');
-    var pictureSelector1 = $('.new-picture-files', form);
+    var pictureSelector1 = $('.new-picture-file-1', form);
     var pictureFile1 = pictureSelector1[0].files[0];
     var pictureSelector2 = $('.new-picture-file-2', form);
     var pictureFile2 = pictureSelector2[0].files[0];
@@ -36,12 +36,12 @@ Radion.Views.NewArtist = Backbone.View.extend({
     formData.append('artist[album_name]', $('.new-album-name', form).val());
     formData.append('artist[song_name]', $('.new-track-name', form).val());
     formData.append('artist[bio]', $('.new-artist-bio', form).val());
-    formData.append('artist[picture_upload_1_file]', pictureFile1);
-    formData.append('artist[picture_upload_2_file]', pictureFile2);
-    formData.append('artist[picture_upload_3_file]', pictureFile3);
-    formData.append('artist[picture_upload_4_file]', pictureFile4);
-    formData.append('artist[picture_upload_5_file]', pictureFile5);
-    formData.append('artist[music_upload_file]', musicFile);
+    formData.append('artist[picture_upload_1]', pictureFile1);
+    formData.append('artist[picture_upload_2]', pictureFile2);
+    formData.append('artist[picture_upload_3]', pictureFile3);
+    // formData.append('artist[picture_upload_4_file]', pictureFile4);
+    // formData.append('artist[picture_upload_5_file]', pictureFile5);
+    formData.append('artist[uploaded_file]', musicFile);
 
     $.ajax({
       url: '/api/artists', // The URL to post to
