@@ -25,7 +25,6 @@
         <div class="feedback-request">
           <div>
             <p>Send a copy to:</p>
-              <a class="remove remove-promoter-feedback">X</a>
           </div>
           <div>
             <ul>
@@ -38,7 +37,7 @@
             </ul>
           </div>
         </div>
-        <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
+        <input name="feedback-id" class="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
         <a class="remove remove-promoter-feedback">X</a>
       </div>
 
@@ -53,8 +52,8 @@
         </div>
       <div class="rejection-message">
         <p>Please Do Not Send Album</p>
-        <input name="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
-        <a class="remove remove-promoter-feedback">X</a>
+        <input name="feedback-id" type="hidden" class="feedback-id" data-feedback-id="<%- feedback.id %>">
+        <a class="remove remove-negative-feedback">X</a>
       </div>
 
     <% } %>

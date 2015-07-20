@@ -38,12 +38,6 @@
   font-size: 1.2em;
 }
 
-.remove-negative-feedback {
-  display: inline-block;
-  float: right;
-  margin-top: -2em;
-}
-
 .promo-feedback {
   background: #FFFFFE;
   color: #21252B;
@@ -111,10 +105,17 @@
 }
 
 .remove-promoter-feedback {
-  border: none;
-  float: right;
+  width: 12%;
+  display: inline-block;
   position: relative;
-  vertical-align: middle;
-  top: 0;
-  cursor: pointer;
+  float: right;
+  font-size: 1em;
+}
+
+.remove-negative-feedback {
+  width: 12%;
+  display: inline-block;
+  position: relative;
+  float: right;
+  font-size: 1em;
 }
