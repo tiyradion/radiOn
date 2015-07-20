@@ -37,12 +37,11 @@ Radion.Views.Chart = Backbone.View.extend({
 
     for(i=1; i<11; ++i) {
       var div = '[name=' + i + ']';
+      console.log(div);
       chart[i] = {
         id: $(div).data('id'),
         station_id: $(div).data('station-id'),
         rank: $(div).find('.js-rank').data('rank'),
-        name: $(div).find('.js-artist-name').data('artist-name'),
-        album_name: $(div).find('.js-album-name').data('album-name'),
         artist_id: $(div).data('artist-id')
       };
     }
@@ -50,9 +49,9 @@ Radion.Views.Chart = Backbone.View.extend({
     console.log(chart);
 
     $.ajax({
-      url: '/api/stations/' + Radion.userId + '/rankings',
+      url: '/api/stations/' + Radion.userId + '/rankings/batch_update' ,
       type: 'PUT',
-      data: chart,
+      data: JSON.stringify(chart),
       processData: false,
       contentType: false,
       dataType: 'json'
