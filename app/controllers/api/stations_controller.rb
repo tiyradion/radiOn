@@ -19,17 +19,15 @@ module Api
       respond_with :api, @station.promoters
     end
 
-    def rankings
-      @rankings = @station.rankings
-      @rankings.each do |ranking|
-        artist = Artist.find_by_name(params[:name])
-        ranking.update(rank: params[:rank], artist_id: artist.id)
-      end
-      respond_with :api, @rankings
-    end
-
     def show
       respond_with :api, @station
+    end
+
+    def rankings
+      byebug
+      # params[:ranking_id].split(',').map(&:to_i).each do |id|
+      #   Ranking.find(id).update(params[:artist_id], params[:rank])
+      # end
     end
 
     def update

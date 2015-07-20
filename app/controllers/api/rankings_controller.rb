@@ -2,7 +2,7 @@ module Api
   class RankingsController < ApplicationController
     respond_to :json
     before_action :set_station, only: [:index]
-    before_action :set_ranking, only: [:show, :update, :destroy]
+    before_action :set_ranking, only: [:show, :destroy]
 
     def index
       @rankings = @station.rankings
@@ -18,6 +18,10 @@ module Api
       @ranking.station_id = session[:user_id]
       @ranking.save
       respond_with :api, @ranking
+    end
+
+    def batch_update
+      Ranking.batch_update(request.raw_post)
     end
 
     def update
