@@ -14,10 +14,14 @@ class StationsController < ApplicationController
   # POST /stations
   # POST /stations.json
   def create
+    count = 1
     @station = Station.new(station_params)
-
     respond_to do |format|
       if @station.save
+        10.times do
+          Ranking.create(rank: count, artist_id: "", station_id: @station.id)
+          count += 1
+        end
         session[:user_id] = @station.id
         session[:user_type] = "stations"
         session[:user_name] = @station.name

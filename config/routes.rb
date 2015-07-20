@@ -15,12 +15,14 @@ Rails.application.routes.draw do
       resources :feedbacks, only: [:create]
     end
     resources :stations, only: [:index, :update] do
-      resources :rankings, only: [:index, :show, :update, :create, :destroy]
+      resources :rankings, only: [:index, :show, :update, :create, :destroy] do
+        match :batch_update, via: [:put], on: :collection
+      end
       resources :promoters, only: [:show]
       member do
-        put :rankings
         get :promoters
         get :artists
+        # put :rankings
       end
     end
     resources :promoters, only: [:index, :update] do
