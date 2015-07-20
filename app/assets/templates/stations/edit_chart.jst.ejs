@@ -1,0 +1,19 @@
+<div class="ranking-modal"></div>
+
+<div class="station-chart">
+
+  <% rankings.forEach(function (ranking) { %>
+  <div name="<%- ranking.rank %>" data-id="<%- ranking.id %>" data-artist-id="<%- ranking.artist_id %>">
+    <div class="js-rank-num">
+      <p class="js-rank" data-rank="<%- ranking.rank %>"><%- ranking.rank %></p>
+    </div>
+    <div class="js-ranking-album">
+      <p class="js-album-name" data-album-name="<%- ranking.album_name %>"><%- ranking.album_name %></p>
+      <p class="js-artist-name" data-artist-name="<%- ranking.name %>"><%- ranking.name %></p>
+    </div>
+  </div>
+  <% }) %>
+
+  <button type="button" class="update-chart">Update</button>
+
+</div>
