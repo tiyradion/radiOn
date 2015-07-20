@@ -4,11 +4,10 @@
 
 <% artists.forEach(function(artist) { %>
 
-<div class="artist station-artist">
-  <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
+<div class="artist station-artist" data-artist-id="<%- artist.id %>" data-artist-name="<%- artist.name %>" data-album-name="<%- artist.album_name %>">
   <a id="artist-route" class="ranking-artist">
-      <div class="artist-name js-album-name"><%- artist.album_name %> by <%- artist.artist_name %></div>
-      <div class="artist-profile js-" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+      <div class="artist-name "><%- artist.album_name %> by <%- artist.name %></div>
+      <div class="artist-profile " style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
   </a>
 </div>
 
