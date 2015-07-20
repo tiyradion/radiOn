@@ -36,7 +36,7 @@ Radion.Views.Chart = Backbone.View.extend({
     var chart=[];
 
     for(i=0; i<10; ++i) {
-      var div = '[name=' + (i+1) + ']';
+      var div = '[name=' + (i + 1) + ']';
       console.log(div);
       chart[i] = {
         id: $(div).data('id'),

@@ -22,6 +22,7 @@ module Api
 
     def batch_update
       Ranking.batch_update(request.raw_post)
+      respond_with :api, "success"
     end
 
     def update
