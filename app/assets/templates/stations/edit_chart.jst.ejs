@@ -3,7 +3,7 @@
 <div class="station-chart">
 
   <% rankings.forEach(function (ranking) { %>
-  <div name="<%- ranking.rank %>" data-id="<%- ranking.id %>" data-artist-id="<%- ranking.artist_id %>" data-station-id="<%- ranking.station_id %>">
+  <div class="charting-div" name="<%- ranking.rank %>" data-id="<%- ranking.id %>" data-artist-id="<%- ranking.artist_id %>" data-station-id="<%- ranking.station_id %>">
     <div class="js-rank-num">
       <p class="js-rank" data-rank="<%- ranking.rank %>"><%- ranking.rank %></p>
     </div>

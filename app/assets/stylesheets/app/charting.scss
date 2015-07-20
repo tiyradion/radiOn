@@ -1,0 +1,46 @@
+.station-chart {
+  padding-top: 5em;
+  text-align: center;
+}
+
+.charting-div {
+  margin-left: 15em;
+  margin-right: 15em;
+}
+
+.js-rank-num {
+  display: inline-block;
+  float: left;
+  font-size: 2em;
+  background-color: #91ada9;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFE;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  width: 3em;
+}
+
+.js-ranking-album {
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #F0F1EE;
+  height: 4em;
+}
+
+.js-album-name {
+  padding-top: 0.5em;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  font-size: 1.5em;
+  color: #91ada9;
+}
+
+.update-chart {
+  margin-bottom: 2em;
+  margin-top: 2em;
+  border: 2px solid #91ada9;
+  color: #91ada9;
+  background-color: #FFFFFE;
+  width: 27em;
+}
