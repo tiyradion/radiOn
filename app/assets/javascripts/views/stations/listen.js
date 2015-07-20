@@ -46,8 +46,8 @@ Radion.Views.Listen = Backbone.View.extend({
        url: '/api/artists/' + id + '/feedbacks',
        type: 'POST',
        data: feedback,
-       processData: false,
-       contentType: false,
+      //  processData: false,
+      //  contentType: false,
        dataType: 'json'
      }).done().fail(function () {
        console.log(arguments);
