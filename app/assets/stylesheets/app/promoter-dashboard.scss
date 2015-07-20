@@ -17,6 +17,7 @@
 
 .feedback-header {
   top: 5em;
+  margin-top: 0.5em;
   z-index: 2;
 }
 
@@ -35,6 +36,12 @@
   font-family: 'Roboto Condensed', sans-serif;
   color: #423f40;
   font-size: 1.2em;
+}
+
+.remove-negative-feedback {
+  display: inline-block;
+  float: right;
+  margin-top: -2em;
 }
 
 .promo-feedback {

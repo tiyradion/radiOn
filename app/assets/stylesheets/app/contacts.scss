@@ -6,8 +6,18 @@
   cursor: pointer;
 }
 
+.btn-add-contact {
+  margin-top: -0.2em;
+  display: inline-block;
+  float: right;
+  border: 1px solid #eb7260;
+  color: #eb7260;
+  background-color: #FFFFFE;
+}
+
 .btn-add-contact:hover {
   color: #91ada9;
+  border: 1px solid #91ada9;
 }
 
 .contact {
@@ -31,4 +41,13 @@
 
 .contact-modal {
   z-index: 10;
+}
+
+.contact-a {
+  background-color: #F0F1EE;
+  border-bottom: 2px solid #FFFFFE;
+}
+
+.contact-a:hover {
+  background-color: #FFFFFE;
 }
