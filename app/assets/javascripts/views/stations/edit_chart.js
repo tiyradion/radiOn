@@ -27,12 +27,6 @@ Radion.Views.Chart = Backbone.View.extend({
 
   },
 
-  updateRanking: function () {
-
-
-
-  },
-
   update: function () {
 
     var chart=[];
@@ -42,7 +36,7 @@ Radion.Views.Chart = Backbone.View.extend({
       chart[i] = {
         id: $(div).data('id'),
         station_id: $(div).data('station-id'),
-        rank: $(div).find('.js-rank').data('rank'),
+        rank: $(div).data('rank'),
         artist_id: $(div).data('artist-id')
       };
     }
