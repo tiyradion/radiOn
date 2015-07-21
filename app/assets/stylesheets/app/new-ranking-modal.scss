@@ -1,3 +1,12 @@
 .ranking-modal {
 	@include span-columns(12 of 12, block-collapse);
 }
+
+.ranking-h2 {
+	
+}
+
+.ranking-artists-modal {
+	height: 80%;
+	overflow: scroll;
+}
