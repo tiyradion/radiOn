@@ -5,7 +5,6 @@
 }
 
 .artist-name {
-  display: none;
   position: absolute;
   z-index: 2;
   text-align: center;
@@ -33,4 +32,8 @@
 
 #artist-route:hover .artist-name {
   display: block;
+}
+
+.remove-station-artist {
+  color: white;
 }
