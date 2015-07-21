@@ -1,5 +1,5 @@
 class Station < ActiveRecord::Base
-  has_many :feedbacks
+  has_many :feedbacks, dependent: :destroy
   has_and_belongs_to_many :promoters
   has_many :artists, through: :promoters
   has_many :rankings
