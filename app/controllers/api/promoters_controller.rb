@@ -20,7 +20,6 @@ module Api
     end
 
     def stations
-      # @promoter.update(promoter_params, station_ids:[])
       respond_with :api, @promoter.stations
     end
 
@@ -31,7 +30,6 @@ module Api
 
     def requests
       respond_with :api, @promoter.requests
-      # @promoter.cd_request
     end
 
     def comments
@@ -43,8 +41,8 @@ module Api
         @promoter = Promoter.find(params[:id])
       end
 
-      def set_promoter
-        @station = Promoter.find(session[:user_id])
+      def set_station
+        @station = Station.find(session[:user_id])
       end
 
       def promoter_params
