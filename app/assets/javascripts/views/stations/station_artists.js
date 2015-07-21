@@ -3,7 +3,7 @@ Radion.Views.StationArtists = Backbone.View.extend({
   el: '.station-artists',
 
   events: {
-    'click .remove-station-artist': 'removeArtist'
+    'click .js-remove-station-artist': 'removeArtist'
   },
 
   template: JST['stations/station_artists'],

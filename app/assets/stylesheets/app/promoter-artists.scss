@@ -9,7 +9,7 @@
 
 .promo-artists {
   position: absolute;
-  background: #E0DEDE;
+  background: #FFFFFE;
   @include span-columns(15 of 15, block-collapse);
   padding: modular-scale(1, 1em, $golden);
   z-index: 1;
@@ -20,8 +20,8 @@
 
 .promo-artists-header {
   @include span-columns(15 of 15);
-  text-align: center;
   display: block;
+  left: 0;
 }
 
 .promo-artist {
@@ -30,20 +30,20 @@
 }
 
 .add-artist {
-  position: relative;
-  display: inline-block;
-  float: right;
-  margin-top: -2em;
+  position: absolute;
+  left: 10em;
+  margin-top: 0.4em;
 }
 
-.promo-artists h2, .promo-contacts h2 {
-  color: #eb7260;
+.promo-contacts-h2 {
+  color: #423f40;
+  font-size: 1.2em;
   margin-bottom: 1em;
+  margin-left: -1em;
 }
 
 .promo-artists h2 {
   display: inline-block;
-  float: left;
 }
 
 .promo-artist-div, .promo-contacts-div, .promo-other-div {
@@ -61,4 +61,14 @@
 .other-div {
   position: relative;
   margin-left: 2em;
+}
+
+.remove-promoter-artist {
+  font-family: 'Roboto Condensed', sans-serif;
+  float: right;
+  cursor: pointer;
+}
+
+.remove-promoter-artist:hover {
+  color: #91ada9;
 }
