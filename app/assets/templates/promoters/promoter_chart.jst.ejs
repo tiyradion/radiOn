@@ -1,18 +1,27 @@
 <div class="promoter-chart">
-
+<div class="feedback-header">
+  <h2 class="pure-menu-heading">Charts</h2>
+  <h2 class="pure-menu-heading contact-details-header">Contact</h2>
+</div>
   <% rankings.forEach(function (ranking) { %>
   <div class="charting-div ranking-div" name="<%- ranking.rank %>" data-rank="<%- ranking.rank %>" data-id="<%- ranking.id %>" data-artist-id="<%- ranking.artist_id %>" data-station-id="<%- ranking.station_id %>">
 
-    <div class="js-rank-num">
-      <p class="js-rank" ><%- ranking.rank %></p>
+    <div class="js-rank-num ranking-num">
+      <p class="js-rank promoter-num" ><%- ranking.rank %></p>
     </div>
-    <div class="js-ranking-album">
-      <p class="js-album-name" data-album-name="<%- ranking.album_name %>">
+    <div class="js-ranking-album promoter-rank">
+      <p class="js-album-name chart-album-name" data-album-name="<%- ranking.album_name %>">
         <% if (ranking.album_name !== undefined) { %><%- ranking.album_name %><% } %></p>
-      <p class="js-artist-name" data-artist-name="<%- ranking.name %>">
+      <p class="js-artist-name chart-artist-name" data-artist-name="<%- ranking.name %>">
         <% if (ranking.artist_name !== undefined) { %><%- ranking.artist_name %><% } %></p>
     </div>
   </div>
   <% }) %>
 
+</div>
+<div class="promoter-contact-details">
+<p class="promoter-contact-icons"><i class="fa fa-microphone"></i> KCWU FM</p>
+<p class="promoter-contact-icons"><i class="fa fa-phone"></i> (800) 202-1254</p>
+<p class="promoter-contact-icons"><i class="fa fa-paper-plane-o"></i> email@email.com</p>
+<p class="promoter-contact-icons"><i class="fa fa-envelope"></i> 819 Fun City, NC, USA 11101</p>
 </div>
