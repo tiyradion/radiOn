@@ -1,3 +1,72 @@
+.promoter-filter-page {
+  overflow-x: hidden;
+}
+
 .promoter-chart {
-  left:0;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.ranking-div {
+  margin-right: 28em;
+  margin-left: 0;
+  margin-bottom: -1em;
+}
+
+.ranking-num {
+  height: 2em;
+  font-size: 1em;
+  width: 2em;
+}
+
+.promoter-rank {
+  height: 2em;
+  padding-bottom: 0.5em;
+}
+
+.chart-artist-name {
+  font-size: 1em;
+  float: right;
+  margin-top: -1.5em;
+  margin-right: 1em;
+  text-align: left;
+}
+
+.chart-album-name {
+  font-size: 1.2em;
+  margin-left: 2em;
+}
+
+.promoter-num {
+  margin-left: 0.5em;
+}
+
+.promoter-contact-details {
+  position: relative;
+  display: block;
+  float: right;
+  background-color: #F0F1EE;
+  margin-top: -21em;
+  padding-right: 5em;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+}
+
+.promoter-contact-icons {
+  margin-bottom: 1.2em;
+  margin-left: 1.5em;
+  font-size: 1.2em;
+  color: #423f40;
+}
+
+.promoter-contact-icons i {
+  margin-right: 1em;
+  font-size: 1.5em;
+  color: #91ada9;
+}
+
+.contact-details-header {
+  float: right;
+  margin-top: -2.5em;
+  margin-right: 12.8em;
 }
