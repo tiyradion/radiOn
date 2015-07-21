@@ -1,12 +1,13 @@
 module Api
   class PromotersController < ApplicationController
     before_action :set_promoter, only: [:show, :artists, :stations, :update]
+    before_action :set_station, only: [:index]
     respond_to :json
     before_action :promoter_logged_in?, only: [:stations, :artists]
     before_action :logged_in?, only: [:show, :index]
 
     def index
-      @promoters = Promoter.all
+      @promoters = Promoter.all - @station.promoters
       respond_with :api, @promoters
     end
 
@@ -40,6 +41,10 @@ module Api
     private
       def set_promoter
         @promoter = Promoter.find(params[:id])
+      end
+
+      def set_promoter
+        @station = Promoter.find(session[:user_id])
       end
 
       def promoter_params
