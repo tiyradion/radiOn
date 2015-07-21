@@ -40,7 +40,7 @@ module Api
         @station = Station.find(params[:id])
       end
 
-      def set_station
+      def set_promoter
         @promoter = Promoter.find(session[:user_id])
       end
 
