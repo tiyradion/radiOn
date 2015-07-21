@@ -3,7 +3,8 @@ Radion.Views.NewRanking = Backbone.View.extend({
   className: 'modalDialog showing ranking-modal',
 
   events: {
-    'click .ranking-artist': 'addRanking'
+    'click .ranking-artist': 'addRanking',
+    'click .close': 'close'
   },
 
   template: JST['stations/new_ranking'],
@@ -37,6 +38,10 @@ Radion.Views.NewRanking = Backbone.View.extend({
 
     this.remove();
 
+  },
+
+  close: function () {
+    this.remove();
   },
 
   refresh: function() {
