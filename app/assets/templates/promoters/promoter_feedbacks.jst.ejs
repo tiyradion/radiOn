@@ -38,7 +38,7 @@
           </div>
         </div>
         <input name="feedback-id" class="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
-        <a class="remove remove-promoter-feedback">X</a>
+        <a class="remove remove-promoter-feedback js-remove-feedback">X</a>
       </div>
 
     <% } else { %>
@@ -53,7 +53,7 @@
       <div class="rejection-message">
         <p>Please Do Not Send Album</p>
         <input name="feedback-id" type="hidden" class="feedback-id" data-feedback-id="<%- feedback.id %>">
-        <a class="remove remove-negative-feedback">X</a>
+        <a class="remove remove-negative-feedback js-remove-feedback">X</a>
       </div>
 
     <% } %>
