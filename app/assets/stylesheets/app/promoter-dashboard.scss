@@ -1,5 +1,5 @@
 .promo-dashboard {
-  background: #F0F1EE;
+  background: #e0dbd2;
 }
 
 .promo-station-info {
@@ -28,11 +28,10 @@
 }
 
 .radio-reviewer {
-  float: right;
-  margin: 10px;
+  margin-top: 1em;
+  margin-left: 6em;
   position: absolute;
   top: 0;
-  padding-right: 2em;
   font-family: 'Roboto Condensed', sans-serif;
   color: #423f40;
   font-size: 1.2em;
@@ -46,14 +45,14 @@
   margin-bottom: 0.2em;
   margin-left: 0;
   margin-right: 0;
-  padding-top: 1em;
   padding-right: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 0.3em;
   padding-left: 0.5em;
   border-right: 1px solid #F0F1EE;
 }
 
 .feedback-profile {
+  margin-top: 1.5em;
   display: inline-block;
   width: 9%;
   background-size: cover;
@@ -68,64 +67,76 @@
   }
 }
 
-.feedback-text {
-  width: 90%;
-  display: inline-block;
-}
-
-.feedback-comment {
-  width: 60%;
-  display: inline-block;
-}
-
 .feedback-request {
   font-family: 'Roboto Condensed', sans-serif;
-  width: 30%;
+  width: 100%;
   display: inline-block;
-}
-
-.artist-reviewed {
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #423f40;
 }
 
 .feedback-quote {
+  margin-top: -2em;
+  margin-left: 5.3em;
   font-family: 'Roboto Condensed', sans-serif;
   color: #423f40;
+  font-size: 1.3em;
   font-style: italic;
 }
 
 .rejection-message {
-  font-family: 'Roboto Condensed', sans-serif;
-  width: 30%;
-  display: inline-block;
-  float: right;
-  margin-right: 4em;
-  margin-top: -2em;
+  width: 100%;
 }
 
-.remove-promoter-feedback {
-  position: relative;
-  float: right;
-  cursor: pointer;
+.positive-request {
+  width: 100%;
 }
 
-.remove-negative-feedback {
-  position: relative;
-  float: right;
-  margin-right: -3.5em;
-  margin-top: -3em;
-  font-size: 1.09em;
-  cursor: pointer;
+.send-to {
+  margin-left: 6.4em;
+  margin-top: 1em;
+  font-size: 1.1em;
+  color: #423f40;
+  padding-bottom: 1em;
+}
+
+.fa-envelope-o {
+  padding-right: 0.5em;
+  color: #91ada9;
+}
+
+.album-reviewed {
+  font-style: italic;
+  font-weight: 200;
+  color: #91ada9;
+}
+
+.fa-trash-o {
+  color: #91ada9;
+  padding-right: 0.3em;
+  font-size: 1.3em;
+}
+
+.rejection-message {
+  margin-top: 1em;
+  margin-left: 7em;
+  font-size: 1em;
+  padding-bottom: 1em;
+  color: #423f40;
+}
+
+.artist-reviewed-name {
+  color: #91ada9;
 }
 
 .remove-promoter-feedback, .remove-negative-feedback {
-  border: 1px solid #eb7260;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  float: right;
+  margin-top: 0.5em;
   color: #eb7260;
-  padding: 0.1em;
+  cursor: pointer;
 }
 
 .remove-promoter-feedback:hover, .remove-negative-feedback:hover {
-  border: 1px solid #91ada9;
   color: #91ada9;
 }
