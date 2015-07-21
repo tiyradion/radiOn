@@ -40,6 +40,7 @@ Radion.Views.Contacts = Backbone.View.extend({
   removeContact: function(e) {
     e.stopPropagation();
 
+    var self = this;
     var theId = parseInt($(e.target).data('contactId'));
 
     var ids = this.model
@@ -56,7 +57,7 @@ Radion.Views.Contacts = Backbone.View.extend({
       url: '/api/' + Radion.userType + '/' + Radion.userId,
       method: 'PATCH',
       data: contactIds
-    }).done(this.refresh()).fail(function () {
+    }).done(function () { self.refresh() }).fail(function () {
       alert("Failed to remove contact.");
     })
 

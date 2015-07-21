@@ -6,6 +6,7 @@
 
 .artist-name {
   display: block;
+  font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   z-index: 2;
   text-align: center;
@@ -29,4 +30,8 @@
     display: block;
     padding-top: 90%;
   }
+}
+
+.remove-station-artist {
+  color: white;
 }

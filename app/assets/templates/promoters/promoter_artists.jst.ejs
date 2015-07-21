@@ -3,7 +3,7 @@
   <div class="promo-artists">
 
     <div class="promo-artists-header">
-      <h2 class="promo-contacts-h2">My Artists</h2>
+      <h2 class="promo-contacts-h2 pure-menu-heading">My Artists</h2>
       <a class="add-artist open-modal">Add +</a>
     </div>
 
@@ -13,10 +13,9 @@
       <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
       <div class="artist-target" >
         <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
-        <div class="artist-name"><%- artist.name %></div>
+        <div class="artist-name"><%- artist.name %><a class="remove remove-promoter-artist">X</a></div>
         <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
       </div>
-      <a class="remove remove-promoter-artist">X</a>
     </div>
 
     <% }) %>

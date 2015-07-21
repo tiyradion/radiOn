@@ -1,13 +1,25 @@
 <div class="pure-menu custom-restricted-width">
 
   <div class="contact-header">
-    <h2 class="contact-title pure-menu-heading">Contacts</h2>
+    <h2 class="contact-title pure-menu-heading">
+      <% if(Radion.userType === "promoters") { %>
+        Stations
+      <% } else { %>
+        Promoters
+      <% } %>
+    </h2>
     <button type="button" class="new-contact">Add +</button>
   </div>
 
   <ul class="all-contacts pure-menu-list">
     <li class="all-contact pure-menu-item">
-      <a class="pure-menu-link all-notes">All Contacts</a>
+      <a class="pure-menu-link all-notes">All
+        <% if(Radion.userType === "promoters") { %>
+          Stations
+        <% } else { %>
+          Promoters
+        <% } %>
+      </a>
     </li>
     <% contacts.forEach(function(contact) { %>
       <li class="contact pure-menu-item">

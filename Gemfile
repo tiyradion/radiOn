@@ -6,6 +6,8 @@ gem 'backbone-on-rails'
 
 gem 'bourbon'
 
+gem "pure-css-rails"
+
 gem 'neat'
 
 gem 'puma'

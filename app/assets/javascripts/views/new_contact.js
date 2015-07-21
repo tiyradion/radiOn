@@ -35,11 +35,13 @@ Radion.Views.NewContact = Backbone.View.extend ({
       var contactIds = {promoter_ids: ids};
     }
 
+    var self = this;
+
       $.ajax({
         url: '/api/' + Radion.userType + '/' + Radion.userId,
         method: 'PATCH',
         data: contactIds
-      }).done(this.close()).fail(function () {
+      }).done(function () { self.close() }).fail(function () {
         alert("Failed to remove contact.");
       })
 

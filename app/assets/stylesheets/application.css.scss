@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_self
+ *= require pure
  */
 
 @import 'reset/reset';
@@ -30,3 +31,4 @@
 @import 'app/promoter-artists';
 @import 'app/listen';
 @import 'app/charting';
+@import 'app/promoter-contact-info';
