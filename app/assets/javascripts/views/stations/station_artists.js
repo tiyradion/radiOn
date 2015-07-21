@@ -26,6 +26,8 @@ Radion.Views.StationArtists = Backbone.View.extend({
 
     var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
 
+    var self = this;
+
     $.ajax({
       url: '/api/artists/' + artistId + '/feedbacks',
       type: 'POST',
@@ -36,7 +38,7 @@ Radion.Views.StationArtists = Backbone.View.extend({
       processData: false,
       contentType: false,
       dataType: 'json'
-    }).done(this.refresh()).fail(function () {
+    }).done(function () { self.refresh(); }).fail(function () {
       console.log(arguments);
     });
 

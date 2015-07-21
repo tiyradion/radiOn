@@ -1,16 +1,22 @@
-<div class="artists-header">
-  <h2 class="pure-menu-heading">New Artists</h2>
+<div>
 
+  <div class="ranking-artists-header">
 
-<% artists.forEach(function(artist) { %>
+    <h2 class="pure-menu-heading ranking-h2">New Ranking</h2>
 
-<div class="artist station-artist" data-artist-id="<%- artist.id %>" data-artist-name="<%- artist.name %>" data-album-name="<%- artist.album_name %>">
-  <a id="artist-route" class="ranking-artist">
-      <div class="artist-name "><%- artist.album_name %> by <%- artist.name %></div>
-      <div class="artist-profile " style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
-  </a>
-</div>
+  </div>
 
-<% }) %>
+  <div class="ranking-artists-modal">
+  <% artists.forEach(function(artist) { %>
+
+  <div class="artist station-artist" data-artist-id="<%- artist.id %>" data-artist-name="<%- artist.name %>" data-album-name="<%- artist.album_name %>">
+    <a id="artist-route" class="ranking-artist">
+        <div class="artist-name "><%- artist.album_name %> by <%- artist.name %></div>
+        <div class="artist-profile " style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+    </a>
+  </div>
+
+  <% }) %>
+  </div>
 
 </div>

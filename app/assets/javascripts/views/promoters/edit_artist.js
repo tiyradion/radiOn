@@ -43,6 +43,8 @@ Radion.Views.EditArtist = Backbone.View.extend({
     pictureFile5 && formData.append('artist[picture_upload_5]', pictureFile5);
     musicFile && formData.append('artist[uploaded_file]', musicFile);
 
+    var self = this;
+
     $.ajax({
       url: '/api/artists/' + id,
       type: 'PUT',
@@ -50,7 +52,7 @@ Radion.Views.EditArtist = Backbone.View.extend({
       processData: false,
       contentType: false,
       dataType: 'json'
-    }).done(this.remove()).fail(function () {
+    }).done(function () { self.close(); }).fail(function () {
       console.log(arguments);
       alert('Failed to upload.');
     });

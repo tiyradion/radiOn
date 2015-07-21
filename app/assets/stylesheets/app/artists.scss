@@ -5,6 +5,7 @@
 }
 
 .artist-name {
+  display: block;
   font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   z-index: 2;
@@ -29,10 +30,6 @@
     display: block;
     padding-top: 90%;
   }
-}
-
-#artist-route:hover .artist-name {
-  display: block;
 }
 
 .remove-station-artist {

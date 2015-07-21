@@ -40,10 +40,12 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
     var promoterId = Radion.userId;
     var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
 
+    var self = this;
+
     $.ajax({
       url: '/api/promoters/' + promoterId + '/artists/' + artistId,
       method: 'DELETE',
-    }).done(this.refresh()).fail(function () {
+    }).done(function () { self.refresh(); }).fail(function () {
       console.log(arguments);
       alert('Failed to delete.');
     });
