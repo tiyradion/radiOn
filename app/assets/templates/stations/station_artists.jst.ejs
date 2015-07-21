@@ -5,12 +5,13 @@
 <% artists.forEach(function(artist) { %>
 
 <div class="artist station-artist">
-<input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
-<a href="#listen/<%- artist.id %>" id="artist-route">
-    <div class="artist-name"><%- artist.name %></div>
-    <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
-</a>
-<a class="remove remove-station-artist">X</a>
+
+  <input type="hidden" name="artist-id" data-artist-id="<%- artist.id %>">
+  <a href="#listen/<%- artist.id %>" id="artist-route">
+      <div class="artist-name"><%- artist.name %></div>
+      <div class="artist-profile" style="background-image: url(<%- artist.picture_upload_1_file %>);"></div>
+  </a>
+  <a class="remove remove-station-artist js-remove-station-artist">X</a>
 </div>
 
 <% }) %>
