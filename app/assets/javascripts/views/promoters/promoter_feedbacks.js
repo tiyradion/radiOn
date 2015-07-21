@@ -3,7 +3,7 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
   el: '.promo-feedbacks',
 
   events: {
-    'click .remove-promoter-feedback': 'removeFeedback'
+    'click .js-remove-feedback': 'removeFeedback'
   },
 
   template: JST['promoters/promoter_feedbacks'],
@@ -14,8 +14,11 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     this.refresh();
 
-    Radion.globalEvents.on('allNotes', this.render, this);
-    Radion.globalEvents.on('singleNote', this.renderSingle, this);
+    this.listenTo(Radion.globalEvents, 'singleNote', this.renderSingle);
+    this.listenTo(Radion.globalEvents, 'allNotes', this.render);
+
+    // Radion.globalEvents.on('allNotes', this.render, this);
+    // Radion.globalEvents.on('singleNote', this.renderSingle, this);
 
   },
 
@@ -23,7 +26,6 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     var promoterId = Radion.userId;
     var feedbackId = $(e.target).siblings('[name="feedback-id"]').attr('data-feedback-id');
-    console.log(feedbackId);
 
     $.ajax({
       url: '/api/promoters/' + promoterId + '/feedbacks/' + feedbackId,

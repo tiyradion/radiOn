@@ -6,7 +6,7 @@ module Api
     before_action :station_logged_in?, only: [:promoters, :update]
 
     def index
-      @stations = Station.all
+      @stations = Station.all - @promoter.stations
       respond_with :api, @stations
     end
 
@@ -38,6 +38,10 @@ module Api
     private
       def set_station
         @station = Station.find(params[:id])
+      end
+
+      def set_station
+        @promoter = Promoter.find(session[:user_id])
       end
 
       def station_params

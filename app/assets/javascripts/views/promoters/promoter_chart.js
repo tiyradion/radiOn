@@ -6,7 +6,7 @@ Radion.Views.PromoterChart = Backbone.View.extend({
 
   initialize: function() {
 
-    Radion.globalEvents.on('rerender', this.remove(), this)
+    this.listenTo(Radion.globalEvents, 'rerender', this.remove);
 
     this.listenTo(this.model, 'change remove add', this.render);
 
