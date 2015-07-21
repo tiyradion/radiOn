@@ -59,6 +59,8 @@ Radion.Views.EditArtist = Backbone.View.extend({
 
   close: function() {
 
+    Radion.globalEvents.trigger('addNewArtist');
+
     this.remove();
 
   },

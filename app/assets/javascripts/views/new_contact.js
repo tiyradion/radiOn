@@ -47,6 +47,8 @@ Radion.Views.NewContact = Backbone.View.extend ({
 
   close: function() {
 
+    Radion.globalEvents.trigger('addedNew');
+
     this.remove();
 
   },
