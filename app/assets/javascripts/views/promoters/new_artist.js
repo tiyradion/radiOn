@@ -43,6 +43,8 @@ Radion.Views.NewArtist = Backbone.View.extend({
     formData.append('artist[picture_upload_5]', pictureFile5);
     formData.append('artist[uploaded_file]', musicFile);
 
+    var self = this;
+
     $.ajax({
       url: '/api/artists', // The URL to post to
       type: 'POST', // The HTTP method (e.g. POST)
@@ -50,7 +52,7 @@ Radion.Views.NewArtist = Backbone.View.extend({
       processData: false, // Disable jQuery's mangling of the data
       contentType: false, // Prevent jQuery from adding the content-type header
       dataType: 'json' // What we expect back from server
-    }).done(this.remove()).fail(function () {
+    }).done(function () { self.close(); }).fail(function () {
       console.log(arguments);
       alert('Failed to upload.');
     });
@@ -58,6 +60,8 @@ Radion.Views.NewArtist = Backbone.View.extend({
   },
 
   close: function() {
+
+    Radion.globalEvents.trigger('addNewArtist');
 
     this.remove();
 

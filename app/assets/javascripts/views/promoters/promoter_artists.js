@@ -14,6 +14,8 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
 
     this.listenTo(this.model, 'change remove add', this.render);
 
+    this.listenTo(Radion.globalEvents, 'addNewArtist', this.refresh);
+
     this.refresh();
 
   },

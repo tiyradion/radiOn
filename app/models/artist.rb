@@ -5,6 +5,7 @@ class Artist < ActiveRecord::Base
   belongs_to :promoter
   has_many :stations, through: :promoter
   has_many :rankings
+  default_scope { order(created_at: :desc) }
   has_attached_file :uploaded_file
   has_attached_file :picture_upload_1
   has_attached_file :picture_upload_2
