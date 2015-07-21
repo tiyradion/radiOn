@@ -40,8 +40,6 @@ Radion.Views.Listen = Backbone.View.extend({
        request: mail
      };
 
-     console.log(feedback);
-
      $.ajax({
        url: '/api/artists/' + id + '/feedbacks',
        type: 'POST',
@@ -49,7 +47,7 @@ Radion.Views.Listen = Backbone.View.extend({
       //  processData: false,
       //  contentType: false,
        dataType: 'json'
-     }).done(location.hash = "dashboard").fail(function () {
+     }).done(function () {location.hash = "dashboard"}).fail(function () {
        console.log(arguments);
        alert('Failed to upload.');
      });
