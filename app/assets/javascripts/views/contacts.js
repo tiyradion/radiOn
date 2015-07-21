@@ -17,6 +17,8 @@ Radion.Views.Contacts = Backbone.View.extend({
 
     this.refresh();
 
+    this.listenTo(Radion.globalEvents, 'addedNew', this.refresh);
+
   },
 
   newContact: function() {

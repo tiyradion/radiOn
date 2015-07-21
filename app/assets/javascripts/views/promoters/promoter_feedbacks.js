@@ -59,7 +59,7 @@ Radion.Views.PromoterFeedbacks = Backbone.View.extend({
 
     Radion.globalEvents.trigger('rerender');
 
-    var promoterChartView = new Radion.Views.PromoterChart({model: new Radion.Collections.Rankings({id: id})});
+    var promoterChartView = new Radion.Views.PromoterChart({model: new Radion.Collections.PRankings({url: '/api/stations/' + id + '/rankings', id: id})});
 
     var single = _.filter(this.model.toJSON(), function (feedback) {
       return feedback.station.id === id;
