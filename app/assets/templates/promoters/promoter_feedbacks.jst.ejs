@@ -15,11 +15,11 @@
     <% if(feedback.request === true) { %>
       <div class="feedback-text">
         <div class="feedback-comment">
-          <div>
-            <p> <span class="radio-reviewer"><%- feedback.station.name %> at <%- feedback.station.station_name %></span> <span class="artist-reviewed"><%- feedback.artist.album_name %> by <%- feedback.artist.name %></span>:</p>
+          <div class="quote">
+            <p class="feedback-quote">"<%- feedback.comment %>"</p>
           </div>
           <div>
-            <p class="feedback-quote">"<%- feedback.comment %>"</p>
+            <p> <span class="radio-reviewer"><%- feedback.station.name %> at <%- feedback.station.station_name %></span> <span class="artist-reviewed"><%- feedback.artist.album_name %> by <%- feedback.artist.name %></span>:</p>
           </div>
         </div>
         <div class="feedback-request">
@@ -27,14 +27,13 @@
             <p>Send a copy to:</p>
           </div>
           <div>
-            <ul>
-              <li><%- feedback.station.name %></li>
-              <li><%- feedback.station.address_1 %></li>
+            <div class="station-address">
+              <p><%- feedback.station.name %><%- feedback.station.address_1 %>
               <% if(feedback.station.address_2 !== null) { %>
-              <li><%- feedback.station.address_2 %></li>
+              <%- feedback.station.address_2 %>
               <% } %>
-              <li><%- feedback.station.city %>, <%- feedback.station.state %> <%- feedback.station.zipcode %></li>
-            </ul>
+              <%- feedback.station.city %>, <%- feedback.station.state %> <%- feedback.station.zipcode %></p>
+            </div>
           </div>
         </div>
         <input name="feedback-id" class="feedback-id" type="hidden" data-feedback-id="<%- feedback.id %>">
@@ -44,11 +43,11 @@
     <% } else { %>
 
       <div class="feedback-text">
+      <div>
+        <p class="feedback-quote">"<%- feedback.comment %>"</p>
+      </div>
         <div>
           <p><span class="radio-reviewer"><%- feedback.station.name %> at <%- feedback.station.station_name %></span><span class="artist-reviewed"><%- feedback.artist.album_name %> by <%- feedback.artist.name %></span>:</p>
-        </div>
-        <div>
-          <p class="feedback-quote">"<%- feedback.comment %>"</p>
         </div>
       <div class="rejection-message">
         <p>Please Do Not Send Album</p>

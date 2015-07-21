@@ -11,6 +11,7 @@
 }
 
 .js-rank-num {
+  overflow: auto;
   display: inline-block;
   float: left;
   font-size: 2em;
@@ -44,5 +45,11 @@
   border: 2px solid #91ada9;
   color: #91ada9;
   background-color: #FFFFFE;
-  width: 27em;
+  width: 37em;
+  height: 2.5em;
+}
+
+.update-chart:hover {
+  border: 2px solid #eb7260;
+  color: #eb7260;
 }
