@@ -98,7 +98,6 @@ label.listen-options input {
 
 label.listen-options span {
   cursor: pointer;
-  color: #eb7260;
 }
 
 label.listen-options span:hover {
@@ -276,4 +275,12 @@ bottom: -4em;
    transition-duration: .1s;
    transition-timing-function: linear;
    cursor: pointer;
+}
+
+.active-i {
+  color: #91ada9;
+}
+
+.inactive-i{
+  color: #eb7260;
 }
