@@ -57,19 +57,28 @@ Radion.Views.Contacts = Backbone.View.extend({
       url: '/api/' + Radion.userType + '/' + Radion.userId,
       method: 'PATCH',
       data: contactIds
-    }).done(function () { self.refresh() }).fail(function () {
+    }).done(function () { self.refresh(); Radion.globalEvents.trigger('deletedContact'); }).fail(function () {
       alert("Failed to remove contact.");
     })
 
   },
 
-  allNotes: function () {
+  allNotes: function (e) {
+
+    this.$('.active').removeClass('active');
+
+    $(e.target).addClass('active');
 
     Radion.globalEvents.trigger('allNotes');
 
   },
 
   singleNote: function (e) {
+
+    this.$('.active').removeClass('active');
+
+    $(e.target).addClass('active');
+    $(e.target).find('button').addClass('active');
 
     var id = parseInt($(e.target).data('contactId'));
 
