@@ -6,6 +6,7 @@
 .picture-div img {
   position: fixed;
   display: block;
+  background-size: cover;
   top: 0;
   width: 80%;
   height: 100%;
@@ -21,7 +22,7 @@
   position: absolute;
   width: 68em;
   height: 100%;
-  margin-right: -40em;
+  margin-right: -25em;
   background-color: #f0f1ee;
   top: 0;
   right: 0;
@@ -75,6 +76,7 @@
 
 #listen-picture-div {
   position: absolute;
+  z-index: 1;
   margin-top: 2em;
   margin-left: 3em;
   white-space: nowrap;
@@ -87,7 +89,8 @@
 }
 
 .logo-image img {
-  width: 8em;
+  background-size: cover;
+  width: 9em;
   max-width: 100%;
   height: 9em;
 }

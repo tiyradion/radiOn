@@ -43,6 +43,7 @@ Radion.Views.EditArtist = Backbone.View.extend({
     pictureFile5 && formData.append('artist[picture_upload_5]', pictureFile5);
     musicFile && formData.append('artist[uploaded_file]', musicFile);
 
+    var id = $('.edit-artist-id', form).val();
     var self = this;
 
     $.ajax({
