@@ -40,6 +40,8 @@ Radion.Views.PromoterArtists = Backbone.View.extend({
     var promoterId = Radion.userId;
     var artistId = $(e.target).siblings('[name="artist-id"]').attr('data-artist-id');
 
+    console.log(artistId);
+
     var self = this;
 
     $.ajax({
