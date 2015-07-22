@@ -11,23 +11,36 @@
   margin-right: 28em;
   margin-left: 0;
   margin-bottom: -1em;
+  position: relative;
+  overflow: auto;
 }
 
 .ranking-num {
   height: 2em;
   font-size: 1em;
   width: 2em;
+  float: left;
+  background-color: #91ada9;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFFFFE;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-right: 1em;
+  width: 3em;
 }
 
 .promoter-rank {
   height: 2em;
-  padding-bottom: 0.5em;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #F0F1EE;
 }
 
 .chart-artist-name {
   font-size: 1em;
   float: right;
-  margin-top: -1.5em;
+  margin-top: -1em;
   margin-right: 1em;
   text-align: left;
 }
@@ -35,6 +48,10 @@
 .chart-album-name {
   font-size: 1.2em;
   margin-left: 2em;
+  padding-top: 0.5em;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  color: #91ada9;
 }
 
 .promoter-num {
@@ -69,4 +86,8 @@
   float: right;
   margin-top: -2.5em;
   margin-right: 12.8em;
+}
+
+.charting-h2 {
+  margin-top: 10em;
 }
