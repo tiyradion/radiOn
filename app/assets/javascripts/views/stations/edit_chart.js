@@ -19,7 +19,7 @@ Radion.Views.Chart = Backbone.View.extend({
 
   newRanking: function (e) {
     e.preventDefault();
-    var rank = $(e.target).closest('.ranking-div').data('rank');
+    var rank = $(e.target).closest('.js-ranking-div').data('rank');
 
     $('.ranking-modal').append(new Radion.Views.NewRanking({model: new Radion.Collections.Artists(), rank: rank}).$el);
 

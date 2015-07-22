@@ -25,8 +25,7 @@ Radion.Views.NewRanking = Backbone.View.extend({
     var albumName = $(e.target).closest('.station-artist').data('albumName');
     var artistName = $(e.target).closest('.station-artist').data('artistName');
 
-    console.log(albumName);
-    console.log(artistName);
+    console.log(this.options.rank);
 
     var div = '[name=' + this.options.rank + ']';
 

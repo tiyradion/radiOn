@@ -57,7 +57,7 @@ Radion.Views.Contacts = Backbone.View.extend({
       url: '/api/' + Radion.userType + '/' + Radion.userId,
       method: 'PATCH',
       data: contactIds
-    }).done(function () { self.refresh(); }).fail(function () {
+    }).done(function () { self.refresh(); Radion.globalEvents.trigger('deletedContact'); }).fail(function () {
       alert("Failed to remove contact.");
     })
 
