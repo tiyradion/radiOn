@@ -1,13 +1,15 @@
 .station-chart {
-  padding-top: 5em;
+  width: 100%;
+  padding-top: 10em;
   text-align: center;
   overflow: auto;
 }
 
 .charting-div {
-  margin-left: 15em;
-  margin-right: 15em;
+  position: relative;
   overflow: auto;
+  margin-left: 10em;
+  margin-right: 10em;
 }
 
 .js-rank-num {
@@ -45,7 +47,7 @@
   border: 2px solid #91ada9;
   color: #91ada9;
   background-color: #FFFFFE;
-  width: 37em;
+  width: 72%;
   height: 2.5em;
 }
 
