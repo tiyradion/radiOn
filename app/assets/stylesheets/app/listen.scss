@@ -56,7 +56,12 @@
   border-bottom: 1.5px dotted #ccc9c9;
 }
 
+.music-div {
+  z-index: 1;
+}
+
 .song-name {
+  z-index: 1;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
   font-size: 1.4em;
@@ -87,6 +92,10 @@
   height: 9em;
 }
 
+#mail-icon {
+  color: #eb7260;
+}
+
 label.listen-options input {
   display:none;
 }
@@ -107,8 +116,8 @@ label.listen-options input:checked + span {
 .icons {
   display: inline-block;
   position: relative;
-  padding-top: 0.2em;
-  margin-top: 1em;
+  padding-top: 0.3em;
+  margin-top: 0.5em;
 }
 
 .divider {
@@ -156,6 +165,7 @@ label.listen-options input:checked + span {
 }
 
 .slider {
+ z-index: 100;
  overflow: hidden;
  position: absolute;
  height: 100%;
