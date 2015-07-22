@@ -1,5 +1,9 @@
 /*contacts*/
 
+.active {
+  background-color: #F0F1EE;
+}
+
 .all-contacts {
   position: absolute;
   width: 100%;
@@ -31,7 +35,7 @@
   right: 0;
   border: none;
   color: #eb7260;
-  background-color: #FFFFFE;
+  background-color: transparent;
 }
 
 .remove-contact:hover {
@@ -50,8 +54,4 @@
 
 .contact-a:hover {
   background-color: #FFFFFE;
-}
-
-.single-note:active {
-  text-decoration: underline;
 }

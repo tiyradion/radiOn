@@ -244,8 +244,8 @@ bottom: -4em;
   background-color: #91ada9;
 }
 
-.play{background: url('./play.svg') ;}
-.pause{background: url('./pause.svg') ;}
+.play{background: image-url('play.svg') ;}
+.pause{background: image-url('pause.svg') ;}
 
 #timeline {
 	width: 70%;

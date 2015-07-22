@@ -3,7 +3,8 @@ Radion.Views.NewRanking = Backbone.View.extend({
   className: 'modalDialog showing ranking-modal',
 
   events: {
-    'click .ranking-artist': 'addRanking'
+    'click .ranking-artist': 'addRanking',
+    'click .close': 'close'
   },
 
   template: JST['stations/new_ranking'],
@@ -24,8 +25,7 @@ Radion.Views.NewRanking = Backbone.View.extend({
     var albumName = $(e.target).closest('.station-artist').data('albumName');
     var artistName = $(e.target).closest('.station-artist').data('artistName');
 
-    console.log(albumName);
-    console.log(artistName);
+    console.log(this.options.rank);
 
     var div = '[name=' + this.options.rank + ']';
 
@@ -37,6 +37,10 @@ Radion.Views.NewRanking = Backbone.View.extend({
 
     this.remove();
 
+  },
+
+  close: function () {
+    this.remove();
   },
 
   refresh: function() {
