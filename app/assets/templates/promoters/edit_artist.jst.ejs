@@ -8,6 +8,10 @@
   <form class="new-artist-form pure-form pure-form-aligned">
 
     <div class="new-artist pure-control-group pure-input-1">
+      <input class="edit-artist-id" name="edit-artist-id" type="hidden"  value="<%- artist.id %>""/>
+    </div>
+
+    <div class="new-artist pure-control-group pure-input-1">
       <input class="new-artist-name" name="new-artist-name" placeholder="Artist name"  value="<%- artist.name %>""/>
     </div>
 
