@@ -10,7 +10,7 @@
 .promo-artists {
   position: absolute;
   background: #FFFFFE;
-  @include span-columns(15 of 15, block-collapse);
+  @include span-columns(15 of 15);
   padding: modular-scale(1, 1em, $golden);
   z-index: 1;
   top: 0;
